@@ -1,0 +1,67 @@
+extends extends/base.pug
+append vars
+  - var pageUrl = 'index.html';
+  - var pageTitle = 'Структура сайта';
+  - var classBody = 'homepage';
+  - var headerBg = 'images/main-banner.jpg';
+block styles
+  
+block content
+  .main-section
+    ._head.lazy(data-bg=headerBg)
+      ._container.container
+        include ../components/breadcrumbs/template
+        +breadcrumbs({
+        items: [
+
+            ]
+        })._bread
+    .container
+      h1 Страницы проекта
+      +listLink({
+        tagName: 'ol',
+          items: [
+            {ttl: 'Главная страница', url: 'main.html', target: '_blank'},
+            
+          ]
+        })
+      br
+      .tabs-panel
+        .in
+          a(href="#tab1" data-tab).is-active Заголовки
+          a(href="#tab2" data-tab) Элементы форм
+          a(href="#tab3" data-tab) Кнопки
+          a(href="#tab4" data-tab) Иконки
+      .tabs-wrap
+        .tab#tab1
+          h1 Заголовок h1
+          h2 Заголовок h2
+          h3 Заголовок h3
+          h4 Заголовок h4
+        .tab#tab2
+          h1 Элементы форм
+          +field({
+            lbl: 'Введите логин <span class="txt-red">*</span>',
+            classInput: 'js-required',
+          })
+          +field({
+            lbl: 'Введите логин <span class="txt-red">*</span>',
+            classInput: 'js-required',
+            value: 'value'
+          })
+        .tab#tab3.is-visible
+          h1 Кнопки
+          a(href="#").btn button
+          a(href="#").btn.btn-yellow button
+          a(href="#").btn.btn-border button
+        .tab#tab4
+          h1 Иконки
+          mixin iconList(data)
+            .icon-list.d-flex.flex-flow-row-wrap
+              each itm in data
+                .item.p-5
+                  +svg(itm).fs-24
+          +iconList(['marker', 'phone', 'video', 'photo', 'arrow-right', 'filter', 'cart', 'marker2', 'exchange', 'angle-right', 'tile', 'burger', 'main'])
+  +gridLayout()
+
+block scripts

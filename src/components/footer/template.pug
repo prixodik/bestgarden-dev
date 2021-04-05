@@ -1,0 +1,62 @@
+include ../subscribe-block/template
+
+mixin footer(data)
+	footer.footer&attributes(attributes)
+		._container.container
+			._row.row.-stretch
+				._logo-col.col-auto.col-lg-3.col-sm-4.col-xs-12
+					._logo
+						+webp('images/logo.png').d-block
+					._slogan Интернет-магазин ООО «БЕСТГАРДЕН»
+					._adres Юридический адрес: 127224, Москва,<br> ул. Широкая, дом 27, пом. I, комн. 21.<br> ОГРН: 1187746815871
+
+				._menu.col-auto.col-lg-2.col-sm-4.col-xs-12
+					._title Каталоги
+					._menu-item
+						a(href="#") Водные растения 2021
+					._menu-item
+						a(href="#") Луковичные <br>и многолетники 2021
+					._menu-item
+						a(href="#") Розы<br> пакетированные 2021
+					._menu-item
+						a(href="#") Саженцы 2021 | ЗКС 2021
+					._menu-item
+						a(href="#") Грунты
+					._menu-item
+						a(href="#") Средства защиты
+					
+
+				._menu.col-auto.col-lg-2.col-sm-4.col-xs-12
+					._title Информация
+					._menu-item
+						a(href="#") О магазине
+					._menu-item
+						a(href="#") Доставка и оплата
+					._menu-item
+						a(href="#") Скидки
+					._menu-item
+						a(href="#") Личный кабинет
+					._menu-item
+						a(href="#") Новости
+
+				._contacts.col.col-lg-5.col-sm-12.col-xs-12
+					._contacts-row.row
+						._contacts-left.col-9.col-sm-12
+							._title контакты
+							._contacts-item <strong>Адрес:</strong><br> г. Москва, ул. 2-я Хуторская, д. 38
+							._contacts-item <strong>Call-center:</strong><br> 8 (495) 734-80-88
+							
+						._contacts-soc.col-3.col-sm-12
+							include ../soc-list/template
+							+socList()._soc.soc-list--vertical
+
+						._contacts-left-2.col-4.col-md-12
+							._contacts-item <strong>Задать вопрос:</strong><br> 8 (495) 212-85-06
+							._contacts-link
+								a.js-popup-show(href="#") Форма обратной связи
+						._contacts-subscribe.col-8.col-md-12
+							+subscribeBlockFooter()
+
+		._bottom
+			._container.container
+				._copyright 2021, Все права защищены  | <a href="#">Политика обработки персональных данных</a>

@@ -1,0 +1,166 @@
+- var id = 0;
+mixin listLink(data)
+  - var tagName = data.tagName? data.tagName: 'ul';
+  - var tagItem = data.tagItem? data.tagItem: 'li';
+  #{tagName}&attributes(attributes)
+    each itm in data.items
+      #{tagItem}(class=itm.cl)
+        a(target=itm.target, href=(itm.url) ? itm.url:'#')
+          if (itm.ttl)
+            !=itm.ttl
+          if (itm.icn)
+            +svg(itm.icn)
+mixin svg(icn)
+  svg( class="icon icon_"+icn)&attributes(attributes)
+    use(xlink:href="images/sprite-svg.svg#"+icn)
+mixin svgAbout(icn)
+  svg( class="icon icon_"+icn)&attributes(attributes)
+    use(xlink:href="images/about-sprite-svg.svg#"+icn) 
+mixin svgServices(icn)
+  svg( class="icon icon_"+icn)&attributes(attributes)
+    use(xlink:href="images/services-sprite-svg.svg#"+icn) 
+
+mixin phone(data)
+  - var href = data.phone.replace(/[^0-9\+]/g, '')
+  a&attributes(attributes)(href="tel:"+href)
+    if data.icon
+      +svg(data.icon)(class=data.classIcon)
+    !=data.phone
+mixin gridLayout()
+  .grid-layout
+    .row.d-flex.ml-0.mr-0
+      .col.d-flex
+        .in.w-100
+      .col.d-flex
+        .in.w-100
+      .col.d-flex
+        .in.w-100
+      .col.d-flex
+        .in.w-100
+      .col.d-flex
+        .in.w-100
+      .col.d-flex
+        .in.w-100
+      .col.d-flex
+        .in.w-100
+      .col.d-flex
+        .in.w-100
+      .col.d-flex
+        .in.w-100
+      .col.d-flex
+        .in.w-100
+      .col.d-flex
+        .in.w-100
+      .col.d-flex
+        .in.w-100
+mixin webp(img)
+  -var src = img.replace(/\.jp[e]?g|.png/g, '')
+  picture
+    source(data-srcset=src+'.webp' class="lazy" type="image/webp")
+    img(data-src=img, class="lazy" alt="")&attributes(attributes)
+mixin field(data)
+  case data.type
+    when 'select'
+      .form-group&attributes(attributes)
+        if data.lbl
+          label(
+            for='input-' + id,
+            class=data.classLabel
+          ).inp-lbl!=data.lbl
+        select(
+          class=data.classInput,
+          name=data.name,
+          placeholder=data.placeholder,
+          style="width: 100%",
+          disabled=data.disabled
+        ).form-select
+          if data.placeholder
+            option
+          each itm in data.options
+            option(value=itm.value)!=itm.ttl
+        if data.classInput == 'js-required'
+          .error-message
+            |Поле заполнено не верно
+    when 'file'
+      -id++
+      .form-group.d-flex&attributes(attributes)
+        .form-file
+          input(type="file" name="" placeholder="")
+          +btn(data.btn)
+          span.text.bold!=data.text
+          .txt
+          span.remove
+            +svg('close')
+    when 'checkbox'
+      -id++
+      .form-group&attributes(attributes)
+        input(
+          type="checkbox",
+          value=data.value,
+          class=data.classInput,
+          name=data.name,
+          id='checkbox-'+id
+        ).checkbox
+        label(for='checkbox-'+id).custorm-checbox
+          .icon-wrap
+
+          !=data.lbl
+          if data.pict
+            +webp(data.pict)
+          if data.icon
+            +svg(data.icon, data.iconPath)(class=data.classIcon)
+    when 'radio'
+      -id++
+      .form-group&attributes(attributes)
+        input(
+          type="radio",
+          value=data.value,
+          class=data.classInput,
+          name=data.name,
+          id='radio-'+id
+        ).checkbox
+        label(for='radio-'+id).custorm-radio
+          .icon-wrap
+            +svg('check')
+          !=data.lbl
+    when 'textarea'
+      .form-group&attributes(attributes)
+        if data.lbl
+          label(
+            for='input-' + id,
+            class=data.classLabel
+          ).inp-lbl!=data.lbl
+        textarea(
+          class=data.classInput,
+          name=data.name,
+          placeholder=data.placeholder,
+          id='input-' + id,
+          rows="5",
+          cols="10"
+        ).form-control
+        if data.classInput == 'js-required'
+          .error-message
+            if data.error
+              != data.error
+            else
+              | Поле заполнено не верно
+    default
+
+      .form-group&attributes(attributes)
+        if data.lbl
+          label(
+            for='input-' + id,
+            class=data.classLabel
+          ).inp-lbl!=data.lbl
+        input(
+          type=data.type ? data.type: 'text',
+          name=data.name,
+          data-mask=data.mask? data.mask: false,
+          placeholder=data.placeholder,
+          value=data.value,
+          class=data.classInput,
+          id='input-'+id,
+        ).form-control
+        if data.classInput == 'js-required'
+          .error-message
+            | Поле заполнено не верно

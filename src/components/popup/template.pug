@@ -1,0 +1,76 @@
+include ../form-block/template
+
+mixin popup(data)
+	.popup&attributes(attributes)
+		._overflow.js-popup-hide
+		._wrapper
+			a._close.js-popup-hide
+				+svg('close')
+			block
+
+
+mixin popupContactForm()
+	+popup().popup--contact#popup-contact-form(attributes)
+		+formBlockContacts()
+
+mixin popupStatus()
+	+popup().popup--status#popup-status(attributes)
+		._title статус заказа
+		._desc Введите номер заказа
+		form._form(action="") 
+			._input.form-group
+				.form-group__label Номер заказа
+				input.form-control.-border(type="text")
+			._buttons
+				button.btn.-block Найти заказ
+
+mixin popupLogin()
+	+popup().popup--login#popup-login(attributes)
+		._title войти в личный кабинет
+		.tabs-head
+			ul
+				li.is-active
+					a(href="#popup-login-tab1" data-tab data-parent='li') Покупатель
+				li
+					a(href="#popup-login-tab2" data-tab data-parent='li') Дилер
+		.tabs-wrap.mt-35
+			.tab.is-visible#popup-login-tab1
+				form
+					+field({
+						lbl: 'Введите логин <span class="txt-red">*</span>',
+						classInput: 'js-required',
+					})
+					+field({
+						type: 'password',
+						lbl: 'Введите пароль <span class="txt-red">*</span>',
+						classInput: 'js-required',
+					})
+					.popup__buttons
+						button.btn Войти
+						button.btn.btn-border.ml-auto регистрация
+			.tab#popup-login-tab2
+				.tab.is-visible#popup-login-tab1
+					form
+						+field({
+							lbl: 'Введите логин <span class="txt-red">*</span>',
+							classInput: 'js-required',
+						})
+						//- +field({
+						//- 	type: 'email',
+						//- 	lbl: 'Введите  email <span class="txt-red">*</span>',
+						//- 	classInput: 'js-required',
+						//- })
+						+field({
+							type: 'password',
+							lbl: 'Введите пароль <span class="txt-red">*</span>',
+							classInput: 'js-required',
+						})
+						.popup__buttons
+							button.btn Войти
+							button.btn.btn-border.ml-auto регистрация
+		.popup__bottom
+				| Нажимая кнопку “отправить” и/или “регистрация” вы соглашаетесь<br> c 
+				a(href="#") политикой конфиденциальности
+
+
+

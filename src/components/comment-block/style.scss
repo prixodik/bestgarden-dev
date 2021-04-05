@@ -1,0 +1,9 @@
+
+.comment-block{ background: #f7f7f7; border-radius: 4px; padding: 30px 45px; position: relative; z-index: 1;
+	&:after{ content: ""; display: block; width: 0; height: 0; border-bottom: 18px solid #f7f7f7; border-right: 18px solid transparent; position: absolute; top: -18px; left: 55px; }
+	&__head{ @include flex(space-between,center,center,nowrap); margin-bottom: 20px; }
+	&__rait{ margin-right: 30px; }
+	&__name{ font: 500 14px $baseFF; color: $black; flex: 1 1 auto; }
+	&__date{ font: 500 14px $baseFF; color: #a8a8a8; }
+	&__body{ color: #787878; font: 500 14px/25px $baseFF;}
+}

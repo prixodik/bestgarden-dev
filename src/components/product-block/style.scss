@@ -1,0 +1,14 @@
+
+.product-block{ background: $white; border-radius: 20px; box-shadow: 4px 4px 15px rgba(92, 109, 116, 0.12); 
+	&__img{
+		img{ width: 100%; object-fit: cover; display: block;   }
+	}
+	&__wrap{ padding: 35px 30px; @include flex(space-between,center,center,nowrap); }
+	&__title{ color: $green; font: $fs-card; }
+	&__button{ margin-left: 15px; }
+
+	@include media($xs){
+		&__wrap{ padding: 25px 20px; }
+		&__title{ font-size: 18px; }
+	}
+}

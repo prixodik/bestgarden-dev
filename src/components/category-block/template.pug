@@ -1,0 +1,11 @@
+
+mixin categoryBlock(data)
+	.category-block&attributes(attributes)
+		a._link(href="#")
+		._icon
+			+webp(data.img)
+		._wrap
+			._title
+				!= data.title
+			._count
+				!= data.count

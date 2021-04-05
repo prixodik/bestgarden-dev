@@ -1,0 +1,37 @@
+
+mixin sliderSection()
+	.slider-section&attributes(attributes)
+		._bg.lazy(data-bg=headerBg)
+		a._next.js-index-slider-next(href="#")
+			+svg('arrow-right')
+		._container.container
+			._info
+				._info-slider.js-index-slider-info
+					._info-item
+						._title.title-h1 Краскопульт GTiPRO LITE <br>с нижней подачей PROPL 1
+						._text Devilbiss PROPL с нижней подачей -это превосходные характеристики распыления, уникально большой объём потока воздуха, лёгкость и комфорт.
+						._buttons
+							a.btn(href="#") В каталог
+					._info-item
+						._title.title-h1 Краскопульт GTiPRO PRO <br>с нижней подачей PROPL 2
+						._text Devilbiss PROPL с нижней подачей -это превосходные характеристики распыдуха, лёгкость и комфорт.
+						._buttons
+							a.btn(href="#") В каталог
+					._info-item
+						._title.title-h1 Краскопульт GTiPRO PRO2 <br>с нижней подачей PROPL 3
+						._text Devilbiss PROPL с нижней подачей -это превоси распыления, уникально большой объём потодуха, лёгкость и комфорт.
+						._buttons
+							a.btn(href="#") В каталог
+
+				._dots.js-index-slider-dots
+
+			._img-wrapper
+				._img-pos
+					._img.js-index-slider-img
+						._img-item
+							+webp('images/slider-img-1.png')
+						._img-item
+							+webp('images/slider-img-1.png')
+						._img-item
+							+webp('images/slider-img-1.png')
+	

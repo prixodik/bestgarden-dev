@@ -1,0 +1,136 @@
+.radiobox{ display: block; 
+	label {	background: none; position: relative; color: $black; padding-left: 30px; display: inline-block; cursor: pointer; font: 500 12px/20px $baseFF;
+		&:before{content: ""; display: block; width: 20px; height: 20px; position: absolute; top: 0; left: 0; background: #696969; border-radius: 50%; }
+		a{ text-decoration: underline; }
+	}
+	input[type=checkbox], input[type=radio] { display: none; }
+	input[type=radio]:checked + label{
+		&:before{background: $yellow; }
+		&:after{ content: ""; display: block; width: 8px; height: 8px; background: $black; position: absolute; top: 6px; left: 6px; border-radius: 50%; }
+	}
+
+	&--white{ 
+		label{ color: $white; }
+	}
+	 
+	/* &--btn{
+		label{ padding: 5px 15px; border: 1px #dfdfdf solid; border-radius: 4px; background: $white; font: 500 13px/25px $baseFF; 
+			&:after, &:before{ display: none;  }
+		}
+		input[type=radio]:checked + label{ background: $yellow; border-color: $yellow;  
+			&:after, &:before{ display: none;  } 	
+		}
+	} */
+
+	
+
+	&.error{
+		label{
+			&:before{ border-color: red; }
+		}
+	}
+
+	@include media($xs){
+		&--adres-block{
+			label{ padding: 10px; font: 500 12px $baseFF; 
+				svg{ margin-right: 10px;  }
+			} 
+		}
+	}
+}
+
+.checkbox{
+	label{ 	background: none; position: relative; color: #333; padding-left: 36px; display: inline-block; cursor: pointer; font: $fs-16; 
+		&:before{content: ""; display: block; width: 22px; height: 22px; position: absolute; top: 0; left: 0; border: 1px #A6B4BC solid;  border-radius: 3px; @include time(); }
+		&:after{ content: ""; display: block; width: 22px; height: 22px; background: url('../images/check.svg') 50% 50%/16px auto no-repeat; position: absolute; top: 0; left: 0; opacity: 0; border-radius: 3px; @include time(); }  
+	}
+	input[type=checkbox], input[type=radio] { display: none; }
+	input[type=checkbox]:checked + label, input[type=radio]:checked + label{
+		&:before{ background: $white; border-color: #C7D3DA; }
+		&:after{ opacity: 1; }
+	} 
+	  
+	/* input[type=checkbox]:invalid + label, input[type=radio]:invalid + label{
+		&:before{ border-color: red!important; }
+	} */ 
+
+	&--fs-14{
+		label{ font: $fs-14; 
+			a{ color: $yellow; font-weight: bold;  }
+		}
+	}
+
+	&--white{ 
+		label{ color: $white; }
+	}
+
+	&--blue{
+		input[type=checkbox]:checked + label, input[type=radio]:checked + label{
+			&:before{ background: $form-blue; border-color: $form-blue; }
+			&:after{  background: url('../images/check-white.svg') 50% 50%/16px auto no-repeat; }
+		}  
+	}
+
+	input.is-error + label{ 
+		&:before{ border-color: $red; }
+	}
+	/* &--btn{
+		label{ padding: 5px 15px; border: 1px #dfdfdf solid; border-radius: 4px; background: $white; font: 500 13px/25px $baseFF; 
+			&:after, &:before{ display: none;  }
+		}
+		input[type=radio]:checked + label{ background: $yellow; border-color: $yellow;  
+			&:after, &:before{ display: none;  } 	
+		}
+	}  */
+
+	@include media($lg){
+		
+	}
+
+	@include media($xs){
+		
+	}
+	
+	&--right{
+		label{padding-left: 0; padding-right: 24px;
+			&:before{left: auto; right: 0;}
+		}
+		input[type=checkbox]:checked + label{
+			&:after{  right: 0; left: auto;}
+		}
+	}
+	
+	/* &--white{
+		label{ color: $white; 
+			&:before{  border: 1px $white solid;  }
+		}
+		input[type=radio]:checked + label, input[type=checkbox]:checked + label{ color: $white; 
+			&:after{ background: inline-image('../images/checkbox-on-white.svg') 50% 50%/15px auto no-repeat; }
+		}
+	} */
+
+	
+}
+
+.checkbox-list, .radiobox-list{ 
+	.checkbox, .radiobox{margin-bottom: 10px;
+		&:last-child{margin-bottom: 0;}
+	}
+
+
+	@include media($xs){
+		
+	}
+}
+
+.checkbox-inline, .radiobox-inline{ margin-bottom: -10px; @include flex();
+	.checkbox, .radiobox{margin-right: 5rem; margin-bottom: 10px; 
+		&:last-child{margin-right: 0;}
+	}
+
+	@include media($lg){
+		.checkbox, .radiobox{margin-right: 3rem; 
+			&:last-child{margin-right: 0;}
+		}
+	}
+}

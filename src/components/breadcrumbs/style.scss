@@ -1,0 +1,20 @@
+
+
+.breadcrumb{ 
+	&__ul{ @include flex(); list-style: none; margin: 0; padding: 0; }
+	&__li{ margin-right: 10px; font: 14px $family; color: $white; @include flex(0,center,center,nowrap);
+		&:after{ content: ""; width: 18px; height: 2px; background: $yellow; margin: 0 0 0 10px; }
+		a{ color: rgba($white,.7);  text-decoration: none; }
+		
+		&:last-child{
+			&:after{ display: none; }
+			a{ color: $white; }
+		}
+		
+	}
+
+	@include media($xs){ 
+		&__ul{ flex-wrap: nowrap; overflow: auto; }
+		&__li{ white-space: nowrap; }
+	}
+}

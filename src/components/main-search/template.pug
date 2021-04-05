@@ -1,0 +1,16 @@
+.main-search
+  .search-bg
+  .search-in
+    form.search-wrap
+      button
+        +svg('search').fs-36
+      .form-group
+        label.inp-lbl(for='main-search').d-none_xs.d-none_sm
+          | Введите поисковую фразу
+        input#main-search.form-control(type='text', placeholder='Введите поисковую фразу')
+        .main-search__result
+          .js-search-result
+          .main-search__show-all
+            a.btn(href="#") все результаты
+      .close.d-none.d-block_lg.d-block_md
+        +svg('close').fs-20

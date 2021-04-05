@@ -1,0 +1,11 @@
+.mobile-menu
+  nav
+    .head.d-none_lg.d-none_md
+      .ttl Меню по сайту
+      .close
+        +svg('close').fs-15
+    ul
+      each itm, i in baseData.menu
+        if i >0
+          li
+            a(href=itm.url)!=itm.ttl

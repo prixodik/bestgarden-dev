@@ -1,0 +1,48 @@
+@include classMod(d-block) {
+  display: block;
+}
+@include classMod(d-flex) {
+  display: flex;
+}
+@include classMod(d-inline-flex) {
+  display: inline-flex;
+}
+@include classMod(d-inline-block) {
+  display: inline-block;
+}
+@include classMod(d-none) {
+  display: none;
+}
+@include classMod(flex-flow-row-wrap) {
+  flex-flow: row wrap;
+}
+@include classMod(flex-flow-nowrap) {
+  flex-flow: nowrap;
+}
+@include classMod(justify-content-center) {
+  justify-content: center;
+}
+@include classMod(justify-content-start) {
+  justify-content: flex-start;
+}
+@include classMod(justify-content-end) {
+  justify-content: flex-end;
+}
+@include classMod(align-items-center) {
+  align-items: center;
+}
+@include classMod(align-items-start) {
+  align-items: flex-start;
+}
+@include classMod(align-items-end) {
+  align-items: flex-end;
+}
+@for $i from -1 through 13 {
+  @include classMod(order#{$i}) {
+    order: $i;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}

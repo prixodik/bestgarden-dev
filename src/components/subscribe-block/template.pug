@@ -1,0 +1,17 @@
+
+mixin subscribeBlock(data)
+	.subscribe-block&attributes(attributes)
+		._title.title-h3 Подпишитесь на наши новости!
+		._desc Узнавайте об акциях и новых поступлениях первыми
+		form._form
+			+svg('mail')._icon
+			input._input(type="text" placeholder="Введите вашу почту")
+			button._btn.btn Подписаться
+
+
+mixin subscribeBlockFooter(data)
+	.subscribe-block.-footer&attributes(attributes)
+		._title Подпишитесь на рассылку
+		form._form
+			input._input(type="text" placeholder="Введите вашу почту")
+			button._btn.btn Подписаться

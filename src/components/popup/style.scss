@@ -1,0 +1,45 @@
+.popup{ position: fixed; top: 0; left: -10000px; width: 100%; z-index: 9999; height: 100%; display: block; visibility: hidden; pointer-events: none; opacity: 0; padding: 70px 30px; overflow-y: auto;  @include time(0.4s, opacity);
+  &__overflow{ position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; display: block; background: rgba($black, 0.68); }
+
+  &__wrapper{ position: relative; width: 100%; padding: 100px 160px; max-width: 810px; margin: auto; z-index: 1;  background: $white; border-radius: 5px; }
+
+  &__close{ width: 48px; height: 48px; cursor: pointer; position: absolute; top: 25px; z-index: 10; 
+      right: 25px; background: $white; box-shadow: 2px 2px 8px rgba(92, 109, 116, 0.1); 
+      margin: 0;
+      padding: 0; 
+      visibility: visible;
+      @include flex(center,center,center); border-radius: 50%;
+
+      svg{ fill: $green; font-size: 20px; }
+  } 
+  &__title{ text-align: center; margin: 0 0 20px; font: $title-h3; text-transform: uppercase; color: $green; }
+  &__desc{ text-align: center; margin-bottom: 32px; font: $fs-16; color: $text-green-dark; }
+  &__input{ margin-bottom: 20px;  }
+  &__form{ margin: 0 auto; max-width: 400px; }
+
+  &.active{ @include flex(center,center,center,nowrap); opacity: 1; visibility: visible; left: 0; pointer-events: auto; }
+
+  
+   
+  @include media($lg){
+    
+  }
+  @include media($md){
+
+    
+    
+  }
+
+  @include media($sm){ 
+    
+  }
+  @include media($xs){ padding: 20px 10px;  
+    &__wrapper{ padding: 40px 20px; }
+    &__title{ font: $title-h4-xs; margin-bottom: 20px;  }
+    &__close{ top: 10px; right: 10px; } 
+
+    
+
+  }
+}
+

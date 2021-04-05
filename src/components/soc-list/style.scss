@@ -1,0 +1,41 @@
+
+.soc-list{  @include flex(); margin-bottom: -20px;  
+	&__item{ margin-right: 36px; margin-bottom: 20px; 
+		&:last-child{ margin-right: 0; }
+		a{ border: 0; border-radius: 10px; @include flex(center,center,center); width: 35px; height: 35px; background: rgba($blue,.4);
+			&:hover{ background: $blue; 
+				svg{ fill: $green; }  
+			}
+		}
+		svg, img{ width: 20px; height: 20px; display: block; fill: $green; @include time(); }
+	}
+
+	&--vertical{ display: block; margin: 0; }
+	&--vertical &{
+		&__item{ margin: 0 0 12px;
+			&:last-child{ margin-bottom: 0; }
+		}
+	}
+
+	/* &--center{ @include flex(space-between,0,0,nowrap); margin-bottom: -10px; }
+	&--center &{
+		&__item{ margin: 0 5px 10px; 
+			&:first-child{ margin-left: 0; }
+			&:last-child{ margin-right: 0; }
+		}
+	}
+
+	&--right{ @include flex(flex-end,0,0,nowrap); margin-bottom: -20px; }
+	&--right &{
+		&__item{ margin: 0 0 20px 36px; 
+			&:first-child{ margin-left: 0; }
+		}
+	} */
+
+	@include media($sm){
+		&--vertical{ @include flex(); margin-bottom: -20px;  }
+		&--vertical &{  
+			&__item{ margin-right: 36px; margin-bottom: 20px; }
+		}
+	}
+}

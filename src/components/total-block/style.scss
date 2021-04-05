@@ -1,0 +1,87 @@
+
+.total-block{ padding: 35px; background: #f7f7f7; border-radius: 5px; position: relative;
+	&__cupon{ margin-bottom: 65px; 
+		&-status{ display: none; color: green; font: 500 13px $baseFF;
+			&.is-active{ display: block; margin: -20px 0 35px; }
+			&--error{ color: $red; }
+		}
+		.form-control{ margin-bottom: 35px; border-color: #dddddd; }
+	}
+	&__head{ @include flex(space-between,center,center,nowrap); margin-bottom: 50px; 
+		.total-block__title{ margin-bottom: 0; }
+		.total-block__counter{ margin-bottom: 0; }
+	}
+	&__param{ position: relative; margin-bottom: 15px; @include flex(space-between,0,0,nowrap); z-index: 1; color: $black;
+		&:after{ content: ""; display: block; width: 100%; height: 1px; background: #e6e6e6; position: absolute; bottom: 4px; left: 0; z-index: -1; }
+		&-label{ font: 500 14px $baseFF; background: #f7f7f7; padding-right: 10px; }
+		&-value{ font: bold 18px $baseFF;  background: #f7f7f7; padding-left: 10px; 
+			span{ font-size: 11px; }
+		}
+
+		&--gray{ color: #929292;
+			.total-block__param-label{ font: 500 13px $baseFF; }
+			.total-block__param-value{ font: 500 13px $baseFF; 
+				span{ font-size: 11px; } 
+			}
+		}
+
+		&--white-bg{ 
+			.total-block__param-label{ background: $white; }
+			.total-block__param-value{ background: $white; }
+		}
+	}
+	&__buttons{ margin-top: 55px;  }
+	&__counter{ font: bold 14px $baseFF; margin-bottom: 20px; } 
+	&__info{ margin-bottom: 30px; 
+		&:last-child{ margin-bottom: 0; }
+		p{ margin: 0; 
+			span{ font-weight: 600; }
+		}
+	}
+	&__edit{ position: absolute; top: 20px; right: 20px;  
+		svg{ font-size: 24px; fill: #cbcbcb; }
+	}
+
+	&--info{ padding: 40px; flex: 1 1 auto; @include flex(center,stretch,stretch,nowrap,column); }
+	//&--adres{ padding: 40px; }
+
+	@include media($md){
+		&__param{
+			&-label{ font-size: 13px; }
+			&-value{ font-size: 17px; }
+
+			&--gray{ 
+				.total-block__param-label{ font: 500 12px $baseFF; }
+				.total-block__param-value{ font: 500 12px $baseFF; 
+					span{ font-size: 10px; }
+				}
+			}
+		}
+	}
+
+	@include media($xs){ padding: 25px 10px;
+		&__cupon{ margin-bottom: 40px; 
+			.form-control{ margin-bottom: 30px; }
+		}
+		&__param{
+			&-label{ font-size: 12px; }
+			//&-value{ font-size: 17px; }
+
+			&--gray{ 
+				.total-block__param-label{ font: 500 11px $baseFF; }
+				.total-block__param-value{ font: 500 11px $baseFF; 
+					//span{ font-size: 10px; }
+				}
+			}
+		}
+		&__buttons{ margin-top: 40px;  }
+		&__edit{ top: 15px; right: 15px;  
+			svg{ font-size: 18px; }
+		}
+		&__info{ margin-bottom: 25px; font-size: 13px; 
+			&:last-child{ margin-bottom: 0; }
+		}
+
+		&--info{ padding: 20px; display: block; }
+	}
+}

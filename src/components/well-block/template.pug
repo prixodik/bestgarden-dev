@@ -1,0 +1,128 @@
+
+mixin wellBlock(data)
+	.well-block&attributes(attributes)
+		._title
+			!= data.text
+		if data.repair == true
+			a._repair(href="#") Восстановить
+		if data.close == true
+			a._close(href="#")
+				+svg('close')
+
+
+mixin wellBlockLogin(data)
+	.well-block.-login&attributes(attributes)
+		._title Авторизуйтесь на сайте, если вы уже зарегистрированы
+		._buttons
+			a.btn.-border(href="#") Войти
+
+mixin wellBlockAdres(data)
+	.well-block.-adres.js-adres&attributes(attributes)
+		._city
+			+svg('marker')
+			span г. Москва
+		._adres Проспект Ленина, д. 6 А, офис 259
+		//- ._comment Товар краскопульт Devilbiss DV1 для лака с цифровым манометром и бачком был удален краскопульт ...
+		._buttons
+			a._edit.js-popup-show(href="#popup-edit-adres")
+				+svg('pencil')
+			a._delete.js-adres-delete(href="#")
+				+svg('close') 
+
+mixin wellBlockData(data)
+	.well-block.-data&attributes(attributes)
+		._row
+			._label Имя:
+			._value
+				form._form(action="") 
+					._required-text * Обязательное поле
+					.form-group
+						input.form-control.-default.js-required(type="text" value="Иван" name="name" required disabled)
+					a._edit.js-edit-well-data(href="#")
+						+svg('pencil')
+					._buttons
+						a.btn.-border.-sm.js-cancel-well-data(href="#") Отменить  
+						button.btn.-sm.js-submit(type="submit") Сохранить  
+		._row
+			._label E-mail:
+			._value
+				.form-group
+					input.form-control.-default(type="text" value="ivan@mail.ru" name="mail" required disabled)
+		._row
+			._label Телефон:
+			._value
+				form._form(action="")
+					._required-text * Обязательное поле
+					.form-group
+						input.form-control.-default.js-required(type="tel" value="+7 (199) 123-23-23" name="phone" required disabled)
+					a._edit.js-edit-well-data(href="#")
+						+svg('pencil')
+					._buttons
+						a.btn.-border.-sm.js-cancel-well-data(href="#") Отменить  
+						button.btn.-sm.js-submit(type="submit") Сохранить 
+		._row
+			._label Пароль:
+			._value
+				form._form(action="")
+					._required-text * Обязательное поле
+					.form-group
+						input.form-control.-default.js-pass1.js-required(type="password" value="111" name="pass1" required disabled)
+					.form-group._copy
+						input.form-control.form-control--default.js-pass2.js-required(type="password" value="111" name="pass2" required disabled)
+					a._edit.js-edit-well-data(href="#")
+						+svg('pencil') 
+					._buttons
+						a.btn.-border.-sm.js-cancel-well-data(href="#") Отменить  
+						button.btn.-sm.js-submit(type="submit") Сохранить
+
+mixin wellBlockDataCompany(data)
+	.well-block.-data&attributes(attributes)
+		._row
+			._label ИНН:
+			._value
+				form._form(action="")
+					._required-text * Обязательное поле
+					.form-group
+						input.form-control.-default.js-required(type="text" value="42321321321" name="inn" required disabled)
+					a._edit.js-edit-well-data(href="#")
+						+svg('pencil')
+					._buttons
+						a.btn.-border.-sm.js-cancel-well-data(href="#") Отменить  
+						button.btn.-sm.js-submit(type="submit") Сохранить  
+		._row
+			._label КПП:
+			._value
+				form._form(action="")
+					._required-text * Обязательное поле
+					.form-group
+						input.form-control.-default(type="text" value="321321321321" name="kpp" required disabled)
+					a._edit.js-edit-well-data(href="#")
+						+svg('pencil')
+					._buttons
+						a.btn.-border.-sm.js-cancel-well-data(href="#") Отменить  
+						button.btn.-sm.js-submit(type="submit") Сохранить 
+		._row
+			._label Название<br> компании:
+			._value
+				form._form(action="")
+					._required-text * Обязательное поле
+					.form-group
+						input.form-control.-default.js-required(type="text" value="ООО “Название”" name="company" required disabled)
+					a._edit.js-edit-well-data(href="#")
+						+svg('pencil')
+					._buttons
+						a.btn.-border.-sm.js-cancel-well-data(href="#") Отменить  
+						button.btn.-sm.js-submit(type="submit") Сохранить 
+
+		._row
+			._label Юр.<br> адрес:
+			._value
+				form._form(action="")
+					._required-text * Обязательное поле
+					.form-group
+						input.form-control.-default.js-required(type="text" value="г. Москва, ул. Пушкина, дом 1, офис 12" name="adres" required disabled)
+					a._edit.js-edit-well-data(href="#")
+						+svg('pencil')
+					._buttons
+						a.btn.-border.-sm.js-cancel-well-data(href="#") Отменить  
+						button.btn.-sm.js-submit(type="submit") Сохранить 

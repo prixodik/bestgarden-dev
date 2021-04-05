@@ -1,0 +1,58 @@
+
+mixin historyBlock(data)
+	.history-block&attributes(attributes)
+		._head
+			if data.status == 'Получен'
+				._status.is-green
+					span
+						!= data.status
+			else if data.status == 'Отменен'
+				._status.is-gray
+					span
+						!= data.status
+			else
+				._status
+					span
+						!= data.status
+			._sku.d-none.d-block_xs
+				!= data.sku
+			._date
+				._sku.d-none_xs
+					!= data.sku
+				p
+					!= data.date
+				._type.d-none.d-block_md
+					!= data.type
+			._type.d-none_md
+				!= data.type
+			._counter
+				!= data.counter
+			._price
+				!= data.price +' <span>р.</span>'
+			._buttons.d-none_xs
+				a.btn.-border.-sm(href="#") Повторить
+			._arrow
+				a.js-history-block-toggle(href="#") 
+					+svg('arrow-down')
+
+		._body
+			+productBlockInlineHistory({
+								img: 'images/product-img-1.jpg', 
+								title: 'Краскопульт Devilbiss DV1 для базы с цифровым манометром и бачком с цифровым',
+								oldprice: '32 900',
+								price: '12 900',
+								sale: '-20%',
+								rait: 3,
+								add: false
+			})._body-item
+			+productBlockInlineHistory({
+								img: 'images/product-img-1.jpg', 
+								title: 'Краскопульт FLG с верхним бачком',
+								oldprice: '32 900',
+								price: '12 900',
+								sale: '-20%',
+								rait: 3,
+								add: true
+			})._body-item
+			._buttons.d-none.d-block_xs
+				a.btn.-border.-sm(href="#") Повторить

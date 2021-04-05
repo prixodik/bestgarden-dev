@@ -1,0 +1,117 @@
+
+.filter-block{ background: #494949; color: $white; border-radius: 6px; padding: 20px 30px 30px;
+	&__head{ @include flex(space-between,center,center,nowrap); margin-bottom: 30px; }
+	&__title{ color: #b3b3b3; font: bold 12px $baseFF; text-transform: uppercase; }
+	&__group{ margin-bottom: 35px; 
+		&-title{ font: bold 12px $baseFF; text-transform: uppercase; color: $white; margin-bottom: 20px; 
+			span{ color: #818181; font: 500 12px $baseFF; text-transform: none; }
+		}
+	}
+	&__reset{ @include flex(0,center,center,nowrap); text-decoration: none; color: $white;  font: 500 12px/14px $baseFF;
+		&:hover, &:focus{ color: $white; }
+		svg{ width: 14px; height: 14px; margin-right: 8px;  }
+	}
+	&__result{ @include flex(); border-bottom: 1px #626262 solid; padding-bottom: 15px; margin-bottom: 35px; 
+		&:empty{ border: 0; padding: 0; margin: 0;  }
+		&-item{ padding: 7px 10px; border-radius: 4px; @include flex(0,center,center,nowrap); background: #696969; font: 500 12px $family; color: #b5b5b5; margin: 0 10px 10px 0; @include time();
+			&:last-child{ margin-right: 0; }
+			svg{ font-size: 11px; fill: #b5b5b5; margin-left: 10px; }
+
+			&:hover{ background: $white; color: $black; }
+		}
+	}
+	&__buttons{ @include flex(center); 
+		.btn{ flex: 0 0 100%; margin-bottom: 25px;   }
+	}
+
+	&__range{ margin-bottom: 15px;
+		input{
+		  border: none;
+		  border: 0;
+		  padding: 5px 10px;
+		  font: 600 12px/17px $baseFF;
+		  background: $white;
+		  color: #000;
+		  display: block;
+		  width: 80px;
+		  border-radius: 4px; 
+		  
+		  @include placeholder {
+		    color: #adadad;
+		    opacity: 1;
+		  }
+		}
+	}
+	&__close{ width: 12px; height: 12px; display: none; color: #afafaf; 
+		svg{ color: #afafaf; width: 12px; height: 12px; display: block;  }
+	}
+
+	@include media($xlg){
+		
+		
+	}
+	@include media($lg){ padding: 20px;
+		&__group{ margin-bottom: 25px; 
+			&-title{ font: bold 11px $baseFF; margin-bottom: 15px; 
+				span{ font: 500 11px $baseFF; }
+			}
+		}
+		&__reset{ font-size: 11px;	}
+		&__result{ 
+			&-item{ padding: 5px 10px; font: 500 11px $family; }
+		}
+		
+		&__range{ margin-bottom: 15px;
+			input{
+			  font: 600 11px/17px $baseFF;
+			}
+		}
+	}
+
+
+	@include media($md){
+
+		
+	}
+
+	@include media($sm){ width: 100%; padding: 0 15px 100px; height: 100vh; overflow: auto; border-radius: 0;  
+		&__close{ display: block; }
+		&__head{ padding: 15px;  margin: 0 -15px 25px;  background: #5e5e5e; box-shadow: 0 3px 3px rgba($black,.07); }
+		&__title{ color: $white; font: 600 13px $baseFF; text-transform: none; }
+		&__group{ margin-bottom: 30px; 
+			&-title{ font: 600 13px $baseFF; margin-bottom: 15px; }
+		}
+		&__reset{ font: 500 13px/14px $baseFF; }
+		&__result{ @include flex(); border-bottom: 1px #626262 solid; padding-bottom: 15px; margin-bottom: 35px; 
+			&-item{ padding: 7px 10px; border-radius: 4px; @include flex(0,center,center,nowrap); background: #696969; font: 500 12px $family; color: #b5b5b5; margin: 0 10px 10px 0; @include time();
+				&:last-child{ margin-right: 0; }
+				svg{ font-size: 11px; fill: #b5b5b5; margin-left: 10px; }
+
+				&:hover{ background: $white; color: $black; }
+			}
+		}
+		&__buttons{ @include flex(center); 
+			.btn{ flex: 0 0 100%; margin-bottom: 25px;   }
+		}
+
+		&__range{ margin-bottom: 15px;
+			input{
+			  border: none;
+			  border: 0;
+			  padding: 5px 10px;
+			  font: 600 12px/17px $baseFF;
+			  background: $white;
+			  color: #000;
+			  display: block;
+			  width: 80px;
+			  border-radius: 4px; 
+			  
+			  @include placeholder {
+			    color: #adadad;
+			    opacity: 1;
+			  }
+			}
+		}
+		
+	}
+}

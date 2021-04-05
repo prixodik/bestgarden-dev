@@ -1,0 +1,14 @@
+
+.service-block{ background: #f5f07f; color: $black; padding: 30px 75px; border-radius: 5px; @include flex(0,center,center,nowrap); height: 100%;
+	&__icon{ fill: $black; font-size: 45px; margin-right: 35px; flex: 0 0 auto; }
+	&__title{ font: 500 18px $family; }
+
+	@include media($lg){ padding: 30px; 
+		&__title{ font-size: 16px; }
+	}
+
+	@include media($xs){ padding: 15px 25px; 
+		&__title{ font: 500 13px/20px $baseFF; }
+		&__icon{ font-size: 30px; margin-right: 20px; }
+	}
+}

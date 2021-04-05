@@ -1,0 +1,45 @@
+
+mixin contactBlock(data)
+	.contact-block&attributes(attributes)
+		._row.row.row--stretch
+			._info.col-6.col-xs-12
+				._title
+					!= data.city
+				._item
+					+svg('marker')._icon
+					p
+						!= data.adres
+				._item
+					+svg('phone')._icon
+					p
+						!= data.phone
+				._item
+					+svg('email')._icon
+					p
+						a(href="#")
+							!= data.email
+				._map
+					a.js-contacts-page-map-show(href="#") Показать на карте
+
+			._personal.col-6.col-xs-12
+				each item, key in data.personal
+					._personal-item
+						._personal-name= item.name
+						._personal-position= item.position
+						._personal-phone= item.phone
+
+mixin contactBlockDiller(data)
+	.contact-block.-diller&attributes(attributes)
+		._title название дилера
+		._item
+			+svg('marker')._icon
+			p 127018 г. Москва, улица Двинцев, д. 3, стр.1
+		._item
+			+svg('phone')._icon
+			p +7 (495) 103-48-50
+		._item
+			+svg('email')._icon
+			p
+				a(href="#") info@specokraska.ru
+		._map
+			a.js-contacts-page-map-show(href="#") Показать на карте

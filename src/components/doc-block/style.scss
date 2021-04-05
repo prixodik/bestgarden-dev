@@ -1,0 +1,6 @@
+
+.doc-block{ @include flex(0,center,center,nowrap); color: #959595; font: 500 14px $baseFF; 
+	&__icon{ flex: 0 0 auto; font-size: 24px; margin-right: 15px; fill: red; }
+
+	&:hover{ color: $black; }
+}

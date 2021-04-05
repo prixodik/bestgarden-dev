@@ -1,0 +1,8 @@
+
+mixin aboutBlock(data)
+	.about-block&attributes(attributes)
+		+svgAbout(data.img)._icon
+		._title
+			!= data.title
+		._text
+			!= data.text

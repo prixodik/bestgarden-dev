@@ -1,0 +1,25 @@
+.lnk,
+a {
+  color: $baseLinkColor;
+  text-decoration: none;
+  @include transition();
+}
+.lnk:hover,
+a:hover {
+  text-decoration: none;
+  color: $baseLinkColorHover;
+
+}
+
+a[href^="tel:"] {
+  text-decoration: none;
+  color: inherit;
+  border-bottom-color: transparent;
+}
+
+.lnk_reverse {
+  border-bottom-color: transparent;
+  &:hover {
+    border-bottom-color: currentColor;
+  }
+}

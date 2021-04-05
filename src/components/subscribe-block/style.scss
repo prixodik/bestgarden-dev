@@ -1,0 +1,33 @@
+
+.subscribe-block{
+	&__title{ text-align: center; margin-bottom: 5px; color: #245E63; }
+	&__desc{ text-align: center; margin-bottom: 30px; font: $fs-16; color: #245E63;  }
+	&__form{ @include flex(space-between,stretch,stretch,nowrap); position: relative; max-width: 476px; margin: 0 auto; }
+	&__icon{ font-size: 17px; fill: $icon-green; position: absolute; top: 50%; transform: translateY(-50%); left: 15px; }
+	&__input{ border: 0; padding: 15px 15px 15px 48px; background: $white; color: $text-green-dark; font: 13px/20px $baseFF; border-radius: 10px 0 0 10px; flex: 1 1 auto; 
+		&::-webkit-input-placeholder{ opacity: .5; color: $text-green-dark; }
+  		&::-moz-placeholder { opacity: .5; color: $text-green-dark; }
+
+  		&:focus{ outline: none;}
+	}
+	&__btn{ border-radius: 0 10px 10px 0; font: bold 15px/20px $baseFF; padding: 14px 45px;  } 
+
+	&--footer &{
+		&__title{ color: $white; text-align: left; margin-bottom: 10px; font: bold 13px/18px $baseFF; }
+		&__form{ max-width: none; margin: 0; }
+		&__input{ padding: 11px 15px; border: 1px $white solid; color: $white; background: transparent; 
+			&::-webkit-input-placeholder{ opacity: .3; color: $white; }
+  			&::-moz-placeholder { opacity: .3; color: $white; }
+		}
+		&__btn{ border-radius: 0 10px 10px 0; background: $white; border-color: $white; color: $green;  padding: 11px 18px;  }
+	}
+
+	@include media($xs){
+		&__input{ padding-right: 5px; }
+		&__btn{ padding: 14px 10px;  }
+
+		&--footer &{
+			&__btn{ font-size: 12px;  }
+		}
+	}
+}

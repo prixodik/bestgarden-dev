@@ -1,0 +1,19 @@
+
+.category-block{ border-radius: 10px; background: $bg-directory; padding: 22px 25px; @include flex(0,center,center,nowrap); position: relative; z-index: 1;
+	&__link{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block; z-index: 4; }
+	&__icon{ @include flex(center,center,center); width: 80px; height: 80px; border-radius: 50%; margin-right: 20px; background: $icon-bg-directory; @include time(); flex: 0 0 auto; }
+	&__title{ margin-bottom: 4px; font: 700 17px/22px $baseFF; color: $blue-dark; }
+	&__count{ font: 15px/18px $baseFF; color: rgba($blue-dark,.6); }
+
+	&:hover &{
+		&__icon{ background: $blue-dark; }
+	}
+
+	@include media($xs){ padding: 15px 20px; 
+		&__icon{ width: 60px; height: 60px; padding: 15px;  
+			img{ width: 100%; height: 100%; object-fit: contain;  }
+		}
+		&__title{ font: 700 16px/20px $baseFF; }
+		&__count{ font: 14px/16px $baseFF; }
+	}
+}

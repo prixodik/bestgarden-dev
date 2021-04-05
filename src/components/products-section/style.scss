@@ -1,0 +1,42 @@
+
+.products-section{ padding: 320px 0 65px; position: relative; z-index: 3; margin-top: -232px;
+	&:before{ content: ""; display: block; width: 100%; height: 50%; position: absolute; top: 0; left: 0; background: url('../images/new-section-bg.svg') 50% 0 no-repeat;  z-index: -1;  }
+	&__title{ text-align: center; margin-bottom: 58px; color: $green; text-transform: uppercase; }
+	&__slider{ @include flex(0,stretch,stretch,nowrap); position: relative;
+		//&-item{ } 
+
+		.slick-list{ overflow: visible; position: relative; max-width: 100%;  }
+		.slick-dots{ position: absolute; bottom: -65px; left: 0; width: 100%;  } 
+		.slick-slide{ opacity: .3; @include time();
+			&.slick-active{ opacity: 1;  }
+		}
+	}
+	&__prev{ position: absolute; left: -150px; top: 50%; transform: translateY(-50%); }
+	&__next{ position: absolute; right: -150px; top: 50%; transform: translateY(-50%); } 
+
+	@include media(1550px){
+		&__prev{ left: -100px; }
+		&__next{ right: -100px; } 
+	}
+
+	@include media($lg){
+		&__prev{ display: none!important; }
+		&__next{ display: none!important; }   
+	}
+
+	@include media($md){ padding-top: 260px;
+
+	}
+
+	@include media($sm){ padding-top: 240px; padding-bottom: 40px; 
+		&__title{ margin-bottom: 40px; }
+	}
+
+	@include media($xs){ padding-top: 70px; padding-bottom: 40px; margin-top: -70px;
+		&:before{ background-size: 100% auto; height: 100%;  }
+		&__title{ margin-bottom: 30px; }
+		&__slider{
+			.slick-dots{ bottom: -40px;  }
+		} 
+	}
+}

@@ -1,0 +1,64 @@
+
+.feedback-section{
+	&__title{ text-align: center; margin-bottom: 80px; }
+	&__wrapper{ background: #494949; color: $white; padding: 70px 160px 80px 480px; border-radius: 5px; position: relative; z-index: 1; 
+		&-bg{ position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; object-fit: contain; object-position: 0 100%; z-index: -1; }
+	}
+	&__buttons{ @include flex(0,center,center,nowrap); margin-top: 70px; }
+	&__police{ margin-left: 35px; font: 500 12px/20px $baseFF; color: #a5a5a5;  
+		a{ color: #a5a5a5; text-decoration: underline; }
+	}
+	&__text{ font: 500 18px/30px $baseFF; margin-bottom: 50px; }
+	&__input{ margin-bottom: 20px; 
+		&:last-child{ margin-bottom: 0; }
+	}
+	&__col{
+		textarea.form-control{ height: 100%; }
+	}
+
+	@include media($lg){
+		&__wrapper{ padding: 60px 85px 60px 430px;  }
+	}
+
+	@include media($md){
+		&__title{ margin-bottom: 50px; }
+		&__wrapper{ padding: 60px 85px;  overflow: hidden;
+			&-bg{ height: 430px; left: -50px; }
+		}
+		&__buttons{ margin-top: 60px; padding-left: 185px; }
+		&__police{ margin-left: 70px; }
+		&__text{ font: 500 16px/28px $baseFF; margin-bottom: 80px; }
+		&__input{ margin-bottom: 25px;  
+			&:last-child{ margin-bottom: 0; }
+		}
+		&__row{ margin-left: 170px;  }
+	}
+
+	@include media($sm){
+		&__wrapper{ padding: 40px 20px; 
+			&-bg{ display: none; }
+		}
+		&__buttons{ padding-left: 0; } 
+		&__text{ font: 500 14px/24px $baseFF; margin-bottom: 50px; } 
+		/* &__police{ margin-left: 70px; }
+		&__text{ font: 500 16px/28px $baseFF; margin-bottom: 80px; }
+		&__input{ margin-bottom: 25px;  
+			&:last-child{ margin-bottom: 0; }
+		} */
+		&__row{ margin-left: -15px;  }
+	}
+
+	@include media($xs){
+		&__title{ margin-bottom: 30px; }
+		&__wrapper{ padding: 30px 25px; }
+		&__buttons{ margin-top: 40px; padding-left: 0; display: block; }
+		&__police{ margin-left: 0; margin-top: 25px; font: 500 11px/20px $baseFF;  
+			br{ display: none; }
+		}
+		&__text{ font: 500 13px/23px $baseFF; margin-bottom: 30px; }
+		
+		 &__col{ margin-bottom: 25px; 
+		 	&:last-child{ margin-bottom: 0; }
+		 }
+	}
+}

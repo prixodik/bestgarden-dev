@@ -1,0 +1,29 @@
+include ../product-block/template
+
+mixin productsSection(data)
+	.products-section&attributes(attributes)
+		._container.container
+			._title.title-h2
+				!= data.title 
+			._slider.row.js-products-slider
+				._slider-item.col-4
+					+productBlock({
+						img: 'images/product-img-1.jpg',
+						title: 'Спирея Широбана японская'
+					})
+					
+				._slider-item.col-4
+					+productBlock({
+						img: 'images/product-img-2.jpg',
+						title: 'Кувшинка (Нимфея) Гладстониана'
+					})
+				._slider-item.col-4
+					+productBlock({
+						img: 'images/product-img-3.jpg',
+						title: 'Калла Манго'
+					})
+				._slider-item.col-4
+					+productBlock({
+						img: 'images/product-img-1.jpg',
+						title: 'Спирея Японская Широбана'
+					})

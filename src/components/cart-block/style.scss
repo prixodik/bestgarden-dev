@@ -1,0 +1,20 @@
+
+.cart-block{ position: absolute; top: calc(100% + 10px); right: 0; padding: 15px 10px; background: $white; border-radius: 5px; display: none; width: 600px;
+	&__list{ max-height: 360px; overflow-y: auto; 
+		&-item{ margin-bottom: 5px; padding: 0 0 0 5px; } 
+	}
+	&__bottom{ margin: 0 -10px -15px; background: #494949; padding: 25px 50px 20px; @include flex(space-between,0,0,wrap); border-radius: 0 0 5px 5px; }
+	&__button{ @include flex(center); flex: 0 0 100%; margin-top: 20px; }
+	&__clear{ @include flex(0,center,center,nowrap); font: 500 13px $baseFF; color: $white; 
+		svg{ margin-right: 7px; fill: #858585; width: 14px; height: 14px; }
+		&:hover{ text-decoration: underline; color: $white; }
+	}
+	&__total{ font: bold 18px $baseFF; color: $white; @include flex(0,center,center,nowrap);
+		&-label{ font: 500 14px $baseFF; margin-right: 15px; }
+		&-value{ 
+			span{ font-size: 15px; }
+		}
+	}
+
+	&.is-active{ display: block; }
+}

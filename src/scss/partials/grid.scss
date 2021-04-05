@@ -1,0 +1,124 @@
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but with 100% width for
+// fluid, full width layouts.
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+
+@if $enable-grid-classes {
+
+	.row {
+		@include make-row();
+		-webkit-align-content: flex-start;
+			-ms-flex-line-pack: flex-start; 
+			align-content: flex-start;
+			-webkit-align-items: flex-start;
+			-ms-flex-align: flex-start;
+			align-items: flex-start;
+
+		/* @include mq('dekstop') {
+		    margin-left: -10px;
+		    margin-right: -10px;
+		}
+		@include mq('tablet') {
+		    margin-left: -5px;
+		    margin-right: -5px;
+		} */
+
+		/* &> .col,
+		&> [class*="col-"]{
+			@include mq('desktop') {
+		      padding-left: 10px;
+		      padding-right: 10px;
+		    }
+		    @include mq('tablet') {
+		      padding-left: 5px;
+		      padding-right: 5px;
+		    }
+		} */
+		
+		&--pad0{margin: 0;
+			&> .col,
+			&> [class*="col-"]{padding: 0;}
+		}
+		&--pad5{margin: 0 -5px;
+			&> .col,
+			&> [class*="col-"]{padding: 0 5px;}
+		}
+		&--pad10{margin: 0 -10px;
+			&> .col,
+			&> [class*="col-"]{padding: 0 10px;}
+		}
+		&--pad20{margin: 0 -20px;
+			&> .col,
+			&> [class*="col-"]{padding: 0 20px;}
+		}
+		&--pad25{margin: 0 -25px;
+			&> .col,
+			&> [class*="col-"]{padding: 0 25px; }
+		}
+		&--pad30{margin: 0 -30px;
+			&> .col,
+			&> [class*="col-"]{padding: 0 30px;}
+		}
+		&--pad35{margin: 0 -35px;
+			&> .col,
+			&> [class*="col-"]{padding: 0 35px;}
+		}
+		&--pad40{margin: 0 -40px;
+			&> .col,
+			&> [class*="col-"]{padding: 0 40px;}
+		}
+		&--pad50{margin: 0 -50px;
+			&> .col,
+			&> [class*="col-"]{padding: 0 50px;}
+		}
+		
+		&--nowrap{
+			-webkit-flex-wrap: nowrap;
+			-ms-flex-wrap: nowrap;
+			flex-wrap: nowrap;
+		}
+		&--stretch{
+			-webkit-align-content: stretch;
+			-ms-flex-line-pack: stretch;
+			align-content: stretch;
+			-webkit-align-items: stretch;
+			-ms-flex-align: stretch;
+			align-items: stretch;
+		}
+		&--between{
+			-webkit-justify-content: space-between;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+		}
+		&--middle{
+			-webkit-align-items: center;
+			-ms-flex-align: center;
+			align-items: center;
+		}
+		&--center{
+			-webkit-justify-content: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+		}
+		&--top{
+			@include flex(flex-start,flex-start,flex-start); 	
+		}
+	}
+
+}
+
+// Columns
+//
+// Common styles for small and large grid columns
+
+@if $enable-grid-classes {
+  @include make-grid-columns();
+}

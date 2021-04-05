@@ -1,0 +1,109 @@
+
+
+.history-block{ border-radius: 5px; 
+	&__head{ @include flex(0,center,center,nowrap); background: #f7f7f7; padding: 15px 25px; border-radius: 5px; }
+	&__status{ flex: 0 0 155px; padding-right: 30px;
+		span{ padding: 5px 20px; border-radius: 4px; background: #faf6bc; display: block; font: 600 13px $baseFF; text-align: center; color: $black; }
+
+		&.is-green{
+			span{ background: #c7f0a3; }
+		}
+		&.is-gray{
+			span{ background: #e3e3e3; }
+		}
+	}
+	&__date{ flex: 0 0 230px; font: 600 14px $baseFF; color: $black; 
+		p{ margin: 0; }
+	}
+	&__sku{ white-space: nowrap; color: #626262; font: 13px $baseFF; margin-bottom: 5px; }
+	&__type{ flex: 0 0 230px; font: 600 14px $baseFF; color: $black; }
+	&__counter{ flex: 0 0 160px; font: 600 14px $baseFF; color: $black; }
+	&__price{ color: $black; font: bold 18px $baseFF; flex: 0 0 150px; padding-right: 20px; white-space: nowrap;
+		span{ font-size: 11px; }
+	}
+	&__buttons{ flex: 1 1 auto; margin-right: 45px; 
+		.btn{ padding-left: 10px; padding-right: 10px; width: 100%; max-width: 180px; }
+	}
+	&__arrow{ flex: 0 0 auto;  @include time(); 
+		svg{ fill: none; stroke: $black; width: 16px; height: 16px; display: block; @include time(); }
+	}
+
+	&__body{ /* max-height: 0px; overflow: hidden; transition: max-height 0.15s ease-out;  padding: 0 25px; */  padding: 10px 25px 25px; background: $white; display: none; position: relative; 
+
+		//& * { transition: all 0.15s linear; }
+		&-item{ border: 1px #dbdbdb solid; border-top: 0;
+			&:first-child{ border-top: 1px #dbdbdb solid; }
+		}
+	}
+
+	&.is-active{  box-shadow: 0 17px 28px rgba($black,.09); }
+	&.is-active &{
+		&__head{ background: $white; border-radius: 5px 5px 0 0; }
+		&__body{ /* transition: max-height 0.25s ease-in; max-height: 100000px; */ padding: 10px 25px 25px; border-radius: 0 0 5px 5px; }
+		&__arrow{
+			svg{ transform: rotate(180deg); }
+		}
+	}
+
+	@include media($md){
+		&__head{ padding: 15px 15px; }
+		&__status{ flex: 0 0 135px; padding-right: 15px;
+			span{ padding: 5px 10px; font-size: 12px; }
+		}
+		&__date{ flex: 0 0 200px; padding-right: 15px; font-size: 12px; }
+		&__type{ margin-top: 5px; font-size: 12px; }
+		&__counter{ flex: 0 0 130px; font-size: 12px; }
+		&__price{ flex: 0 0 120px; padding-right: 10px; font-size: 16px; }
+		&__buttons{ flex: 1 1 auto; margin-right: 20px; 
+			.btn{ max-width: 160px; }
+		}
+		
+		&__body{ padding: 0 15px; }
+
+		&.is-active &{
+			&__body{ padding: 10px 15px 20px; }			
+		}
+	}
+
+	@include media($sm){
+		&__head{ flex-wrap: wrap; position: relative; padding-right: 40px; }
+		&__status{ flex: 0 0 33.33%; margin-bottom: 15px;
+			//span{ padding: 5px 10px; font-size: 12px; }
+		}
+		&__date{ flex: 0 0 33.33%; margin-bottom: 15px; /* padding-right: 15px; font-size: 12px; */ }
+		&__type{ flex: 0 0 33.33%; margin-bottom: 15px; }
+		&__counter{ flex: 0 0 33.33%; text-align: center; padding-right: 15px;  }
+		&__price{ flex: 0 0 33.33%; }
+		&__buttons{ flex: 0 0 33.33%; margin-right: 0; }
+		&__arrow{ position: absolute; top: 50%; right: 15px; transform: translateY(-50%); }
+		//&__body{ padding: 0 15px; }
+
+		/* &.is-active &{
+			&__body{ padding: 10px 15px 20px; }			
+		} */
+	}
+
+
+	@include media($xs){ position: relative; 
+		&__head{ padding: 20px 20px 40px; position: static; }
+		&__status{ flex: 0 0 50%; margin-bottom: 15px; padding: 0; 
+			//span{ padding: 5px 10px; font-size: 12px; }
+		}
+		&__sku{ flex: 0 0 50%; text-align: right; margin-bottom: 15px; }
+		&__date{ flex: 0 0 100%; margin-bottom: 10px; }
+		&__type{ flex: 0 0 100%; margin: 0 0 10px; }
+		&__counter{ flex: 0 0 50%; margin-bottom: 0; text-align: left; }
+		&__price{ flex: 0 0 50%; margin: 0; text-align: right; padding-right: 0; }
+		&__buttons{ flex: 0 0 100%; margin-top: 25px; 
+			.btn{ width: 100%; max-width: none;  }
+		}
+		&__arrow{ right: 50%; bottom: 15px; transform: translate(50%,0); top: auto; z-index: 5; }
+		&__body{ padding: 0 10px; }
+
+		&.is-active &{
+			&__head{ padding-bottom: 0; }
+			&__body{ padding: 25px 10px 40px; }
+			&__arrow{ right: 50%; bottom: 15px; transform: rotate(0deg) translate(50%,0); top: auto; }			
+		}
+	}
+}

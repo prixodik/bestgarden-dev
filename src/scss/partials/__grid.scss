@@ -1,0 +1,207 @@
+@mixin make-grid-columns($i: 1, $list: ".col-xxs-#{$i}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .col-xxs-#{$i}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
+  }
+  #{$list} {
+    position: relative;
+    min-height: 1px;
+    padding-left:  ceil(($grid-gutter-width / 2));
+    padding-right: floor(($grid-gutter-width / 2));
+    @include mq('desktop') {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    @include mq('tablet') {
+      padding-left: 7.5px;
+      padding-right: 7.5px;
+    }
+  }
+}
+
+@mixin float-grid-columns($class, $i: 1, $list: ".col-#{$class}-#{$i}") {
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .col-#{$class}-#{$i}";
+  }
+  #{$list} {
+
+  }
+}
+
+.row {
+  .col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    padding-left:  ceil(($grid-gutter-width / 2));
+    padding-right: floor(($grid-gutter-width / 2));
+    @include mq('desktop') {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    @include mq('tablet') {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+}
+@mixin calc-grid-column($index, $class, $type) {
+  @if ($type == width) and ($index > 0) {
+    .col-#{$class}-#{$index} {
+      max-width: percentage(($index / $grid-columns));
+      flex: 0 0  percentage(($index / $grid-columns));
+
+    }
+  }
+  @if ($type == push) and ($index > 0) {
+    .col-#{$class}-push-#{$index} {
+      left: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == push) and ($index == 0) {
+    .col-#{$class}-push-0 {
+      left: auto;
+    }
+  }
+  @if ($type == pull) and ($index > 0) {
+    .col-#{$class}-pull-#{$index} {
+      right: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == pull) and ($index == 0) {
+    .col-#{$class}-pull-0 {
+      right: auto;
+    }
+  }
+  @if ($type == offset) {
+    .col-#{$class}-offset-#{$index} {
+      margin-left: percentage(($index / $grid-columns));
+    }
+  }
+}
+@mixin loop-grid-columns($columns, $class, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid-column($i, $class, $type);
+  }
+}
+
+@mixin make-grid($class) {
+  @include float-grid-columns($class);
+  @include loop-grid-columns($grid-columns, $class, width);
+  @include loop-grid-columns($grid-columns, $class, pull);
+  @include loop-grid-columns($grid-columns, $class, push);
+  @include loop-grid-columns($grid-columns, $class, offset);
+}
+.row {
+  margin-left:  - ceil(($grid-gutter-width / 2));
+  margin-right: - floor(($grid-gutter-width / 2));
+  display: flex;
+  flex-flow: row wrap;
+  
+    &--nowrap{
+      -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+    }
+    &--stretch{
+      -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+      align-content: stretch;
+      -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+    }
+    &--between{
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+    &--middle{
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+    &--center{
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+    &--top{
+      @include flex(flex-start,flex-start,flex-start);  
+    }
+
+  @include mq('dekstop') {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  @include mq('tablet') {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+}
+@include make-grid-columns;
+@include make-grid(xxs);
+
+@media (min-width: $breakpointsPhoneWide*1-1) {
+  @include make-grid(xs);
+}
+@media (min-width: $breakpointsTablet*1-1) {
+  @include make-grid(sm);
+}
+@media (min-width: $breakpointsTabletWide*1-1) {
+  @include make-grid(md);
+}
+@media (min-width: $breakpointsDesktop*1-1) {
+  @include make-grid(lg);
+}
+.pull-right {
+  float: right;
+}
+.visible-xxs, .visible-xs, .visible-sm, .visible-md, .visible-lg {
+  display: none;
+}
+@include mq('phone-wide') {
+  .hidden-xxs {
+    display: none!important;
+  }
+  .visible-xxs {
+    display: block;
+  }
+}
+@include mq('phone-wide', min) {
+  @include mq('tablet') {
+    .hidden-xs {
+      display: none!important;
+    }
+    .visible-xs {
+      display: block;
+    }
+  }
+}
+@include mq('tablet', min) {
+  @include mq('tablet-wide') {
+    .hidden-sm {
+      display: none!important;
+    }
+    .visible-sm {
+      display: block;
+    }
+  }
+}
+@include mq('tablet-wide', min) {
+  @include mq('desktop') {
+    .hidden-md {
+      display: none!important;
+    }
+    .visible-md {
+      display: block;
+    }
+  }
+}
+@include mq('desktop', min) {
+  .hidden-lg {
+    display: none!important;
+  }
+  .visible-lg {
+    display: block;
+  }
+}

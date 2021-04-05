@@ -1,0 +1,11 @@
+
+mixin accardionBlock(data)
+	.accardion-block&attributes(attributes)
+		each item in data
+			._head.js-accardion-toggle
+				._title
+					!= item.title
+				._arrow
+					+svg('arrow-right-2')
+			._body.js-accardion-body
+				!= item.text

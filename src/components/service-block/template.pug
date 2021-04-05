@@ -1,0 +1,6 @@
+
+mixin serviceBlock(data)
+	.service-block&attributes(attributes)
+		+svgServices(data.icon)._icon
+		._title
+			!= data.title

@@ -1,0 +1,12 @@
+
+.menu-block{ @include flex(0,center,center,nowrap);
+	&__item{ margin-right: 55px; color: $green; font: 500 13px/18px $baseFF;
+		&:last-child{ margin-right: 0; }
+	}
+
+	@include media($sm){ display: block; 
+		&__item{ margin: 0 0 10px; 
+			&:last-child{ margin-bottom: 0; }
+		}
+	}
+}

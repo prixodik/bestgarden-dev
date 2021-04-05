@@ -1,0 +1,11 @@
+
+.news-block{ background: $white; box-shadow: $cards-bg; border-radius: 20px; height: 100%; @include flex(0,stretch,stretch,nowrap,column); overflow: hidden;
+	&__img{ height: 220px; flex: 0 0 220px;
+		img{ width: 100%; display: block; object-fit: cover; height: 100%;  }
+	}
+	&__wrap{ padding: 28px 20px 32px; flex: 1 1 auto; @include flex(0,stretch,stretch,nowrap,column); }
+	&__title{ margin-bottom: 20px; font: $title-h4; color: $green; flex: 1 1 auto;  }
+	&__date{ margin-bottom: 15px; color: #4D4D4D; font: 15px/18px $baseFF; }
+	&__text{ color: $text-green-dark; font: $fs-14; }
+	&__more{ color: $link; font-weight: bold; }
+}

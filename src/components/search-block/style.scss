@@ -1,0 +1,16 @@
+
+.search-block{ border-radius: 11px; border: 1px $green solid; position: relative; @include flex(space-between,stretch,stretch,nowrap); max-width: 416px; overflow: hidden; width: 100%;
+	&__input{ border: 0; background: $white; width: 100%; padding: 15px; color: $green;
+		&::-webkit-input-placeholder{ opacity: .5; color: $green; }
+  		&::-moz-placeholder { opacity: .5; color: $green; }
+
+  		&:focus{ outline: none;}
+	}
+	&__btn{ border: 0; background: $green; width: 63px; @include flex(center,center,center);
+		svg{ fill: $white; font-size: 20px; display: block; }
+	}
+
+	@include media($sm){ max-width: 100%;  
+
+	}
+}

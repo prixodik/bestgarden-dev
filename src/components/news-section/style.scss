@@ -1,0 +1,16 @@
+
+.news-section{ background: url('../images/faq-section-bg.svg') 50% 170px no-repeat, url('../images/news-section-bg.svg') 50% 0 no-repeat $gray-bg; padding: 30px 0 100px;
+	&__title{ text-align: center; margin-bottom: 60px; color: $green; }
+
+	&__row{ margin-bottom: -20px; }
+	&__item{ margin-bottom: 20px; }
+
+	@include media($sm){ padding: 0 0 70px; background: url('../images/faq-section-bg.svg') 50% 100px no-repeat, url('../images/news-section-bg.svg') 50% 0 no-repeat $gray-bg;
+		&__title{ margin-bottom: 40px; }
+	}
+
+	@include media($sm){ padding: 40px 0 40px; background: url('../images/news-section-bg.svg') 50% 0/100% auto no-repeat $gray-bg; position: relative;
+		&:before{ content: ""; display: block; width: 100%; height: calc(100% - 70px);  position: absolute; bottom: 0; left: 0; z-index: 0; background: $white; } 
+		&__title{ margin-bottom: 30px; position: relative; z-index: 1; }
+	}
+}

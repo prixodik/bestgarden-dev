@@ -1,0 +1,57 @@
+include ../service-block/template
+
+mixin servicesSection(data)
+	.services-section&attributes(attributes)
+		._container.container
+			._title.title-h1 к вашим услугам
+			._row.row.-stretch
+				._item.col-6.col-xs-12
+					+serviceBlock({
+						icon: 'service-icon-1',
+						title: 'Реальные и конкурентноспособные цены'
+					})
+				._item.col-6.col-xs-12
+					+serviceBlock({
+						icon: 'service-icon-2',
+						title: 'Специальные ценовые предложения' 
+					})
+				._item.col-6.col-xs-12
+					+serviceBlock({
+						icon: 'service-icon-3',
+						title: 'Качественные описания и изображения товаров'
+					})
+				._item.col-6.col-xs-12
+					+serviceBlock({
+						icon: 'service-icon-4',
+						title: 'Регулярные новости от производителей'
+					})
+				._item.col-6.col-xs-12
+					+serviceBlock({
+						icon: 'service-icon-5',
+						title: 'Поиск товаров в магазине'
+					})
+				._item.col-6.col-xs-12
+					+serviceBlock({
+						icon: 'service-icon-6',
+						title: 'Информация о бесплатных семинарах в городах России'
+					})
+				._item.col-6.col-xs-12
+					+serviceBlock({
+						icon: 'service-icon-7',
+						title: 'Консультация на сайте в режиме реального времени'
+					})
+				._item.col-6.col-xs-12
+					+serviceBlock({
+						icon: 'service-icon-8',
+						title: 'Гарантийное обслуживание купленных у нас товаров'
+					})
+				._item.col-6.col-xs-12
+					+serviceBlock({
+						icon: 'service-icon-9',
+						title: 'Широкий ассортимент оборудования'
+					})
+				._item.col-6.col-xs-12
+					+serviceBlock({
+						icon: 'service-icon-10',
+						title: 'Обмен товаров ненадлежащего качества и много другое'
+					})

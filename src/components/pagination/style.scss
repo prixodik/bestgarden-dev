@@ -1,0 +1,58 @@
+
+.pagination{ @include flex(center,center,center,nowrap);
+	&__next, &__prev{ margin-right: 210px; 
+		a{ width: 34px; height: 34px; background: #f0f0f0; @include flex(0,center,center); border-radius: 4px; 
+				svg{ font-size: 24px; fill: $black; display: block;  }
+
+				&:hover, &:active{ background: #fff63c;  }
+		}
+	}
+	&__next{ margin-left: 210px; margin-right: 0; }
+	&__prev{
+		a{ @include flex(flex-end,center,center); }
+		svg{ transform: rotate(180deg); }
+	}
+
+	&__item{ margin: 0 12px; font: bold 15px $baseFF;
+		span, a{ width: 35px; height: 35px; border-radius: 4px; @include flex(center,center,center); color: $black; }
+		span{ background: $yellow; } 
+
+		&.is-active{
+			a{ background: $yellow; }
+		}
+	}
+
+	&__load{ margin-bottom: 20px; display: none; }
+
+	&--news-view{ @include flex(space-between,center,center,nowrap); }
+	&--news-view &{ 
+		&__next, &__prev{ flex: 1 1 auto; @include flex(0,center,center,nowrap); margin: 0; color: #767676; font: 500 13px $baseFF;
+			span{ margin-left: 20px; }
+		}
+		&__next{ @include flex(flex-end,center,center,nowrap); margin: 0; 
+			span{ margin: 0 20px 0 0; }
+		}
+	}
+
+	@include media($md){   @include flex(space-between,center,center,nowrap);
+		&__prev{ margin-right: 15px; flex: 1 1 auto; }
+		&__next{ margin-left: 15px; flex: 1 1 auto; @include flex(flex-end);  } 
+
+		&--news-view &{ 
+			&__next, &__prev{ flex: 1 1 auto; @include flex(0,center,center,nowrap); margin: 0; }
+			&__next{ @include flex(flex-end,center,center,nowrap); margin: 0; }
+		}
+	}
+
+	@include media($xs){ flex-wrap: wrap; 
+		&__load{ display: block; flex: 0 0 100%; padding: 7px 20px;  }
+		&__item{ margin: 0 1px; font: bold 13px $baseFF;  }
+
+		&--news-view &{ 
+			&__next, &__prev{ 
+				span{ display: none; }
+			}
+			
+		}
+	}
+}

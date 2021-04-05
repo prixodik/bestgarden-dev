@@ -1,0 +1,59 @@
+.mobile-nav {  
+  background: $white; 
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1500;
+  max-height: 59px;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    list-style-type: none;
+    max-width: 320px;
+    margin: 0 auto;
+    li {
+      &.active,
+      a:hover {
+        color: #000;
+      }
+      a  {
+        display: block;
+        text-align: center;
+        font-size: 9px;
+        line-height: 1;
+        position: relative;
+        padding: 10px 10px 15px;
+
+        span{ display: block; margin-top: 3px; }
+      }
+    }
+    .count {
+      position: absolute;
+      font-size: 10px;
+      padding: 0px 1px;
+      line-height: 15px;
+      min-width: 20px;
+      text-align: center;
+      background: $yellow;
+      color: $baseFClr;
+      top: 3px;
+      right: 10px;
+      border-radius: 5px;
+    }
+    .icon-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .icon {
+        height: 22px;
+        width: 22px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}

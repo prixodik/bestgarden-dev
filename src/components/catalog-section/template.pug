@@ -1,0 +1,63 @@
+include ../category-block/template
+
+mixin catalogSection(data)
+	.catalog-section&attributes(attributes)
+		._container.container
+			._title.title-h2 каталоги
+			._row.row
+				._item.col-4.col-sm-6.col-xs-12
+					+categoryBlock({
+						img: 'images/category-img-1.png',
+						title: 'Водные растения 2021',
+						count: '26 товаров'
+					})
+					
+				._item.col-4.col-sm-6.col-xs-12
+					+categoryBlock({
+						img: 'images/category-img-2.png',
+						title: 'Розы пакетированные 2021',
+						count: '345 товаров'
+					})
+					
+				._item.col-4.col-sm-6.col-xs-12
+					+categoryBlock({
+						img: 'images/category-img-3.png',
+						title: 'Луковичные<br> и многолетники 2021',
+						count: '785 товаров'
+					})
+					
+				._item.col-4.col-sm-6.col-xs-12
+					+categoryBlock({
+						img: 'images/category-img-4.png',
+						title: 'Саженцы 2021',
+						count: '479 товаров'
+					})
+					
+				._item.col-4.col-sm-6.col-xs-12
+					+categoryBlock({
+						img: 'images/category-img-5.png',
+						title: 'Саженцы ЗКС',
+						count: '142 товара'
+					})
+					
+				._item.col-4.col-sm-6.col-xs-12
+					+categoryBlock({
+						img: 'images/category-img-6.png',
+						title: 'Средства защиты',
+						count: '0 товаров'
+					})
+					
+				._item.col-4.col-sm-6.col-xs-12
+					+categoryBlock({
+						img: 'images/category-img-7.png',
+						title: 'Грунты',
+						count: '0 товаров'
+					})
+					
+				._item.col-4.col-sm-6.col-xs-12
+					+categoryBlock({
+						img: 'images/category-img-8.png',
+						title: 'Товары в наличии',
+						count: '2711 товаров'
+					})
+					

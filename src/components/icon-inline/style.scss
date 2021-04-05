@@ -1,0 +1,20 @@
+
+.icon-inline{ @include flex(0,center,center,nowrap);
+	&__icon{ @include flex(center,center,center); margin-right: 12px; width: 38px; height: 38px; border-radius: 50%; background: $blue;  flex: 0 0 auto;
+		svg{ display: block; font-size: 20px; fill: $white; }
+	}
+	&__wrap{ color: $text-green-dark; font: $fs-14; 
+		a{ text-decoration: none; }
+
+		&--login{
+			span{ margin: 0 5px; }
+		}
+	}
+	&__phone{ margin-bottom: 4px; font: $fs-16-bold; display: block; white-space: nowrap; }
+
+	@include media($md){
+		&__icon{ width: 30px; height: 30px; 
+			svg{ font-size: 16px; }
+		}
+	}
+}

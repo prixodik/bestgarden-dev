@@ -1,0 +1,99 @@
+
+mixin totalBlock(data)
+	.total-block&attributes(attributes)
+		._cupon
+			form(action="") 
+				input(type="text" placeholder="Введите код скидочного купона").form-control
+				._cupon-status.js-cupon-status Код активирован
+				._cupon-status.-error.js-cupon-status Код не активирован
+				button.btn.-block.-border.js-cupon-add применить код
+		._param
+			._param-label Сумма:
+			._param-value 132 900 <span>р.</span>
+		._param
+			._param-label Скидка:
+			._param-value 15 000 <span>р.</span>
+		._param
+			._param-label Итого со скидкой:
+			._param-value 117 900 <span>р.</span>
+		._param.-gray
+			._param-label Сумма НДС:
+			._param-value 11 000 <span>р.</span>
+
+		._buttons
+			a.btn.-block.-icon-right
+				span далее
+				+svg('arrow-right')
+
+mixin totalBlockAdres(data)
+	.total-block.-info.-adres&attributes(attributes)
+		a._edit(href="#")
+			+svg('pencil')
+		._info
+			p <span>Иван Иванович</span>
+			p <span>+7 (111) 111-22-22</span>
+			p <span>123@mail.ru</span>
+		._info
+			p <span>ИНН:</span> 321321456
+			p <span>КПП:</span> 55554464
+			p ООО “Спецокраска”
+			p г. Москва, проспект Ленина 14, корп 2, офис 506
+
+mixin totalBlockShipping(data)
+	.total-block.-info.-shipping&attributes(attributes)
+		a._edit(href="#")
+			+svg('pencil')
+		._info
+			p
+				span Доставка курьером
+			p <span>Адрес:</span> г. Москва, проспект Ленина 14, корп 2, офис 503
+
+mixin totalBlockPayment(data)
+	.total-block.-info.-payment&attributes(attributes)
+		a._edit(href="#")
+			+svg('pencil')
+		._info
+			p
+				span Оплата наличными курьеру
+
+mixin totalBlockParams(data)
+	.total-block.-info.-params&attributes(attributes)
+		a._edit(href="#")
+			+svg('pencil')
+		._counter 3 товара
+		._param
+			._param-label Сумма:
+			._param-value 132 900 <span>р.</span>
+		._param
+			._param-label Скидка:
+			._param-value 15 000 <span>р.</span>
+		._param
+			._param-label Стоимость доставки:
+			._param-value 700 <span>р.</span>
+		._param
+			._param-label Итого со скидкой:
+			._param-value 117 900 <span>р.</span>
+		._param.-gray
+			._param-label Сумма НДС:
+			._param-value 11 000 <span>р.</span>
+
+mixin totalBlockYourOrder(data)
+	.total-block.-info.-params&attributes(attributes)
+		._head
+			._title.title-h3 ваш заказ
+			._counter 3 товара
+		._param
+			._param-label Сумма:
+			._param-value 132 900 <span>р.</span>
+		._param
+			._param-label Скидка:
+			._param-value 15 000 <span>р.</span>
+		._param
+			._param-label Стоимость доставки:
+			._param-value 700 <span>р.</span>
+		._param
+			._param-label Итого со скидкой:
+			._param-value 117 900 <span>р.</span>
+		._param.-gray
+			._param-label Сумма НДС:
+			._param-value 11 000 <span>р.</span>

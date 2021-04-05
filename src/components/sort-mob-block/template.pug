@@ -1,0 +1,22 @@
+
+mixin sortMobBlock(data)
+	.sort-mob-block.js-sort-block&attributes(attributes)
+		._overflow.js-sort-block-close
+		._wrapper
+			a._close.js-sort-block-close(href="#")
+				+svg('close')
+			._title Сортировка:
+			//- ._item
+			//- 	a(href="#") По умолчанию
+			._item
+				span По цене:
+				//- a(href="#")
+				//- 	+svg('sort')
+				a.is-active(href="#")
+					+svg('sort')
+			._item
+				span По популярности:
+				a(href="#")
+					+svg('sort')
+				//- a(href="#")
+				//- 	+svg('sort')

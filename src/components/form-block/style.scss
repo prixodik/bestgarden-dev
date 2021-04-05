@@ -1,0 +1,17 @@
+
+.form-block{ max-width: 996px; margin: 0 auto;
+	&__title{ text-align: center; margin-bottom: 20px; color: $green; }
+	&__desc{ text-align: center; margin-bottom: 45px; color: $text-green-dark; font: $fs-18; }
+	&__row{ }
+	&__input{ margin-bottom: 20px; }
+	&__buttons{ @include flex(center); }
+	&__file{ margin: 0 0 26px 0; }
+	&__police{ margin: 0 0 26px 0; }
+
+	@include media($xs){
+		&__title{ margin-bottom: 10px; }
+		&__desc{ margin-bottom: 25px; font: $fs-16; 
+			strong{ display: block; }
+		}
+	}
+}

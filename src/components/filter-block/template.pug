@@ -1,0 +1,76 @@
+
+mixin filterBlock(data)
+	.filter-block&attributes(attributes)
+		form(action="" class="js-filter") 
+			._head
+				._title Фильтр
+				a._reset.js-filter-reset(href="#")
+					+svg('refresh')
+					span Сбросить
+				a._close.js-filter-block-close(href="#")
+					+svg('close')
+
+			._result.js-filter-result
+				//- a._result-item.js-filter-del(href="#")
+				//- 	span 13 500
+				//- 	+svg('close')
+				//- a._result-item.js-filter-del(href="#")
+				//- 	span Значение 1234
+				//- 	+svg('close')
+
+			._group
+				._group-title Цена <span>руб.</span>
+				._range.row.row--between
+					._range-col.col-auto
+						input.js-range-from(type="text" value="1000" placeholder="От")
+					._range-col.col-auto
+						input.js-range-to(type="text" value="6000" placeholder="До")
+				input.js-range-slider(type="text" data-min="0" data-max="10000" data-from="1000" data-to="6000")
+			._group
+				._group-title Параметры
+				select(name="lektor"  multiple="multiple" data-js-placeholder="Выберите параметр").nice-select--drop-checkbox.nice-select--no-search
+					option(value="Все параметры" class="all-options") Все параметры
+					option(value="Иванов Алексей") Иванов Алексей 
+					option(value="Константинов Вениамин") Константинов Вениамин
+					option(value="Кац Анастасия") Кац Анастасия
+					option(value="Преображенский Афанасий") Преображенский Афанасий
+					option(value="Петров Александр") Петров Александр
+					option(value="Иванов Алексей 2") Иванов Алексей 2 
+					option(value="Константинов Вениамин 2") Константинов Вениамин 2
+					option(value="Кац Анастасия 2") Кац Анастасия 2
+					option(value="Преображенский Афанасий 2") Преображенский Афанасий 2
+					option(value="Петров Александр 2") Петров Александр 2
+
+			._group
+				._group-title параметр 2
+				.checkbox-list
+					.radiobox.-white
+						input(type="radio" name="p1" id="p1" value="Значение")
+						label(for="p1") Значение
+					.radiobox.-white
+						input(type="radio" name="p1" id="p2" value="Значение 2")
+						label(for="p2") Значение 2
+					.radiobox.-white
+						input(type="radio" name="p1" id="p3" value="Значение 3")
+						label(for="p3") Значение 3
+					.radiobox.-white
+						input(type="radio" name="p1" id="p4" value="Значение 4")
+						label(for="p4") Значение 4
+
+			._group
+				._group-title параметр 2
+				.checkbox-list
+					.checkbox.-white
+						input#ch-1(type="checkbox" value="Бесплатно")
+						label(for="ch-1") Бесплатно
+					.checkbox.-white
+						input#ch-2(type="checkbox" value="Платно")
+						label(for="ch-2") Платно
+					.checkbox.-white
+						input#ch-3(type="checkbox" value="НМО")
+						label(for="ch-3") НМО
+			._buttons
+				button.btn.-block Показать
+				a._reset.js-filter-reset(href="#")
+					+svg('refresh')
+					span Сбросить

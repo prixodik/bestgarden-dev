@@ -1,0 +1,9 @@
+
+mixin adresBlock(data)
+	.adres-block&attributes(attributes)
+		._img
+			+webp(data.img)
+		._text
+			!= data.text
+		._buttons
+			a.btn.-border(href="#") Выбрать

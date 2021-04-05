@@ -1,0 +1,25 @@
+//- include ../service-block/template
+
+mixin feedbackSection(data)
+	.feedback-section&attributes(attributes)
+		._container.container
+			._title.title-h1 обратная связь
+			._wrapper
+				+webp('images/feedback-wrapper-bg.png')._wrapper-bg
+				._text Мы всегда рады общению с нашими клиентами. <br>Если у Вас есть какие-либо пожелания, предложения,  замечания, касающиеся работы нашего Интернет-магазина - пишите нам, и мы с благодарностью примем Ваше мнение во внимание:
+				._row.row.row--stretch
+					._col.col-6.col-xs-12
+						._input
+							input.form-control.-white(type="text" placeholder="Введите имя")
+						._input
+							input.form-control.-white(type="text" placeholder="Введите e-mail")
+						._input
+							input.form-control.-white(type="tel" placeholder="Введите телефон")
+					._col.col-6.col-xs-12
+						textarea.form-control(name="", cols="20", rows="4" placeholder="Введите сообщение")
+
+				._buttons
+					button.btn отправить
+					._police Нажимая кнопку “отправить” вы соглашаетесь <br>с <a href="#">политикой конфиденциальности</a>
+
+				

@@ -1,0 +1,15 @@
+
+mixin brandsSection(data)
+	.brands-section&attributes(attributes)
+		._head
+			._title.title-h1 наши бренды
+			._arrows
+				a._prev.slick-arrow.slick-arrow--gray.slick-prev.js-brand-slider-prev(href="#") 
+					+svg('arrow-right')
+				a._next.slick-arrow.slick-arrow--gray.js-brand-slider-next(href="#") 
+					+svg('arrow-right')
+		._list.js-brands-slider
+			each n in [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4]
+				- var url = 'images/brand-img-'+n+'.jpg'
+				._list-item
+					+webp(url)

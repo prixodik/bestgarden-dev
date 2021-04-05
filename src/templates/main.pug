@@ -1,0 +1,35 @@
+extends extends/base.pug
+append vars
+	- var pageUrl = 'main.html';
+	- var pageTitle = 'Главная';
+	- var classBody = 'main-page';
+	- var headerBg = 'images/main-banner.jpg';
+block styles
+	
+block content
+	include ../components/index-section/template
+	+indexSection()
+
+	include ../components/about-section/template
+	+aboutSection()
+
+	include ../components/products-section/template 
+	+productsSection({
+		title: 'НОВИНКИ СЕЗОНА' 
+	})
+
+	include ../components/catalog-section/template 
+	+catalogSection()
+
+	include ../components/news-section/template 
+	+newsSection()
+
+	include ../components/faq-section/template  
+	+faqSection()
+
+	include ../components/footer/template  
+	+footer()    
+
+	//- +gridLayout() 
+
+block scripts

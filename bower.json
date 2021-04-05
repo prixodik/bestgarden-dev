@@ -1,0 +1,26 @@
+{
+  "name": "ffg.ru",
+  "description": "layout task",
+  "main": "gulpfile.js",
+  "authors": [
+    "aleks664"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.4",
+    "jquery-mask-plugin": "^1.14.16",
+    "vanilla-lazyload": "^17.3.0",
+    "fancybox": "^3.5.7",
+    "jquery-ui": "^1.12.1",
+    "slick-carousel": "^1.8.1",
+    "malihu-custom-scrollbar-plugin": "^3.1.5"
+  }
+}

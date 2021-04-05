@@ -1,0 +1,13 @@
+mixin breadcrumbs(data)
+  .breadcrumb&attributes(attributes)
+      ul._ul(itemscope='', itemtype='http://schema.org/BreadcrumbList')
+        li._li(itemprop='itemListElement', itemscope='', itemtype='http://schema.org/ListItem')
+          a(href='/', itemprop='item')
+            span(itemprop='name') Главная
+            meta(itemprop='position', content='0')
+        each itm, i in data.items
+          li._li.active(itemprop='itemListElement', itemscope='', itemtype='http://schema.org/ListItem')
+            a(href=itm.url, itemprop='item')
+              span(itemprop='name')!=itm.ttl
+              meta(itemprop='position', content=i+1)
+

@@ -1,0 +1,12 @@
+include ../stars/template
+
+mixin commentBlock(data)
+	.comment-block&attributes(attributes)
+		._head
+			+stars({rait: data.rait})._rait
+			._name
+				!= data.name
+			._date
+				!= data.date
+		._body.item-page
+			!= data.text

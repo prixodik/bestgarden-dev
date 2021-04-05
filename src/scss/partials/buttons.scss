@@ -1,0 +1,90 @@
+.btn {
+  border: 1px solid $green;
+  background: $green;
+  font: 700 15px/20px $baseFF; 
+  padding: 16px 25px; 
+  color: $white;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border-radius: 10px;
+
+  svg{ fill: $white; }
+
+  &:hover, &:active {
+    border-color: #A4C5DA;
+    background: #A4C5DA;
+    color: $blue-dark;
+  }
+
+  &:focus{ outline: none; /* background: inherit; border-color: inherit; color: inherit;  */ }
+  
+  &--gray{ background: $icon-bg-directory; border-color: $icon-bg-directory; color: $blue-dark; }
+
+  &--disabled, &:disabled,&[disabled], &:disabled:focus{ background: $icon-bg-directory; border-color: $icon-bg-directory; color: $blue-dark; opacity: .3;  }
+
+  &--blue{ background: $blue; border-color: $blue; color: $green; 
+    &:hover, &:active{ background: #7EC9CE; border-color: #7EC9CE; }
+
+    &.btn--disabled, &:disabled,&[disabled], &:disabled:focus{ opacity: .5; }
+  }
+
+  &--yellow{ background: $yellow; border-color: $yellow; color: $white; 
+    &:hover, &:active{ background: $link; border-color: $link; color: $white;  } 
+
+    &.btn--disabled, &:disabled,&[disabled], &:disabled:focus{ opacity: .5; }
+  }
+
+  &--border{
+    background: transparent; 
+    &:hover {
+      border-color: $green;
+      background: $green;
+    }
+  }
+
+
+  &--block{ width: 100%; padding-left: 10px; padding-right: 10px;  }
+
+  &--only-icon{ width: 54px; height: 54px; padding: 0; @include flex(center,center,center); border-radius: 50%;  
+    svg{ fill: $white; font-size: 21px; display: block; 
+      .binfo{ fill: $black; }
+    }
+  }
+
+  &--icon{ @include flex(0,center,center,nowrap); display: inline-flex; padding-left: 16px; padding-right: 16px;
+    svg{ font-size: 20px; fill: $green; margin-right: 6px; flex: 0 0 auto; }
+    span{ flex: 1 1 auto; text-align: center;  }
+    span + svg{ margin: 0 0 0 6px;  }
+  }
+  
+
+  &--lg{ padding: 19px 45px; } 
+  &--sm{ padding: 10px 16px; font: 600 13px/20px $baseFF; } 
+
+
+  @include media($lg){ 
+
+  }
+
+  @include media($md){
+    
+  }
+
+  @include media($sm){
+    
+  }  
+
+  @include media($xs){ 
+    font: 700 14px/20px $baseFF; 
+    padding: 10px 20px; 
+
+    &--only-icon{ padding: 0; }
+
+    &--lg{ padding: 16px 35px; } 
+    &--sm{ padding: 10px 16px;  } 
+  }
+}

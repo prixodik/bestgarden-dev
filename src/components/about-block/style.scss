@@ -1,0 +1,14 @@
+
+.about-block{ background: $white; border-radius: 5px; padding: 50px 40px 25px; height: 100%; font: 500 14px/25px $baseFF; color: $black; 
+	&__icon{ fill: $yellow; width: 45px; height: 45px; margin-bottom: 35px; }
+	&__title{ font: bold 20px/30px $titleFF; text-transform: uppercase; color: $black; margin-bottom: 25px; }
+
+	@include media($md){ padding: 30px; 
+		&__icon{ margin-bottom: 20px; }
+	}
+
+	@include media($xs){ padding: 20px 15px; font: 500 13px/23px $baseFF; 
+		&__icon{ margin-bottom: 15px; }
+		&__title{ font: bold 18px/18px $titleFF; margin-bottom: 20px; }
+	}
+}

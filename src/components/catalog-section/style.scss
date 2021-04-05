@@ -1,0 +1,18 @@
+
+.catalog-section{ padding: 330px 0 110px; margin-top: -260px; position: relative; z-index: 2; background: url('../images/catalog-section-line.svg') 50% calc(100% - 20px) no-repeat;
+	&:before{ content: ""; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('../images/catalog-section-bg.svg') 50% 0 no-repeat; z-index: -1; }
+	&:after{ content: ""; display: block; position: absolute; bottom: 20px; left: 0; width: 100%; height: 20px; background: url('../images/catalog-section-line.svg') 50% 0 no-repeat; z-index: 0; }
+
+	&__title{ text-align: center; text-transform: uppercase; margin-bottom: 58px; color: $green; }
+	&__row{ margin: 0 -10px -20px; }
+	&__item{ padding: 0 10px; margin-bottom: 20px; }
+
+	@include media($sm){ padding: 330px 0 70px; background: url('../images/catalog-section-line.svg') 50% calc(100% - 0px) no-repeat; 
+		&__title{ margin-bottom: 40px; } 
+	}
+
+	@include media($xs){ padding: 0px 0 70px; margin-top: 70px; background: #F6F9FF; 
+		&__title{ margin-bottom: 30px; }
+		&:before{ background-size: 100% auto; top: -70px; }
+	}
+}

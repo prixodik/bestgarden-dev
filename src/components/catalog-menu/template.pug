@@ -1,0 +1,36 @@
+.catalog-menu
+  .catalog-menu-bg
+  .container
+    nav
+      .head.d-none_lg.d-none_md
+        .ttl Разделы каталога
+        .close
+          +svg('close').fs-15
+        .head-in
+          .back
+            +svg('arrow-right').fs-20
+          .ttl
+            a(href="#") Название раздела
+      mixin catalogMenu(data)
+        ul
+          each item in data
+            li.has-submenu
+              a(href=item.url)!=item.ttl
+                .arrow.d-none.d-block_sm.d-block_xs
+                  +svg('angle-right').fs-12
+              if item.submenu
+                ul
+                  each sub in item.submenu
+                    li
+                      a(href=sub.url)!=sub.ttl
+
+              else
+                ul
+                  each sub in data[0].submenu
+                    li
+                      a(href=sub.url)!=sub.ttl
+
+      +catalogMenu(baseData.catalogMenu)
+
+
+

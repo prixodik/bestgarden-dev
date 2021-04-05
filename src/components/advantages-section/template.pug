@@ -1,0 +1,21 @@
+include ../advantage-block/template
+
+mixin advantagesSection(data)
+	.advantages-section&attributes(attributes)
+		._container.container
+			._row.row.row--between
+				._item.col-auto.col-xs-12
+					+advantageBlock({
+						img: 'images/advantage-index-img-1.png', 
+						text: 'Фильтр товаров'
+					})
+				._item.col-auto.col-xs-12
+					+advantageBlock({
+						img: 'images/advantage-index-img-2.png',
+						text: 'Доставка оборудования<br> в любой регион'
+					})
+				._item.col-auto.col-xs-12
+					+advantageBlock({
+						img: 'images/advantage-index-img-3.png',
+						text: 'Способы оплаты' 
+					})

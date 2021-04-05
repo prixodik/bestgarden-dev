@@ -1,0 +1,50 @@
+.popup.popup-login#popup-login
+  ._title.title-h4 войти в личный кабинет
+  .tabs-head
+    ul
+      li.is-active
+        a(href="#popup-login-tab1" data-tab data-parent='li') Покупатель
+      li
+        a(href="#popup-login-tab2" data-tab data-parent='li') Дилер
+  .tabs-wrap.mt-35
+    .tab.is-visible#popup-login-tab1
+      form
+        +field({
+          lbl: 'Введите логин <span class="txt-red">*</span>',
+          classInput: 'js-required',
+        })
+        +field({
+          type: 'password',
+          lbl: 'Введите пароль <span class="txt-red">*</span>',
+          classInput: 'js-required',
+        })
+        .btn-wrap.d-flex.mt-50
+          button.btn Войти
+          button.btn.btn-border.ml-auto регистрация
+    .tab#popup-login-tab2
+      .tab.is-visible#popup-login-tab1
+        form
+          +field({
+            lbl: 'Введите логин <span class="txt-red">*</span>',
+            classInput: 'js-required',
+          })
+          +field({
+            type: 'email',
+            lbl: 'Введите  email <span class="txt-red">*</span>',
+            classInput: 'js-required',
+          })
+          +field({
+            type: 'password',
+            lbl: 'Введите пароль <span class="txt-red">*</span>',
+            classInput: 'js-required',
+          })
+          .btn-wrap.d-flex.mt-50
+            button.btn Войти
+            button.btn.btn-border.ml-auto регистрация
+  .bottom.mt-35
+    .footnote
+      | Нажимая кнопку “отправить” и/или “регистрация” вы соглашаетесь
+      =' '
+      a(href="#") с политикой конфиденциальности
+
+

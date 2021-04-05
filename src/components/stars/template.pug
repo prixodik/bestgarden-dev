@@ -1,0 +1,14 @@
+
+mixin stars(data)
+	.stars&attributes(attributes)
+		._off
+			+svg('star')
+			+svg('star')
+			+svg('star')
+			+svg('star')
+			+svg('star')
+		._on
+			- var n = 1;
+			while n <= data.rait
+				- n++
+				+svg('star-on')

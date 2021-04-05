@@ -1,0 +1,22 @@
+
+.about-section{ background: url('../images/about-section-bg.svg') 50% 0 no-repeat; padding: 300px 0 180px; position: relative; z-index: 2; margin-top: -250px;  pointer-events: none;
+	&__container{ pointer-events: auto;  }
+	&__title{ font: bold 40px/46px $baseFF; color: $white; margin-bottom: 25px; }
+	&__more{ @include flex(0,center,center,nowrap); color: $yellow; 
+		svg{ fill: $yellow; font-size: 12px; margin-left: 10px; }
+	}
+	&__text{ padding-top: 80px; color: rgba($white,.8); }  
+
+	@include media($md){
+		&__title{ font: bold 35px/40px $baseFF;  }
+	}
+
+	@include media($sm)	{ padding: 290px 0 140px;
+		&__title{ font: bold 30px/35px $baseFF;  } 
+	}
+
+	@include media($xs){ background: $green; padding: 40px 0 100px; margin-top: -20px;  
+		&__title{ font: bold 26px/30px $baseFF; margin-bottom: 15px; }
+		&__text{ padding-top: 20px; }
+	}
+}

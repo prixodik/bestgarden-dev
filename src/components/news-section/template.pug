@@ -1,0 +1,28 @@
+include ../news-block/template
+
+mixin newsSection(data)
+	.news-section&attributes(attributes)
+		._container.container
+			._title.title-h2 Новости
+			._row.row.row--stretch
+				._item.col-4.col-sm-6.col-xs-12
+					+newsBlock({
+						img: 'images/news-img-1.jpg',
+						title: 'Новое поступление лилий!<br> Более 45 сортов!',
+						date: '20.01.2021',
+						text: 'В садовом центре и интернет-магазине появилось более 45 сортов лилий. С полным списком обновления вы можете <a href="#">ознакомиться</a>'
+					})
+				._item.col-4.col-sm-6.col-xs-12
+					+newsBlock({
+						img: 'images/news-img-2.jpg',
+						title: 'Новое поступление садового инвентаря премиум класса! ',
+						date: '19.01.2021',
+						text: 'DeWit — качественный садовый инвентарь из Голландии. Выбор качественных инструментов для сада — задача не из легких... <a href="#" class="news-block__more">Подробнее</a>'
+					})
+				._item.col-4.col-sm-6.col-xs-12.d-none_sm
+					+newsBlock({
+						img: 'images/news-img-3.jpg',
+						title: 'ОКС или ЗКС, что выбрать?',
+						date: '15.01.2021',
+						text: 'В продаже можно встретить саженцы двух видов: с открытой корневой системой (ОКС), т.е. с голыми корнями,  и в контейнерах... <a href="#" class="news-block__more">Подробнее</a>'
+					})

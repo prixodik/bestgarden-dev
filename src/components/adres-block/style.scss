@@ -1,0 +1,26 @@
+
+.adres-block{ @include flex(space-between,center,center,nowrap); background: #f7f7f7; border-radius: 5px; overflow: hidden;
+	&__img{ align-self: stretch; flex: 0 0 225px; max-width: 225px; margin-right: 40px; 
+		img{ width: 100%; height: 100%; display: block; object-fit: cover; }
+	}
+	&__text{ font: 14px/22px $baseFF; padding: 20px 40px 20px 0; flex: 1 1 auto;
+		p{ margin: 0; }
+	}
+	&__buttons{ margin-right: 40px; }
+
+	&:hover{ background: $white; box-shadow: 0 17px 28px rgba($black, .09); }
+
+	@include media($sm){
+		&__img{ flex: 0 0 150px; max-width: 150px; margin-right: 20px; }
+		&__text{ padding-right: 20px; }
+		&__buttons{ margin-right: 20px; }
+	}
+
+	@include media($xs){ display: block;
+		&__img{ max-width: 100%; margin-right: 0; margin-bottom: 15px; }
+		&__text{ padding: 0 20px 15px; font: 12px/20px $baseFF; }
+		&__buttons{ margin-right: 0; padding: 0 20px 20px; 
+			.btn{ width: 100%; }
+		}
+	}
+}

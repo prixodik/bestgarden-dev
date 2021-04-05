@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Структура сайта</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- appstore links-->
+    <!-- seo meta-->
+    <meta name="description" content="Meta description">
+    <meta name="keywords" content="Key, words">
+    <meta name="author" content="Site name">
+    <!-- og meta-->
+    <meta property="og:title" content="Site name">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="Site name">
+    <meta name="twitter:title" content="Site name">
+    <meta name="twitter:description" content="Site name">
+    <meta name="twitter:image:src" content="https://projectname.surge.shimages/og/1_1200х628.jpg">
+    <meta name="twitter:url" content="https://projectname.surge.sh">
+    <!-- remove for production-->
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="css/template_styles.css">
+  </head>
+  <body class="homepage">
+        <header class="header">
+          <div class="header__container container">
+            <div class="header__body">
+              <div class="header__logo-wrap"><a class="header__logo"><img src="images/logo.png" alt=""></a>
+                <div class="header__slogan">Оптовая продажа товаров для сада</div>
+              </div>
+              <div class="header__body-content">
+                    <div class="search-block header__search">
+                      <input class="search-block__input" type="text" placeholder="Название или артикул">
+                      <button class="search-block__btn">
+                        <svg class="icon icon_search">
+                          <use xlink:href="images/sprite-svg.svg#search"></use>
+                        </svg>
+                      </button>
+                    </div>
+                <div class="header__contacts">
+                      <div class="icon-inline header__contacts-item">
+                        <div class="icon-inline__icon">
+                          <svg class="icon icon_user">
+                            <use xlink:href="images/sprite-svg.svg#user"></use>
+                          </svg>
+                        </div>
+                        <div class="icon-inline__wrap icon-inline__wrap--login"><a href="#">Вход</a><span>|</span><a href="#">Регистрация</a></div>
+                      </div>
+                      <div class="icon-inline header__contacts-item">
+                        <div class="icon-inline__icon">
+                          <svg class="icon icon_phone">
+                            <use xlink:href="images/sprite-svg.svg#phone"></use>
+                          </svg>
+                        </div>
+                        <div class="icon-inline__wrap"><a class="icon-inline__phone" href="tel:+74957348088">+7 (495) 734-80-88</a>
+                          <p>Пн–Пт 09:00–18:00</p>
+                        </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+            <div class="header__bottom"><a class="burger js-mobile-menu-toggle header__burger" href="#"><span> </span><span> </span><span> </span></a>
+              <div class="header__menu js-mobile-menu">
+                    <div class="menu-block">
+                      <div class="menu-block__item"><a href="#">Каталоги</a></div>
+                      <div class="menu-block__item"><a href="#">О нас</a></div>
+                      <div class="menu-block__item"><a href="#">Доставка и оплата</a></div>
+                      <div class="menu-block__item"><a href="#">Задать вопрос</a></div>
+                      <div class="menu-block__item"><a href="#">Скидки</a></div>
+                      <div class="menu-block__item"><a href="#">Новости</a></div>
+                      <div class="menu-block__item"><a href="#">Контакты</a></div>
+                    </div>
+              </div>
+              <div class="header__buttons"><a class="btn btn--blue btn--icon btn--sm js-popup-show" href="#popup-status">
+                  <svg class="icon icon_question">
+                    <use xlink:href="images/sprite-svg.svg#question"></use>
+                  </svg><span>Узнать статус заказа</span></a></div>
+            </div>
+          </div>
+        </header>
+    <div class="main-section">
+      <div class="main-section__head lazy" data-bg="images/main-banner.jpg">
+        <div class="main-section__container container">
+                    <div class="breadcrumb main-section__bread">
+                      <ul class="breadcrumb__ul" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                        <li class="breadcrumb__li" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Главная</span>
+                            <meta itemprop="position" content="0"></a></li>
+                      </ul>
+                    </div>
+        </div>
+      </div>
+      <div class="container">
+        <h1>Страницы проекта</h1>
+        <ol>
+          <li><a target="_blank" href="main.html">Главная страница</a></li>
+        </ol><br>
+        <div class="tabs-panel">
+          <div class="in"><a class="is-active" href="#tab1" data-tab>Заголовки</a><a href="#tab2" data-tab>Элементы форм</a><a href="#tab3" data-tab>Кнопки</a><a href="#tab4" data-tab>Иконки</a></div>
+        </div>
+        <div class="tabs-wrap">
+          <div class="tab" id="tab1">
+            <h1>Заголовок h1</h1>
+            <h2>Заголовок h2</h2>
+            <h3>Заголовок h3</h3>
+            <h4>Заголовок h4</h4>
+          </div>
+          <div class="tab" id="tab2">
+            <h1>Элементы форм</h1>
+            <div class="form-group">
+              <label class="inp-lbl" for="input-0">Введите логин <span class="txt-red">*</span></label>
+              <input class="js-required form-control" type="text" id="input-0"/>
+              <div class="error-message">Поле заполнено не верно</div>
+            </div>
+            <div class="form-group">
+              <label class="inp-lbl" for="input-0">Введите логин <span class="txt-red">*</span></label>
+              <input class="js-required form-control" type="text" value="value" id="input-0"/>
+              <div class="error-message">Поле заполнено не верно</div>
+            </div>
+          </div>
+          <div class="tab is-visible" id="tab3">
+            <h1>Кнопки</h1><a class="btn" href="#">button</a><a class="btn btn-yellow" href="#">button</a><a class="btn btn-border" href="#">button</a>
+          </div>
+          <div class="tab" id="tab4">
+            <h1>Иконки</h1>
+                        <div class="icon-list d-flex flex-flow-row-wrap">
+                          <div class="item p-5">
+                            <svg class="icon icon_marker fs-24">
+                              <use xlink:href="images/sprite-svg.svg#marker"></use>
+                            </svg>
+                          </div>
+                          <div class="item p-5">
+                            <svg class="icon icon_phone fs-24">
+                              <use xlink:href="images/sprite-svg.svg#phone"></use>
+                            </svg>
+                          </div>
+                          <div class="item p-5">
+                            <svg class="icon icon_video fs-24">
+                              <use xlink:href="images/sprite-svg.svg#video"></use>
+                            </svg>
+                          </div>
+                          <div class="item p-5">
+                            <svg class="icon icon_photo fs-24">
+                              <use xlink:href="images/sprite-svg.svg#photo"></use>
+                            </svg>
+                          </div>
+                          <div class="item p-5">
+                            <svg class="icon icon_arrow-right fs-24">
+                              <use xlink:href="images/sprite-svg.svg#arrow-right"></use>
+                            </svg>
+                          </div>
+                          <div class="item p-5">
+                            <svg class="icon icon_filter fs-24">
+                              <use xlink:href="images/sprite-svg.svg#filter"></use>
+                            </svg>
+                          </div>
+                          <div class="item p-5">
+                            <svg class="icon icon_cart fs-24">
+                              <use xlink:href="images/sprite-svg.svg#cart"></use>
+                            </svg>
+                          </div>
+                          <div class="item p-5">
+                            <svg class="icon icon_marker2 fs-24">
+                              <use xlink:href="images/sprite-svg.svg#marker2"></use>
+                            </svg>
+                          </div>
+                          <div class="item p-5">
+                            <svg class="icon icon_exchange fs-24">
+                              <use xlink:href="images/sprite-svg.svg#exchange"></use>
+                            </svg>
+                          </div>
+                          <div class="item p-5">
+                            <svg class="icon icon_angle-right fs-24">
+                              <use xlink:href="images/sprite-svg.svg#angle-right"></use>
+                            </svg>
+                          </div>
+                          <div class="item p-5">
+                            <svg class="icon icon_tile fs-24">
+                              <use xlink:href="images/sprite-svg.svg#tile"></use>
+                            </svg>
+                          </div>
+                          <div class="item p-5">
+                            <svg class="icon icon_burger fs-24">
+                              <use xlink:href="images/sprite-svg.svg#burger"></use>
+                            </svg>
+                          </div>
+                          <div class="item p-5">
+                            <svg class="icon icon_main fs-24">
+                              <use xlink:href="images/sprite-svg.svg#main"></use>
+                            </svg>
+                          </div>
+                        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-layout">
+      <div class="row d-flex ml-0 mr-0">
+        <div class="col d-flex">
+          <div class="in w-100"></div>
+        </div>
+        <div class="col d-flex">
+          <div class="in w-100"></div>
+        </div>
+        <div class="col d-flex">
+          <div class="in w-100"></div>
+        </div>
+        <div class="col d-flex">
+          <div class="in w-100"></div>
+        </div>
+        <div class="col d-flex">
+          <div class="in w-100"></div>
+        </div>
+        <div class="col d-flex">
+          <div class="in w-100"></div>
+        </div>
+        <div class="col d-flex">
+          <div class="in w-100"></div>
+        </div>
+        <div class="col d-flex">
+          <div class="in w-100"></div>
+        </div>
+        <div class="col d-flex">
+          <div class="in w-100"></div>
+        </div>
+        <div class="col d-flex">
+          <div class="in w-100"></div>
+        </div>
+        <div class="col d-flex">
+          <div class="in w-100"></div>
+        </div>
+        <div class="col d-flex">
+          <div class="in w-100"></div>
+        </div>
+      </div>
+    </div>
+            <div class="popup popup--contact" id="popup-contact-form" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                    <div class="form-block">
+                      <div class="form-block__title title-h2">Есть вопрос? Мы с радостью на него ответим!</div>
+                      <div class="form-block__desc"><strong>Контакты техподдержки:</strong> +7 (495) 734-80-88</div>
+                      <form action=""> 
+                        <div class="form-block__row row">
+                          <div class="form-block__input col-6 col-xs-12">
+                            <div class="form-group">
+                              <div class="form-group__label">Введите ваше имя</div>
+                              <input class="form-control js-required" type="text" placeholder="" required>
+                            </div>
+                          </div>
+                          <div class="form-block__input col-6 col-xs-12">
+                            <div class="form-group">
+                              <div class="form-group__label">Введите вашу почту</div>
+                              <input class="form-control js-required" type="text" placeholder="" required>
+                            </div>
+                          </div>
+                          <div class="form-block__input col-12">
+                            <textarea class="form-control js-required" name="" cols="30" rows="10" placeholder="Введите ваш вопрос"></textarea>
+                          </div>
+                          <div class="form-block__file col-4 col-xs-12">
+                                <div class="upload-block upload-block--inline js-files-form">
+                                  <input class="js-file-input" type="file" name="files[]" id="upload-file__input_1" accept=".jpg, .jpeg, .png, .svg" multiple>
+                                  <svg class="icon icon_file-add upload-block__icon">
+                                    <use xlink:href="images/sprite-svg.svg#file-add"></use>
+                                  </svg>
+                                  <div class="upload-block__title">Прикрепить файл</div>
+                                </div>
+                          </div>
+                          <div class="form-block__police col-8 col-xs-12">
+                            <div class="checkbox checkbox--blue checkbox--fs-14">
+                              <input class="js-required" id="police-1" type="checkbox" name="police" value="1" required>
+                              <label for="police-1">Я принимаю <a href="#"><strong>Пользовательское соглашение</strong></a> и даю согласие обработку, хранение и передачу указанных мной персональных данных согласно <a href="#"><strong>Политике конфиденциальности</strong></a></label>
+                            </div>
+                          </div>
+                          <div class="form-block__buttons col-12">
+                            <button class="btn btn--yellow js-submit" type="submit">Отправить вопрос</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+              </div>
+            </div>
+            <div class="popup popup--status" id="popup-status" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">статус заказа</div>
+                <div class="popup__desc">Введите номер заказа</div>
+                <form class="popup__form" action=""> 
+                  <div class="popup__input form-group">
+                    <div class="form-group__label">Номер заказа</div>
+                    <input class="form-control form-control--border" type="text">
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block">Найти заказ</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>

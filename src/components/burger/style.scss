@@ -1,0 +1,47 @@
+
+.burger{ text-decoration: none; cursor: pointer; position: relative; z-index: 9998; @include time();
+	a{ text-decoration: none; }
+	span{display: block; width: 30px; height: 4px; margin: 0 0 5px; background: $green; position: relative; @include time(); border-radius: 2px;
+		&:last-child{ margin-bottom: 0; }
+	}
+	
+	&:hover{
+		span{
+			&:after{ width: 100%; }
+		}
+	}
+
+
+	&.active{ display: block; 
+		span:nth-of-type(2){ opacity: 0; }
+		span:first-child{ bottom: -10px;
+			-moz-transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+		span:last-child{ top: -8px;
+			-moz-transform: rotate(-45deg);
+			-webkit-transform: rotate(-45deg);
+			-o-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+
+		/* &.burger--normal{
+			span{ background: $white; }
+		} */
+	}
+
+	/* @include media($xs){
+		span{ width: 30px; margin-bottom: 7px;
+			&:last-child{ margin-bottom: 0; }
+		}
+	
+		&.active{ 
+			span:first-child{ bottom: -10px; }
+			span:last-child{ top: -10px; }
+		}
+	} */
+}

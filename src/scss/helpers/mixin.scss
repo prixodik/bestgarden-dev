@@ -1,0 +1,157 @@
+
+@mixin flex ($justifyContent: flex-start, $alignItems: flex-start, $align-content: flex-start, $wrap: wrap, $flex-direction: row ){
+	display: flex;
+	
+	@if not ($flex-direction == 0) { 
+		flex-direction: $flex-direction;
+	}
+	
+	@if not ($wrap == 0) { 
+		flex-wrap: $wrap;
+	}
+	
+	@if not ($justifyContent == 0) { 
+		justify-content: $justifyContent;
+	}
+	
+	@if not ($alignItems == 0) { 
+		align-items: $alignItems;
+	}
+	
+	@if not ($align-content == 0) { 
+		align-content: $align-content;
+	}
+}
+
+// Функция времени. Вызов time(n);
+@mixin time($times: 0.35s, $all: all, $func: ease){
+	-webkit-transition: $all $times $func;
+	-moz-transition: $all $times $func;
+	-o-transition: $all $times $func;
+	transition: $all $times $func;
+}
+
+@mixin transition($time: 0.3s, $duration: 0s) {
+  transition: all $time ease $duration;
+}
+
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+   $width: map_get($breakpoints, $width);
+   @if $type == max {
+    $width: $width - 1px;
+   }
+   @media only screen and (#{$type}-width: $width) {
+    @content;
+   }
+  }
+}
+
+// медиа вставки  @include media($max, $min){ ... }
+@mixin media($max: 0, $min: 0){
+
+	@if ($min != 0 and $max != 0) {
+		@media (min-width: $min) and (max-width: $max){
+			@content;
+		}
+	} @else if ($min != 0 and $max == 0) {
+		@media (min-width: $min){
+			@content;
+		}
+	} @else if ($max != 0) {
+		@media (max-width: $max){
+			@content;
+		}
+	}
+	
+}
+
+@mixin placeholder {
+	$placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+	@each $placeholder in $placeholders {
+		&:#{$placeholder}-placeholder {
+			@content;
+		}
+	}
+}
+
+@mixin format-text($font-size: 14px, $font-weight: 400, $color: false, $line-height: false) {
+	font-size: px2em($font-size);
+	font-weight: $font-weight;
+
+	@if $color {
+		color:$color;
+	}
+
+	@if $line-height {
+		line-height: px2em($line-height);
+	}
+	@else {
+		line-height: 100%;
+	}
+}
+
+
+@mixin center {
+	position:absolute;
+	margin:auto;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+// add muted bg
+@mixin muted($color: #000, $opacity: 0.5) {
+	position:relative;
+	&:before {
+		content:'';
+		position:absolute;
+		left:0;
+		right:0;
+		top:0;
+		bottom:0;
+		background-color:rgba($color, $opacity);
+	}
+}
+@mixin gradient($deg: '-45deg', $bg1: '#7f20da' , $bg2: '#e05a6c') {
+	background-image: linear-gradient($deg, $bg1 0%, $bg2 100%);
+}
+
+
+@mixin classMod($class) {
+
+		/* [class*='#{$class} '],
+		[class$='#{$class}'] {
+			@content;
+		} */ 
+
+		@include mq('tablet') {
+			html body [class*='#{$class}_xs '],
+			html body [class$='#{$class}_xs'] {
+				@content;
+			}
+		}
+		@include mq('tablet', min) {
+			@include mq('tablet-wide') {
+				html body [class*='#{$class}_sm '],
+				html body [class$='#{$class}_sm'] {
+					@content;
+				}
+			}
+		}
+		@include mq('tablet-wide', min) {
+			@include mq('desktop') {
+				html body [class*='#{$class}_md '],
+				html body [class$='#{$class}_md'] {
+					@content;
+				}
+			}
+		}
+
+		@include mq('desktop', min) {
+			html body [class*='#{$class}_lg '],
+			html body [class$='#{$class}_lg'] {
+				@content;
+			}
+		}
+}

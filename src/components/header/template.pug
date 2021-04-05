@@ -1,0 +1,28 @@
+include ../icon-inline/template
+include ../menu-block/template
+include ../search-block/template
+include ../burger/template
+
+mixin header(data)
+	header.header&attributes(attributes)
+		._container.container
+			._body
+				._logo-wrap
+					a._logo
+						img(src="images/logo.png", alt="")
+					._slogan Оптовая продажа товаров для сада
+				._body-content
+					+searchBlock()._search
+					
+					._contacts
+						+iconInlineLogin()._contacts-item
+						+iconInlinePhone()._contacts-item 
+						
+			._bottom
+				+burger()._burger
+				._menu.js-mobile-menu
+					+menuBlock()
+				._buttons
+					a.btn.-blue.-icon.-sm.js-popup-show(href="#popup-status")
+						+svg('question')
+						span Узнать статус заказа

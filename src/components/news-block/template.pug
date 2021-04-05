@@ -1,0 +1,15 @@
+
+mixin newsBlock(data)
+	.news-block&attributes(attributes)
+		._img
+			a(href="#")
+				+webp(data.img)
+		._wrap
+			._title
+				a(href="#")
+					!= data.title
+			._date
+				!= data.date
+			._text
+				!= data.text
+

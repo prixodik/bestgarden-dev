@@ -1,0 +1,13 @@
+
+.video-block{ position: relative; z-index: 1; 
+	&__play{ position: absolute; top: 50%; left: 50%; z-index: 5; pointer-events: none; width: 52px; height: 52px; border-radius: 50%; transform: translate(-50%,-50%); @include flex(center,center,center); background: $white; @include time();
+		svg{ display: block; font-size: 24px; fill: $black; }
+
+		
+	}
+	img{ display: block; border-radius: 5px; width: 100%; }
+
+	&:hover &{
+		&__play{ background: $yellow; }
+	}
+}

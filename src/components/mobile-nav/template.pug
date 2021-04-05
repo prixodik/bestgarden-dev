@@ -1,0 +1,48 @@
+mixin mobileNav(data)
+  .mobile-nav.d-none.d-block_sm.d-block_xs
+    ul
+      each itm in data
+        li(class=pageUrl == itm.url ? 'active': '')
+          a(href=itm.url? itm.url: '#', class=itm.class)
+            .icon-wrap
+              +svg(itm.icon)
+            span!=itm.ttl
+            if itm.count
+              span.count!=itm.count
++mobileNav([
+  {
+    url: 'home.html',
+    icon: 'main',
+    ttl: 'Главная'
+  },
+  {
+    url: '#',
+    icon: 'tile',
+    ttl: 'Каталог',
+    class: 'js-catalog-open'
+  },
+  {
+    url: '#',
+    icon: 'shopping-cart',
+    ttl: 'Корзина',
+    count: '55'
+  },
+  {
+    url: '#',
+    icon: 'marker2',
+    ttl: 'Контакты'
+  },
+  {
+    url: '#popup-login',
+    icon: 'user',
+    ttl: 'Вход',
+    class: 'js-popup-show'
+  },
+  {
+    url: '#',
+    icon: 'burger',
+    ttl: 'Еще',
+    class: 'js-mobile-menu-open'
+  }
+])
+

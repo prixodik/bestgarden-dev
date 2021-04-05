@@ -1,0 +1,12 @@
+
+mixin advantageBlock(data)
+	.advantage-block&attributes(attributes)
+		a._link(href="#")
+		if data.img != undefined
+			._img
+				+webp(data.img) 
+		if data.icon != undefined
+			._img
+				+svg(data.icon)
+		._text 
+			!= data.text

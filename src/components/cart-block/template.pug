@@ -1,0 +1,50 @@
+include ../product-block/template
+
+mixin cartBlock(data)
+	.cart-block&attributes(attributes)
+		._list.js-custom-scroll
+			._list-item
+						+productBlockCart({
+						  img: 'images/product-img-2.jpg',
+						  title: 'Краскопульт Devilbiss DV1 для базы без бачка с соплом 1,3 и головой B ',
+						  rait: 4,
+						  price: '32 900'
+						})
+			._list-item
+						+productBlockCart({
+						  img: 'images/product-img-2.jpg',
+						  title: 'Краскопульт Devilbiss DV1 для базы без бачка с соплом 1,3 и головой B ',
+						  rait: 4,
+						  price: '32 900'
+						})
+			._list-item
+						+productBlockCart({
+						  img: 'images/product-img-2.jpg',
+						  title: 'Краскопульт Devilbiss DV1 для базы без бачка с соплом 1,3 и головой B ',
+						  rait: 4,
+						  price: '32 900'
+						})
+			._list-item
+						+productBlockCart({
+						  img: 'images/product-img-2.jpg',
+						  title: 'Краскопульт Devilbiss DV1 для базы без бачка с соплом 1,3 и головой B ',
+						  rait: 4,
+						  price: '32 900'
+						})
+			._list-item
+						+productBlockCart({
+						  img: 'images/product-img-2.jpg',
+						  title: 'Краскопульт Devilbiss DV1 для базы без бачка с соплом 1,3 и головой B ',
+						  rait: 4,
+						  price: '32 900'
+						})
+		._bottom
+			a._clear(href="#")
+				+svg('refresh')
+				span Очистить корзину
+			._total
+				._total-label Итого:
+				._total-value 32 900 <span>р.</span>
+			._button
+				a.btn(href="#") перейти в корзину
+
