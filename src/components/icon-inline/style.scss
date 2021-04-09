@@ -4,7 +4,9 @@
 		svg{ display: block; font-size: 20px; fill: $white; }
 	}
 	&__wrap{ color: $text-green-dark; font: $fs-14; 
-		a{ text-decoration: none; }
+		a{ text-decoration: none; 
+			&:hover{ text-decoration: underline; }
+		}
 
 		&--login{
 			span{ margin: 0 5px; }

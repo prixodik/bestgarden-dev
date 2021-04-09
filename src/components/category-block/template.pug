@@ -3,6 +3,18 @@ mixin categoryBlock(data)
 	.category-block&attributes(attributes)
 		a._link(href="#")
 		._icon
+			img(src=data.img alt="")
+		._wrap
+			._title
+				!= data.title
+			._count
+				!= data.count
+
+
+mixin categoryBlockImg(data)
+	.category-block.-img&attributes(attributes)
+		a._link(href="#")
+		._img
 			+webp(data.img)
 		._wrap
 			._title

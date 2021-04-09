@@ -1,4 +1,5 @@
 include ../form-block/template
+include ../upload-block/template
 
 mixin popup(data)
 	.popup&attributes(attributes)
@@ -10,8 +11,8 @@ mixin popup(data)
 
 
 mixin popupContactForm()
-	+popup().popup--contact#popup-contact-form(attributes)
-		+formBlockContacts()
+	+popup().popup--contact-form#popup-contact-form(attributes)
+		+formBlockContactsPopup()
 
 mixin popupStatus()
 	+popup().popup--status#popup-status(attributes)
@@ -22,55 +23,169 @@ mixin popupStatus()
 				.form-group__label Номер заказа
 				input.form-control.-border(type="text")
 			._buttons
-				button.btn.-block Найти заказ
+				a.btn.-block.js-popup-show(href="#popup-status-2") Найти заказ
+
+mixin popupStatus2()
+	+popup().popup--status-result#popup-status-2(attributes)
+		._title статус заказа
+		._well
+			._number Заказ <strong>56452356485669</strong>
+			._status.is-active
+				._status-bullet.bullet
+				span Доставка
+		._date Информация обновлена 15.02.2021
+		._desc Подробную информацию о заказе вы можете узнать<br> в личном кабинете или по телефону +7 (495) 734-80-88 
+		._buttons
+			a.btn.-block.js-popup-show(href="#popup-status") Новый поиск
+
+mixin popupInfoProduct()
+	+popup().popup--info-product#popup-info-product(attributes)
+		._subtitle Информация о товаре
+		._title Спирея Широбана японская
+		._desc Spiraea japonica Shirobana
+		._img
+			+webp('images/product-img-1.jpg')
+		._category <span>Находится в каталоге:</span> водные растения 2021
+		._buttons
+			a.btn.-yellow(href="#") Перейти в каталог
+
+mixin popupTermsOrder(data)
+	+popup().popup--terms-order#popup-terms-order
+		._title Условия оформления заказа
+		._message
+			._message-icon
+				+svg('warning')
+			._message-text <span>Общий минимальный заказ:</span> от 40 000 руб.
+		._well <strong>Как сделать заказ:</strong> заполненный бланк заказа в Excel отправить в форму на нашем сайте и отслеживать заказ в личном кабинете. Также возможно оформление<br> без регистрации (в 1 клик): наш менеджер свяжется с вами.
+		._buttons
+			a.btn.js-popup-show(href="#popup-login") Войти  в личный кабинет
+		._links
+			a.btn.-icon.-link.-blue-dark.js-popup-show(href="#popup-registration-1")
+				+svg('registration')
+				span Регистрация
+			a.btn.-icon.-link.-form-blue.js-popup-show(href="#popup-one-click")
+				+svg('click')
+				span Оформить в 1 клик
+
+mixin popupOrderOneClick(data)
+	+popup().popup--one-click#popup-one-click
+		._title быстрое оформление заказа
+		._desc Если вы зарегистрированы в системе, <a href="#">войдите в личный кабинет</a>, чтобы отслеживать статус заказа и получать персональные скидки. Если вы хотите оформить заказ без регистрации, заполните форму ниже.
+		form._form(action="")
+			._input
+				._input-label Телефон для связи:
+				.form-group
+					._label Введите телефон
+					input.form-control.js-required(type="tel" placeholder="" required)
+			+uploadBlockFile().popup__file
+			._checkboxs
+				.checkbox
+					input(type="checkbox" name="police1" id="police1" value="1")
+					label(for="police1") Согласен(а) с условиями <a href="#">доставки и оплаты заказа</a> 
+				.checkbox
+					input(type="checkbox" name="police2" id="police2" value="1")
+					label(for="police2") Согласен(а) с условиями <a href="#">политики конфиденциальности и обработки персональных данных</a>
+			._buttons
+				a.btn.-block.js-popup-show(href="#popup-finish")  Отправить заказ
+
+mixin popupFinish(data)
+	+popup().popup--finish#popup-finish
+		._img
+			+webp('images/finish-popup-img.png')
+		._title Спасибо! заказ оформлен
+		._desc Наши менеджеры скоро свяжутся с вами для уточнения заказа
+		._buttons
+			a.btn.-border(href="#") Вернуться к каталогу
+
 
 mixin popupLogin()
-	+popup().popup--login#popup-login(attributes)
-		._title войти в личный кабинет
-		.tabs-head
-			ul
-				li.is-active
-					a(href="#popup-login-tab1" data-tab data-parent='li') Покупатель
-				li
-					a(href="#popup-login-tab2" data-tab data-parent='li') Дилер
-		.tabs-wrap.mt-35
-			.tab.is-visible#popup-login-tab1
-				form
-					+field({
-						lbl: 'Введите логин <span class="txt-red">*</span>',
-						classInput: 'js-required',
-					})
-					+field({
-						type: 'password',
-						lbl: 'Введите пароль <span class="txt-red">*</span>',
-						classInput: 'js-required',
-					})
-					.popup__buttons
-						button.btn Войти
-						button.btn.btn-border.ml-auto регистрация
-			.tab#popup-login-tab2
-				.tab.is-visible#popup-login-tab1
-					form
-						+field({
-							lbl: 'Введите логин <span class="txt-red">*</span>',
-							classInput: 'js-required',
-						})
-						//- +field({
-						//- 	type: 'email',
-						//- 	lbl: 'Введите  email <span class="txt-red">*</span>',
-						//- 	classInput: 'js-required',
-						//- })
-						+field({
-							type: 'password',
-							lbl: 'Введите пароль <span class="txt-red">*</span>',
-							classInput: 'js-required',
-						})
-						.popup__buttons
-							button.btn Войти
-							button.btn.btn-border.ml-auto регистрация
-		.popup__bottom
-				| Нажимая кнопку “отправить” и/или “регистрация” вы соглашаетесь<br> c 
-				a(href="#") политикой конфиденциальности
+	+popup().popup--login.popup--terms-order#popup-login(attributes)
+		._title вход в личный кабинет
+		.form-group._input
+			._label Введите телефон
+			input.form-control.form-control--border.js-required(type="tel" placeholder="" required)
+		.form-group._input
+			._label Введите пароль
+			input.form-control.form-control--border.js-required(type="password" placeholder="" required)
+		._buttons
+			button.btn.-block  Войти  в личный кабинет
+		._links
+			a.btn.-icon.-link.-blue-dark.js-popup-show(href="#popup-registration-1")
+				+svg('registration')
+				span Регистрация
+
+mixin popupRegistration1()
+	+popup().popup--registration#popup-registration-1(attributes)
+		._title регистрация в личном кабинете
+		._desc Вы сможете быстро оформлять и отслеживать заказы, получать скидки постоянного покупателя
+		form._form(action="") 
+			.form-group._input
+				._label Введите телефон
+				input.form-control.form-control--border.js-required(type="tel" placeholder="" required)
+			._buttons
+				button.btn.-block.js-popup-show(data-href="#popup-registration-2") Отправить код в SMS
+			._links
+				a(href="#") У меня уже есть аккаунт
+
+mixin popupRegistration2()
+	+popup().popup--registration#popup-registration-2(attributes)
+		._title регистрация в личном кабинете
+		._desc На номер <strong>+7-952-364-78-50</strong> отправлено<br> SMS-сообщение с паролем
+		form._form(action="") 
+			.form-group._input
+				._label Введите код из SMS
+				input.form-control.form-control--border.js-required.js-mask-sms(type="text" placeholder="" required)
+			._buttons
+				button.btn.-block.js-popup-show(data-href="#popup-registration-3") Далее
+			._links
+				a(href="#") Отправить код повторно
+
+mixin popupRegistration3()
+	+popup().popup--registration.active#popup-registration-3(attributes)
+		._title регистрация в личном кабинете
+		._desc Для продолжения регистрации придумайте пароль для входа в личный кабинет
+		form._form(action="") 
+			.form-group._input
+				._label Придумайте пароль для входа
+				input.form-control.form-control--border.js-required.js-pass1(type="password" placeholder="" required)
+			.form-group._input
+				._label Повторите пароль
+				input.form-control.form-control--border.js-required.js-pass2(type="password" placeholder="" required)
+			._group
+				._group-title Контактные данные
+				._group-checkboxs
+					.radiobox
+						input.js-tab-show(type="radio" name="typereg" id="reg-type-label-1" value="reg-type-1" checked)
+						label(for="reg-type-label-1") Физическое лицо
+					.radiobox
+						input.js-tab-show(type="radio" name="typereg" id="reg-type-label-2" value="reg-type-2")
+						label(for="reg-type-label-2") Юридическое лицо
+				._group-tab.tabs__body.is-active#reg-type-1
+					.form-group._input
+						._label Имя Фамилия Отчество
+						input.form-control.form-control--border.js-required(type="text" placeholder="" required)
+					.form-group._input
+						._label E-mail/Электронный адрес
+						input.form-control.form-control--border.js-required(type="email" placeholder="" required)
+				._group-tab.tabs__body#reg-type-2
+					.form-group._input
+						._label Имя Фамилия Отчество
+						input.form-control.form-control--border.js-required(type="text" placeholder="" required)
+					.form-group._input
+						._label Телефон
+						input.form-control.form-control--border.js-required(type="tel" placeholder="" required)
+					.form-group._input
+						._label E-mail
+						input.form-control.form-control--border.js-required(type="email" placeholder="" required)
+					.form-group._input
+						._label Полное официальное название предприятия
+						input.form-control.form-control--border.js-required(type="text" placeholder="" required)
+					.form-group._input
+						._label ИНН или номер свидетельства постановки на учет
+						input.form-control.form-control--border.js-required(type="text" placeholder="" required)
+			._buttons
+				button.btn.-block.js-popup-show(data-href="#popup-registration-2") Зарегистрироваться
+
 
 
 

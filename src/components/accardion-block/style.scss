@@ -1,5 +1,9 @@
 
 .accardion-block{ 
+	* {
+		transition-duration: .2s;
+    	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+	}
 	&__head{ @include flex(space-between,center,center,nowrap); padding: 15px 15px; cursor: pointer; border-bottom: 2px rgba($gray-devider,.6) solid; 
 		&.is-active{ border-color: transparent; 
 			.accardion-block__arrow{ transform: rotate(-180deg); }
@@ -9,10 +13,10 @@
 	&__arrow{ @include flex(center,center,center); width: 45px; height: 45px; background: rgba($blue,.4); border-radius: 50%; @include time(); flex: 0 0 auto; margin-left: 10px; 
 		svg{ font-size: 15px; fill: $green; transform: rotate(90deg); display: block; }
 	}
-	&__body{ /* max-height: 0; overflow: hidden; transition: all .7s linear;  padding: 0 15px; */ border-bottom: 2px rgba($gray-devider,.6) solid; padding: 0 15px 24px; display: none; /* height: auto; transition-delay: 0;   */
+	&__body{ max-height: 0; opacity: 0; pointer-events: none;  overflow: hidden; /* transition: all .7s linear;  padding: 0 15px; */ border-bottom: 2px rgba($gray-devider,.6) solid; padding: 0 15px;  /* height: auto; transition-delay: 0;   */
 
-		// &.is-active{ max-height: 1000px; transition: all .7s linear;  height: 100%; /* padding: 0 15px 24px;  */  transition-delay: 0; }  
-	}
+		&.is-active{ max-height: 200px; margin-top: 20px;  opacity: 1; pointer-events: auto; /*transition: all .7s linear;  height: 100%;  */ padding: 0 15px 24px;    }  
+	} 
 
 	@include media($sm){
 		&__head{ padding: 10px 10px; }

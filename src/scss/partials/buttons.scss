@@ -39,10 +39,11 @@
   }
 
   &--border{
-    background: transparent; 
-    &:hover {
+    background: transparent; color: $green;
+    &:hover, &:active {
       border-color: $green;
       background: $green;
+      color: $white;
     }
   }
 
@@ -61,6 +62,17 @@
     span + svg{ margin: 0 0 0 6px;  }
   }
   
+  &--link{ background: transparent; border: 0; padding: 0;  border-radius: 0; color: $green;  
+    svg{ font-size: 30px; }
+    &:hover, &:active{ background: none; text-decoration: underline;  }
+
+    &.btn--blue-dark{ color: $blue-dark; 
+      svg{ fill: $blue-dark; }
+    }
+    &.btn--form-blue{ color: $form-blue; 
+      svg{ fill: $form-blue; } 
+    }
+  }
 
   &--lg{ padding: 19px 45px; } 
   &--sm{ padding: 10px 16px; font: 600 13px/20px $baseFF; } 
@@ -86,5 +98,7 @@
 
     &--lg{ padding: 16px 35px; } 
     &--sm{ padding: 10px 16px;  } 
+
+    &--link{ padding: 0; }
   }
 }

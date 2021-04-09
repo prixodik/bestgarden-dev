@@ -102,13 +102,16 @@ mixin uploadBlockComment(data)
 			._text JPG, PNG, размер 300х300, не более 2 Мб
 
 mixin uploadBlockFile(data)
-	.upload-block.js-files-form&attributes(attributes)
-		input(type="file" name="files[]" id="upload-file__input_1" class="js-file-input")
+	.upload-block.-default.js-files-form&attributes(attributes)
+		input(type="file" name="files[]" id="upload-file__input_1" class="js-file-input" accept=".xsl")
 		._result.js-files-list
 				//- ._list-item Иванов.jpg
 				//- 	span 1.29 Мб
 				//- 	a(href="#") 
 				//- 		+svg('close')
+		._icon
+			+svg('plus')
 		._wrap
-			._title + Добавить файл
-			._text Размер файла не более 10 Мб
+			._title Добавьте файлы заказа xsl
+			._text Или перетащить в эту область
+		._desc Не более 10 файлов

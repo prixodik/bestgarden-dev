@@ -2,11 +2,18 @@
 .form-block{ max-width: 996px; margin: 0 auto;
 	&__title{ text-align: center; margin-bottom: 20px; color: $green; }
 	&__desc{ text-align: center; margin-bottom: 45px; color: $text-green-dark; font: $fs-18; }
+	&__desc-2{ text-align: left; margin-bottom: 20px; 
+      a{ font-weight: bold; color: $form-blue;  }
+    }
 	&__row{ }
 	&__input{ margin-bottom: 20px; }
 	&__buttons{ @include flex(center); }
 	&__file{ margin: 0 0 26px 0; }
 	&__police{ margin: 0 0 26px 0; }
+
+	&--popup &{
+		&__desc{ margin-bottom: 30px; font: $fs-16; color: $text-form; }
+	}
 
 	@include media($xs){
 		&__title{ margin-bottom: 10px; }

@@ -1,0 +1,74 @@
+extends extends/base.pug
+append vars
+	- var pageUrl = 'catalogs.html';
+	- var pageTitle = 'Каталоги';
+	- var classBody = 'catalogs-page';
+	- var headerBg = 'images/main-banner.jpg';
+block styles
+	
+block content
+	include ../components/main-section/template
+	+mainSection({
+		bread: [{url: '#', title: 'Каталоги'}]
+	})
+		h1.main-section__title Каталоги товаров
+
+		include ../components/category-block/template
+		.main-section__row.row.row--stretch
+			.main-section__row-item.col-3.col-md-4.col-sm-6.col-xs-12
+				+categoryBlockImg({ 
+					img: 'images/cat-img-1.png',
+					title: 'Водные растения',
+					count: '232 товара'
+				})
+			.main-section__row-item.col-3.col-md-4.col-sm-6.col-xs-12
+				+categoryBlockImg({
+					img: 'images/cat-img-2.png',
+					title: 'Луковичные <br>и многолетники 2020',
+					count: '26 товаров'
+				})
+			.main-section__row-item.col-3.col-md-4.col-sm-6.col-xs-12
+				+categoryBlockImg({
+					img: 'images/cat-img-3.png',
+					title: 'Пионы',
+					count: '752 товара'
+				})
+			.main-section__row-item.col-3.col-md-4.col-sm-6.col-xs-12
+				+categoryBlockImg({
+					img: 'images/cat-img-4.png',
+					title: 'Лук севок',
+					count: '165 товара'
+				})
+
+			.main-section__row-item.col-3.col-md-4.col-sm-6.col-xs-12
+				+categoryBlockImg({
+					img: 'images/cat-img-5.png',
+					title: 'Гладиолусы',
+					count: '78 товаров'
+				})
+			.main-section__row-item.col-3.col-md-4.col-sm-6.col-xs-12
+				+categoryBlockImg({
+					img: 'images/cat-img-6.png',
+					title: 'Розы',
+					count: '306 товаров'
+				})
+			.main-section__row-item.col-3.col-md-4.col-sm-6.col-xs-12
+				+categoryBlockImg({
+					img: 'images/cat-img-7.png',
+					title: 'Плодовые и декоративные саженцы',
+					count: '1566 товаров'
+				})
+			.main-section__row-item.col-3.col-md-4.col-sm-6.col-xs-12
+				+categoryBlockImg({
+					img: 'images/cat-img-8.png',
+					title: 'Средства защиты растений',
+					count: '250 товаров'
+				})
+	
+
+	include ../components/footer/template  
+	+footer()    
+
+	//- +gridLayout() 
+
+block scripts 

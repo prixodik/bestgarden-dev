@@ -8527,6 +8527,8 @@ var uikit = {
 
         $("input[type='tel']").mask('+7 (000) 000-0000', { placeholder: '+7 (___) ___-____' });
 
+        $("input.js-mask-sms").mask('0 0 0 0 0 0', { placeholder: '_ _ _ _ _ _' });
+
     },
 
 
@@ -8835,19 +8837,25 @@ var uikit = {
 
         });
 
+ 
+
+        $(".js-tab-show").click(function(e){ 
+
+            //alert(); 
+
+            console.log("#"+$(this).val()); 
 
 
-        $(".js-show-tab").click(function(e){
-
-            console.log($(this).attr('href'));
 
             if( $(this).attr('href') != undefined){
 
-                e.preventDefault();
+
+
+                //e.preventDefault(); 
 
             }
 
-            var href = ($(this).attr("href") != undefined)? $(this).attr("href") : $(this).data("href");
+            var href = ($(this).attr("href") != undefined)? $(this).attr("href") : "#"+$(this).val();
 
             var nav_id = $(this).data("navid");
 
@@ -8859,6 +8867,8 @@ var uikit = {
 
         });
 
+        //$(".js-tab-show").che
+
     },
 
 
@@ -8867,7 +8877,15 @@ var uikit = {
 
         $(document).on("click", ".js-popup-show", function(){
 
-            var href = $(this).attr("href");
+            if( $(this).attr("href") != "" && $(this).attr("href") != undefined){
+
+                var href = $(this).attr("href");
+
+            }else{
+
+                var href = $(this).data("href");
+
+            }
 
             if($(this).data('media') == "lg" && uikit.ww() <= uikit.md){
 
@@ -8881,7 +8899,7 @@ var uikit = {
 
 
 
-            $("body").addClass("overflow");
+            $("body, html").addClass("overflow");
 
 
 
@@ -8917,7 +8935,7 @@ var uikit = {
 
             $(".popup").removeClass("active");
 
-            $("body").css('padding-right',0).removeClass("overflow");
+            $("body, html").css('padding-right',0).removeClass("overflow");
 
             return false;
 
@@ -9063,7 +9081,7 @@ var uikit = {
 
                         variableWidth: false,
 
-                        slidesToShow: 6,
+                        slidesToShow: 4,
 
                         slidesToScroll: 1,
 
@@ -9071,7 +9089,7 @@ var uikit = {
 
                         lazyLoad: 'progressive',
 
-                        arrows: true,
+                        arrows: false,
 
                         fade: false,
 
@@ -9093,7 +9111,7 @@ var uikit = {
 
                         },*/{
 
-                            breakpoint: md,
+                            breakpoint: sm,
 
                             settings: {
 
@@ -9107,7 +9125,7 @@ var uikit = {
 
                             settings: {
 
-                                slidesToShow: 2,
+                                slidesToShow: 3,
 
                             }
 
@@ -9665,7 +9683,7 @@ var uikit = {
 
         $('.js-accardion-toggle').click(function(){ 
 
-            $(this).toggleClass('is-active').next().slideToggle(); //.toggleClass('is-active');
+            $(this).toggleClass('is-active').next().toggleClass('is-active');
 
             return false;
 
@@ -9707,7 +9725,7 @@ var uikit = {
 
         
 
-        //this.tabs();
+        this.tabs();
 
         
 
@@ -9733,7 +9751,7 @@ var uikit = {
 
 };
 
-$(document).ready(function () {
+$(document).ready(function () { 
 
 
 

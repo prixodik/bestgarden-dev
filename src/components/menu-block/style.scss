@@ -2,6 +2,10 @@
 .menu-block{ @include flex(0,center,center,nowrap);
 	&__item{ margin-right: 55px; color: $green; font: 500 13px/18px $baseFF;
 		&:last-child{ margin-right: 0; }
+
+		&.active, &:hover{
+			a{ text-decoration: underline; }
+		}
 	}
 
 	@include media($sm){ display: block; 

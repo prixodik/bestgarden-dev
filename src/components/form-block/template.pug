@@ -24,3 +24,29 @@ mixin formBlockContacts()
 						label(for="police-1") Я принимаю <a href="#"><strong>Пользовательское соглашение</strong></a> и даю согласие обработку, хранение и передачу указанных мной персональных данных согласно <a href="#"><strong>Политике конфиденциальности</strong></a>
 				._buttons.col-12
 					button.btn.-yellow.js-submit(type="submit") Отправить вопрос
+
+mixin formBlockContactsPopup()
+	.form-block.-popup&attributes(attributes)
+		._title.title-h2 Есть вопрос? Мы с радостью на него ответим!
+		._desc Контакты техподдержки: +7 (495) 734-80-88
+		._desc-2 Перед тем, как задать вопрос, ознакомьтесь, пожалуйста, с разделами <a href="#"> Вопросы и ответы</a> и <a href="#">Доставка и оплата.</a>
+		form(action="") 
+			._row.row
+				._input.col-6.col-xs-12
+					.form-group
+						._label Введите ваше имя
+						input.form-control.js-required(type="text" placeholder="" required)
+				._input.col-6.col-xs-12
+					.form-group
+						._label Введите вашу почту
+						input.form-control.js-required(type="text" placeholder="" required)
+				._input.col-12
+					textarea.form-control.js-required(name="", cols="30", rows="10" placeholder="Введите ваш вопрос")
+				._file.col-4.col-xs-12
+					+uploadBlockMinimal()
+				._police.col-8.col-xs-12
+					.checkbox.-blue.-fs-14
+						input.js-required#police-1(type="checkbox" name="police" value="1" required)
+						label(for="police-1") Я принимаю <a href="#"><strong>Пользовательское соглашение</strong></a> и даю согласие обработку, хранение и передачу указанных мной персональных данных согласно <a href="#"><strong>Политике конфиденциальности</strong></a>
+				._buttons.col-12
+					button.btn.-yellow.js-submit(type="submit") Отправить вопрос

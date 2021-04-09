@@ -1,0 +1,62 @@
+extends extends/base.pug
+append vars
+	- var pageUrl = 'product.html';
+	- var pageTitle = 'Один каталог';
+	- var classBody = 'product-page';
+	- var headerBg = 'images/main-banner.jpg';
+block styles
+	
+block content
+	include ../components/main-section/template
+	include ../components/gallery-block/template
+
+	+mainSection({
+		bread: [{url: '#', title: 'Каталоги'},{url: '#', title: 'Водные растения 2021'}]
+	}).main-section--product
+		.main-section__row.row
+			.main-section__img.col-6.col-sm-12
+				+galleryBlock()
+			.main-section__info.col-6.col-sm-12
+				h1.main-section__title каталог Водные растения 2021
+				.main-section__params
+					.main-section__params-item
+						.main-section__params-icon
+							img(src="images/param-icon-1.svg", alt="")
+						.main-section__params-label Описание:
+						.main-section__params-value водные растения питомника Сербии
+					.main-section__params-item
+						.main-section__params-icon
+							img(src="images/param-icon-2.svg", alt="")
+						.main-section__params-label Срок посадки:
+						.main-section__params-value круглодично
+					.main-section__params-item
+						.main-section__params-icon
+							img(src="images/param-icon-3.svg", alt="")
+						.main-section__params-label Система: 
+						.main-section__params-value открытая корневая
+					.main-section__params-item
+						.main-section__params-icon
+							img(src="images/param-icon-4.svg", alt="")
+						.main-section__params-label Производитель:
+						.main-section__params-value ООО “Семена России”
+					.main-section__params-item
+						.main-section__params-icon
+							img(src="images/param-icon-5.svg", alt="")
+						.main-section__params-label Поставляется:
+						.main-section__params-value в контейнерах 5-20 л.
+
+				.main-section__buttons
+					a.btn(href="#") Загрузить прайс в xsl
+					a.btn.-border.js-popup-show(href="#popup-terms-order") Оформить заказ на сайте
+
+				.main-section__catalog
+					img(src="images/icon-shop.svg", alt="").main-section__catalog-icon
+					.main-section__catalog-text <a href="#">Перейти</a> в каталог водных растений<br> на розничном сайте
+		
+
+	include ../components/footer/template  
+	+footer()    
+
+	//- +gridLayout() 
+
+block scripts 

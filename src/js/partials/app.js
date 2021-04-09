@@ -15,6 +15,7 @@ var uikit = {
 
     mask: function() {
         $("input[type='tel']").mask('+7 (000) 000-0000', { placeholder: '+7 (___) ___-____' });
+        $("input.js-mask-sms").mask('0 0 0 0 0 0', { placeholder: '_ _ _ _ _ _' });
     },
 
     niceSelect: function(){
@@ -169,30 +170,38 @@ var uikit = {
             $(this).parent().addClass("is-active");
             $(href).addClass("is-active");
         });
+ 
+        $(".js-tab-show").click(function(e){ 
+            //alert(); 
+            console.log("#"+$(this).val()); 
 
-        $(".js-show-tab").click(function(e){
-            console.log($(this).attr('href'));
             if( $(this).attr('href') != undefined){
-                e.preventDefault();
+
+                //e.preventDefault(); 
             }
-            var href = ($(this).attr("href") != undefined)? $(this).attr("href") : $(this).data("href");
+            var href = ($(this).attr("href") != undefined)? $(this).attr("href") : "#"+$(this).val();
             var nav_id = $(this).data("navid");
             $(".tabs__nav__item, .tabs__nav-item, .tabs__body").removeClass("is-active");
             $(nav_id).addClass("is-active");
             $(href).addClass("is-active");
         });
+        //$(".js-tab-show").che
     },
 
     popups: function() {
         $(document).on("click", ".js-popup-show", function(){
-            var href = $(this).attr("href");
+            if( $(this).attr("href") != "" && $(this).attr("href") != undefined){
+                var href = $(this).attr("href");
+            }else{
+                var href = $(this).data("href");
+            }
             if($(this).data('media') == "lg" && uikit.ww() <= uikit.md){
                 return false;
             }
 
             var bodyWidth = $('body').width();
 
-            $("body").addClass("overflow");
+            $("body, html").addClass("overflow");
 
                 if( bodyWidth - uikit.ww() < 0){
                     //$('body').css('padding-right',((bodyWidth - uikit.ww())* -1)+'px');
@@ -210,7 +219,7 @@ var uikit = {
 
         $(".js-popup-hide").click(function(){
             $(".popup").removeClass("active");
-            $("body").css('padding-right',0).removeClass("overflow");
+            $("body, html").css('padding-right',0).removeClass("overflow");
             return false;
         });
     },
@@ -283,11 +292,11 @@ var uikit = {
                         focusOnSelect: true,
                         infinite: true,
                         variableWidth: false,
-                        slidesToShow: 6,
+                        slidesToShow: 4,
                         slidesToScroll: 1,
                         centerMode: false,
                         lazyLoad: 'progressive',
-                        arrows: true,
+                        arrows: false,
                         fade: false,
                         asNavFor: '.js-gallery-main',
                         nextArrow: '<button type="button" class="gallery-block__thumb-next slick-next slick-arrow"><svg class="icon"><use xlink:href="images/sprite-svg.svg#arrow-right"></svg></button>',
@@ -298,14 +307,14 @@ var uikit = {
                                 slidesToShow: 4,
                             }
                         },*/{
-                            breakpoint: md,
+                            breakpoint: sm,
                             settings: {
                                 slidesToShow: 4,
                             }
                         },{
                             breakpoint: xs,
                             settings: {
-                                slidesToShow: 2,
+                                slidesToShow: 3,
                             }
                         }]
                 });
@@ -584,7 +593,7 @@ var uikit = {
 
     accardion: function(){
         $('.js-accardion-toggle').click(function(){ 
-            $(this).toggleClass('is-active').next().slideToggle(); //.toggleClass('is-active');
+            $(this).toggleClass('is-active').next().toggleClass('is-active');
             return false;
         });
     },
@@ -605,7 +614,7 @@ var uikit = {
         this.lazy();
         this.validation();
         
-        //this.tabs();
+        this.tabs();
         
         this.niceSelect();
         
@@ -618,7 +627,7 @@ var uikit = {
         
     }
 };
-$(document).ready(function () {
+$(document).ready(function () { 
 
     uikit.mainInit();
 

@@ -2,8 +2,12 @@
 .about-section{ background: url('../images/about-section-bg.svg') 50% 0 no-repeat; padding: 300px 0 180px; position: relative; z-index: 2; margin-top: -250px;  pointer-events: none;
 	&__container{ pointer-events: auto;  }
 	&__title{ font: bold 40px/46px $baseFF; color: $white; margin-bottom: 25px; }
-	&__more{ @include flex(0,center,center,nowrap); color: $yellow; 
-		svg{ fill: $yellow; font-size: 12px; margin-left: 10px; }
+	&__more{ @include flex(0,center,center,nowrap); color: $yellow; @include time(); 
+		svg{ fill: $yellow; font-size: 12px; margin-left: 10px; @include time(); }
+
+		&:hover{ color: $link;
+			svg{ fill: $link; }
+		}
 	}
 	&__text{ padding-top: 80px; color: rgba($white,.8); }  
 

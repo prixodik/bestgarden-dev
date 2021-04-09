@@ -1,11 +1,15 @@
 
-.upload-block{ @include flex(0,center,center,nowrap); position: relative; z-index: 1; cursor: pointer; 
+.upload-block{ @include flex(0,center,center,nowrap); position: relative; z-index: 1; cursor: pointer; border-radius: 5px; border: 2px $green dashed; background: $white; padding: 25px 20px;
 	input{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; opacity: 0; cursor: pointer; }
 	&__link{ position: absolute; top: 0; left: 0; z-index: 3; }
-	/* &__img{ flex: 0 0 132px; max-width: 132px; margin-right: 24px; }
-	&__subtitle{ margin-bottom: 16px; }
-	&__title{ margin-bottom: 8px; color: $green; text-transform: uppercase; font: $fs-button-text; }
-	&__text{ color: $gray; font: $fs-p2; }
+	&__icon{ flex: 0 0 40px; width: 40px; height: 40px; @include flex(center,center,center); margin-right: 12px; background: $blue; border-radius: 50%; 
+		svg{ fill: $green; font-size: 15px; display: block; }
+	}
+	&__title{ margin-bottom: 7px; color: $green; font: bold 15px/18px $baseFF; }
+	&__text{ color: rgba(#102E25, .35); font: $fs-14; }
+	&__desc{ position: absolute; top: calc(100% + 7px); left: 20px; color: $blue-dark; font: 12px/14px $baseFF; }
+
+	/*&__subtitle{ margin-bottom: 16px; }
 	&__result{ @include flex(); position: relative; z-index: 10; 
 		&:empty{ display: none; }
 		&-item{ margin: 0 16px 16px 0; @include flex(0,center,center,nowrap); font: $fs-p2; color: $black;
@@ -15,7 +19,7 @@
 		} 
 	} */
 
-	&--inline{ @include flex(0,center,center,nowrap); padding: 0; border: 0; background: none; color: $green; }
+	&--inline{ @include flex(0,center,center,nowrap); padding: 0; border: 0; background: none; color: $green; border-radius: 0; }
 	&--inline &{
 		// &__wrap{ @include flex(0,center,center); }
 		&__icon{ fill: $green; font-size: 24px; margin-right: 12px; pointer-events: none; }
@@ -35,7 +39,8 @@
 		
 	}
 
-	@include media($xs){ 
-		
+	@include media($xs){ padding: 20px 10px; 
+		&__title{ font-size: 14px; }
+		&__text{ font-size: 12px; }
 	}
 }

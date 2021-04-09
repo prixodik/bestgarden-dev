@@ -35,7 +35,7 @@ html
     meta(name="author" content="Site name")
 
     // og meta
-    meta(property='og:title', content='Site name')
+    meta(property='og:title', content='Site name') 
     meta(property='og:url', content='')
     meta(property='og:image', content='')
     meta(property='og:description', content='Site name')
@@ -62,13 +62,19 @@ html
 
       block popups
         //- include ../../components/catalog-menu/template
-        //- include ../../components/mobile-menu/template
+        //- include ../../components/mobile-menu/template 
         include ../../components/popup/template
         +popupContactForm()
         +popupStatus()
-        //- +popupChoiceCity() 
-        //- +popupProductView() 
-        //- +popupEditAdres() 
+        +popupStatus2()
+        +popupInfoProduct()
+        +popupTermsOrder() 
+        +popupOrderOneClick() 
+        +popupFinish()  
+        +popupLogin()  
+        +popupRegistration1()  
+        +popupRegistration2()  
+        +popupRegistration3()  
 
     block scripts
     script(type="text/javascript" src="js/script.js")

@@ -11,9 +11,9 @@ mixin iconInlineLogin(data)
 		._icon
 			+svg('user')
 		._wrap.-login
-			a(href="#") Вход
+			a.js-popup-show(href="#popup-login") Вход
 			span |
-			a(href="#") Регистрация
+			a.js-popup-show(href="#popup-registration-1") Регистрация
 
 mixin iconInlinePhone(data)
 	.icon-inline&attributes(attributes)
