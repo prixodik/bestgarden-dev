@@ -1,0 +1,67 @@
+
+.progress-bar{ position: relative; z-index: 1; padding: 90px 0 75px; 
+	&__line{ height: 3px; position: relative; background: $gray-dark; 
+		&--active{ position: absolute; top: 0; left: 0; height: 3px; background: $green; margin: 0; }
+	}
+	&__item{ position: absolute; top: 0;
+		&:after{ content: ""; display: block; width: 17px; height: 17px; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: $green; }
+		&:before{  content: ""; display: block; width: 31px; height: 31px; border: 2px $green solid; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: $gray-bg; }
+		&--step-1{ left: 15px; }
+		&--step-2{ left: 15%; }
+		&--step-3{ left: 60%; }
+		&--step-4{ left: 80%; }
+		&--step-5{ left: calc(100% - 15px); }
+
+		&--disabled{ 
+			&:after{ display: none; }
+			&:before{ border-color: $gray-dark; }
+			.progress-bar__price{ color: $gray-dark; background: none; box-shadow: none;
+				&:before{ display: none; }
+			}
+			.progress-bar__procent{ color: $gray-dark; background: none; }
+		}
+	}
+	&__price{ position: absolute; top: 40px; left: 50%; transform: translateX(-50%); background: $white; border-radius: 5px; box-shadow: 4px 4px 23px rgba(113, 159, 163, 0.14); display: inline-block; padding: 4px 20px; color: $green; font: 500 20px/28px $baseFF; white-space: nowrap;
+		&:before{ content: ""; display: block; width: 0; height: 0; border-bottom: 20px $white solid; border-left: 20px transparent solid; border-right: 20px transparent solid; position: absolute; top: -10px; left: 50%; transform: translateX(-50%); border-radius: 1px; z-index: -1; }
+		span{ font: 10px/14px $baseFF; margin-left: 2px; }
+	}
+	&__procent{ width: 60px; height: 60px; border-radius: 50%; background: $bg-directory; @include flex(center,center,center); color:  $blue-dark; font: bold 22px $baseFF; position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); }
+
+	@include media($sm){ padding: 75px 0 70px; 
+		&__item{
+			&:after{ width: 12px; height: 12px; }
+			&:before{  width: 26px; height: 26px; }
+
+			&--step-1{ left: 10px; }
+			&--step-5{ left: calc(100% - 10px); }
+		}
+		&__price{ padding: 4px 10px; font: 500 18px/24px $baseFF; }
+		&__procent{ width: 50px; height: 50px; font: bold 18px $baseFF; bottom: 26px; }
+	}
+
+	@include media($xs){ padding: 0; 
+		&__line{ height: auto; border-left: 3px $gray-dark solid; position: relative; background: none; 
+			&--active{ position: absolute; top: 0; left: -1.5px; height: 3px; background: $green; margin: 0; transform: rotate(90deg); transform-origin: 0; }
+		}
+		&__item{ @include flex(0,center,center,nowrap); margin-bottom: 20px; position: relative; left: 0!important; padding-left: 30px;
+			&:last-child{ margin-bottom: 0; }
+			&:after{ width: 12px; height: 12px; left: 0; }
+			&:before{  width: 26px; height: 26px; left: 0; }
+
+			/* &:after{ content: ""; display: block; width: 17px; height: 17px; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: $green; }
+			&:before{  content: ""; display: block; width: 31px; height: 31px; border: 2px $green solid; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: $gray-bg; } */
+
+			&--step-1{ left: 10px; }
+			&--step-5{ left: calc(100% - 10px); 
+				&:after{ top: auto; bottom: 1px; }
+				&:before{ top: auto; bottom: 0; transform: translate(-50%,0); }
+				.progress-bar__procent{ margin-bottom: -12px; }
+				.progress-bar__price{ margin-bottom: -12px; }
+			}
+		}
+		&__price{ padding: 4px 10px; font: 500 18px/24px $baseFF; position: static; transform: none; 
+			&:before{ display: none; }
+		}
+		&__procent{ width: 50px; height: 50px; font: bold 18px $baseFF; position: static; transform: none; margin-right: 20px; }
+	}
+}

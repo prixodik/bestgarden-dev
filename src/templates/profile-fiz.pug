@@ -1,0 +1,33 @@
+extends extends/base.pug
+append vars
+	- var pageUrl = 'profile-fiz.html';
+	- var pageTitle = 'Профиль физ. лица';
+	- var classBody = 'profile-page';
+	- var headerBg = 'images/main-banner.jpg';
+block styles
+	
+block content
+	include ../components/main-section/template
+	include ../components/well-block/template
+
+	+mainSection({
+		bread: [{url: '#', title: 'Личный кабинет'}]
+	}).main-section--profile
+		.main-section__row.row.row--stretch
+			.main-section__row-item.col-6.col-sm-12
+				+wellBlockProfile() 
+			.main-section__row-item.col-6.col-sm-12
+				+wellBlockOrders()
+			.main-section__row-item.col-6.col-sm-12
+				+wellBlockDiscount()
+			.main-section__row-item.col-6.col-sm-12
+				+wellBlockPay() 
+			.main-section__row-item.col-12
+				+wellBlockDoc()
+
+	include ../components/footer/template  
+	+footer()    
+
+	//- +gridLayout() 
+
+block scripts 

@@ -99,6 +99,12 @@
           <li><a target="_blank" href="main.html">Главная страница</a></li>
           <li><a target="_blank" href="catalogs.html">Каталоги</a></li>
           <li><a target="_blank" href="product.html">Один каталог</a></li>
+          <li><a target="_blank" href="about.html">О нас</a></li>
+          <li><a target="_blank" href="delivery.html">Доставка и оплата</a></li>
+          <li><a target="_blank" href="profile-fiz.html">Профиль физ.лица</a></li>
+          <li><a target="_blank" href="profile-yur.html">Профиль юр.лица</a></li>
+          <li><a target="_blank" href="orders.html">Заказы</a></li>
+          <li><a target="_blank" href="discount.html">Скидки и бонусы</a></li>
         </ol><br>
         <div class="tabs-panel">
           <div class="in"><a class="is-active" href="#tab1" data-tab>Заголовки</a><a href="#tab2" data-tab>Элементы форм</a><a href="#tab3" data-tab>Кнопки</a><a href="#tab4" data-tab>Иконки</a></div>
@@ -124,7 +130,7 @@
             </div>
           </div>
           <div class="tab is-visible" id="tab3">
-            <h1>Кнопки</h1><a class="btn" href="#">button</a><a class="btn btn-yellow" href="#">button</a><a class="btn btn-border" href="#">button</a>
+            <h1>Кнопки</h1><a class="btn" href="#">button</a><a class="btn btn--border" href="#">button</a><a class="btn btn--yellow" href="#">button</a>
           </div>
           <div class="tab" id="tab4">
             <h1>Иконки</h1>
@@ -298,11 +304,13 @@
                 <div class="popup__title">статус заказа</div>
                 <div class="popup__desc">Введите номер заказа</div>
                 <form class="popup__form" action=""> 
-                  <div class="popup__input form-group">
+                  <div class="form-group form-group--sm popup__input">
                     <div class="form-group__label">Номер заказа</div>
-                    <input class="form-control form-control--border" type="text">
+                    <input class="form-control form-control--border js-required" type="text" required>
                   </div>
-                  <div class="popup__buttons"><a class="btn btn--block js-popup-show" href="#popup-status-2">Найти заказ</a></div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit" data-href="#popup-status-2">Найти заказ</button>
+                  </div>
                 </form>
               </div>
             </div>
@@ -315,8 +323,9 @@
                 <div class="popup__title">статус заказа</div>
                 <div class="popup__well">
                   <div class="popup__number">Заказ <strong>56452356485669</strong></div>
-                  <div class="popup__status is-active">
-                    <div class="popup__status-bullet bullet"></div><span>Доставка</span>
+                  <div class="popup__status bullet bullet--lg status-2">
+                    <div class="bullet__icon"></div>
+                    <div class="bullet__text">Ожидают проверки</div>
                   </div>
                 </div>
                 <div class="popup__date">Информация обновлена 15.02.2021</div>
@@ -379,24 +388,26 @@
                 <form class="popup__form" action="">
                   <div class="popup__input">
                     <div class="popup__input-label">Телефон для связи:</div>
-                    <div class="form-group">
+                    <div class="form-group form-group--sm">
                       <div class="form-group__label">Введите телефон</div>
-                      <input class="form-control js-required" type="tel" placeholder="" required>
+                      <input class="form-control form-control--border js-required" type="tel" placeholder="" required>
                     </div>
                   </div>
                       <div class="upload-block upload-block--default js-files-form popup__file">
-                        <input class="js-file-input" type="file" name="files[]" id="upload-file__input_1" accept=".xsl">
+                        <input class="js-file-input" type="file" name="files[]" id="upload-file__input_1" accept=".jpg, .png, .xsl">
+                        <div class="upload-block__block">
+                          <div class="upload-block__icon">
+                            <svg class="icon icon_plus">
+                              <use xlink:href="images/sprite-svg.svg#plus"></use>
+                            </svg>
+                          </div>
+                          <div class="upload-block__wrap">
+                            <div class="upload-block__title">Добавьте файлы заказа xsl</div>
+                            <div class="upload-block__text">Или перетащить в эту область</div>
+                          </div>
+                          <div class="upload-block__desc">Не более 10 файлов</div>
+                        </div>
                         <div class="upload-block__result js-files-list"></div>
-                        <div class="upload-block__icon">
-                          <svg class="icon icon_plus">
-                            <use xlink:href="images/sprite-svg.svg#plus"></use>
-                          </svg>
-                        </div>
-                        <div class="upload-block__wrap">
-                          <div class="upload-block__title">Добавьте файлы заказа xsl</div>
-                          <div class="upload-block__text">Или перетащить в эту область</div>
-                        </div>
-                        <div class="upload-block__desc">Не более 10 файлов</div>
                       </div>
                   <div class="popup__checkboxs">
                     <div class="checkbox">
@@ -408,7 +419,9 @@
                       <label for="police2">Согласен(а) с условиями <a href="#">политики конфиденциальности и обработки персональных данных</a></label>
                     </div>
                   </div>
-                  <div class="popup__buttons"><a class="btn btn--block js-popup-show" href="#popup-finish"> Отправить заказ</a></div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit" data-href="#popup-finish"> Отправить заказ</button>
+                  </div>
                 </form>
               </div>
             </div>
@@ -428,6 +441,22 @@
                 <div class="popup__buttons"><a class="btn btn--border" href="#">Вернуться к каталогу</a></div>
               </div>
             </div>
+            <div class="popup popup--finish" id="popup-finish-2">
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__img">
+                  <picture>
+                    <source class="lazy" data-srcset="images/finish-popup-img.webp" type="image/webp"/><img class="lazy" data-src="images/finish-popup-img.png" alt=""/>
+                  </picture>
+                </div>
+                <div class="popup__title">Спасибо! заказ оформлен</div>
+                <div class="popup__desc">Статус заказа вы можете отслеживать<br> в <a href="#">личном кабинете</a></div>
+                <div class="popup__buttons"><a class="btn btn--border" href="#">Вернуться к каталогу</a></div>
+              </div>
+            </div>
             <div class="popup popup--login popup--terms-order" id="popup-login" attributes>
               <div class="popup__overflow js-popup-hide"></div>
               <div class="popup__wrapper"><a class="popup__close js-popup-hide">
@@ -435,17 +464,19 @@
                     <use xlink:href="images/sprite-svg.svg#close"></use>
                   </svg></a>
                 <div class="popup__title">вход в личный кабинет</div>
-                <div class="form-group popup__input">
-                  <div class="form-group__label">Введите телефон</div>
-                  <input class="form-control form-control--border js-required" type="tel" placeholder="" required>
-                </div>
-                <div class="form-group popup__input">
-                  <div class="form-group__label">Введите пароль</div>
-                  <input class="form-control form-control--border js-required" type="password" placeholder="" required>
-                </div>
-                <div class="popup__buttons">
-                  <button class="btn btn--block"> Войти  в личный кабинет</button>
-                </div>
+                <form class="popup__form" action=""> 
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Введите телефон</div>
+                    <input class="form-control form-control--border js-required" type="tel" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Введите пароль</div>
+                    <input class="form-control form-control--border js-required" type="password" placeholder="" required>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit"> Войти  в личный кабинет</button>
+                  </div>
+                </form>
                 <div class="popup__links"><a class="btn btn--icon btn--link btn--blue-dark js-popup-show" href="#popup-registration-1">
                     <svg class="icon icon_registration">
                       <use xlink:href="images/sprite-svg.svg#registration"></use>
@@ -461,12 +492,12 @@
                 <div class="popup__title">регистрация в личном кабинете</div>
                 <div class="popup__desc">Вы сможете быстро оформлять и отслеживать заказы, получать скидки постоянного покупателя</div>
                 <form class="popup__form" action=""> 
-                  <div class="form-group popup__input">
+                  <div class="form-group form-group--sm popup__input">
                     <div class="form-group__label">Введите телефон</div>
                     <input class="form-control form-control--border js-required" type="tel" placeholder="" required>
                   </div>
                   <div class="popup__buttons">
-                    <button class="btn btn--block js-popup-show" data-href="#popup-registration-2">Отправить код в SMS</button>
+                    <button class="btn btn--block js-submit" data-href="#popup-registration-2">Отправить код в SMS</button>
                   </div>
                   <div class="popup__links"><a href="#">У меня уже есть аккаунт</a></div>
                 </form>
@@ -481,18 +512,18 @@
                 <div class="popup__title">регистрация в личном кабинете</div>
                 <div class="popup__desc">На номер <strong>+7-952-364-78-50</strong> отправлено<br> SMS-сообщение с паролем</div>
                 <form class="popup__form" action=""> 
-                  <div class="form-group popup__input">
+                  <div class="form-group form-group--sm popup__input">
                     <div class="form-group__label">Введите код из SMS</div>
                     <input class="form-control form-control--border js-required js-mask-sms" type="text" placeholder="" required>
                   </div>
                   <div class="popup__buttons">
-                    <button class="btn btn--block js-popup-show" data-href="#popup-registration-3">Далее</button>
+                    <button class="btn btn--block js-submit" data-href="#popup-registration-3">Далее</button>
                   </div>
                   <div class="popup__links"><a href="#">Отправить код повторно</a></div>
                 </form>
               </div>
             </div>
-            <div class="popup popup--registration active" id="popup-registration-3" attributes>
+            <div class="popup popup--registration" id="popup-registration-3" attributes>
               <div class="popup__overflow js-popup-hide"></div>
               <div class="popup__wrapper"><a class="popup__close js-popup-hide">
                   <svg class="icon icon_close">
@@ -501,11 +532,11 @@
                 <div class="popup__title">регистрация в личном кабинете</div>
                 <div class="popup__desc">Для продолжения регистрации придумайте пароль для входа в личный кабинет</div>
                 <form class="popup__form" action=""> 
-                  <div class="form-group popup__input">
+                  <div class="form-group form-group--sm popup__input">
                     <div class="form-group__label">Придумайте пароль для входа</div>
                     <input class="form-control form-control--border js-required js-pass1" type="password" placeholder="" required>
                   </div>
-                  <div class="form-group popup__input">
+                  <div class="form-group form-group--sm popup__input">
                     <div class="form-group__label">Повторите пароль</div>
                     <input class="form-control form-control--border js-required js-pass2" type="password" placeholder="" required>
                   </div>
@@ -522,40 +553,276 @@
                       </div>
                     </div>
                     <div class="popup__group-tab tabs__body is-active" id="reg-type-1">
-                      <div class="form-group popup__input">
+                      <div class="form-group form-group--sm popup__input">
                         <div class="form-group__label">Имя Фамилия Отчество</div>
                         <input class="form-control form-control--border js-required" type="text" placeholder="" required>
                       </div>
-                      <div class="form-group popup__input">
+                      <div class="form-group form-group--sm popup__input">
                         <div class="form-group__label">E-mail/Электронный адрес</div>
                         <input class="form-control form-control--border js-required" type="email" placeholder="" required>
                       </div>
                     </div>
                     <div class="popup__group-tab tabs__body" id="reg-type-2">
-                      <div class="form-group popup__input">
+                      <div class="form-group form-group--sm popup__input">
                         <div class="form-group__label">Имя Фамилия Отчество</div>
                         <input class="form-control form-control--border js-required" type="text" placeholder="" required>
                       </div>
-                      <div class="form-group popup__input">
+                      <div class="form-group form-group--sm popup__input">
                         <div class="form-group__label">Телефон</div>
                         <input class="form-control form-control--border js-required" type="tel" placeholder="" required>
                       </div>
-                      <div class="form-group popup__input">
+                      <div class="form-group form-group--sm popup__input">
                         <div class="form-group__label">E-mail</div>
                         <input class="form-control form-control--border js-required" type="email" placeholder="" required>
                       </div>
-                      <div class="form-group popup__input">
+                      <div class="form-group form-group--sm popup__input">
                         <div class="form-group__label">Полное официальное название предприятия</div>
                         <input class="form-control form-control--border js-required" type="text" placeholder="" required>
                       </div>
-                      <div class="form-group popup__input">
+                      <div class="form-group form-group--sm popup__input">
                         <div class="form-group__label">ИНН или номер свидетельства постановки на учет</div>
                         <input class="form-control form-control--border js-required" type="text" placeholder="" required>
                       </div>
                     </div>
                   </div>
                   <div class="popup__buttons">
-                    <button class="btn btn--block js-popup-show" data-href="#popup-registration-2">Зарегистрироваться</button>
+                    <button class="btn btn--block js-submit" data-href="#popup-registration-4">Зарегистрироваться</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--registration" id="popup-registration-4" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">регистрация в личном кабинете</div>
+                <div class="popup__desc">Для продолжения регистрации и выставления счетов заполните банковские реквизиты</div>
+                <form class="popup__form" action=""> 
+                  <div class="popup__input">
+                    <div class="popup__input-label">Банковские реквизиты</div>
+                    <div class="form-group form-group--sm">
+                      <div class="form-group__label">КПП:</div>
+                      <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                    </div>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Расчетный счет:</div>
+                    <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Название банка:</div>
+                    <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">БИК:</div>
+                    <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Корреспондентский счёт:</div>
+                    <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit" data-href="#popup-registration-5">Завершить регистрацию</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--registration" id="popup-registration-5" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">регистрация в личном кабинете</div>
+                <div class="popup__desc">
+                  <p><strong>Вы успешно зарегистрированы!</strong></p>
+                  <p>Для входы в личный кабинет введите номер телефона и пароль, указанные при реггистрации.</p>
+                </div>
+                <form class="popup__form" action=""> 
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Введите телефон</div>
+                    <input class="form-control form-control--border js-required" type="tel" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Введите пароль</div>
+                    <input class="form-control form-control--border js-required" type="password" placeholder="" required>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block"> Войти в личный кабинет</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--order" id="popup-order-1">
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">оформление заказа</div>
+                <form class="popup__form" action="">
+                  <div class="popup__input">
+                    <div class="popup__input-label">Контактные данные:</div>
+                    <div class="form-group form-group--sm">
+                      <div class="form-group__label">Имя</div>
+                      <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                    </div>
+                  </div>
+                  <div class="popup__row row">
+                    <div class="popup__input col-6 col-xs-12">
+                      <div class="form-group form-group--sm">
+                        <div class="form-group__label">Телефон для связи</div>
+                        <input class="form-control form-control--border js-required" type="tel" placeholder="" required>
+                      </div>
+                    </div>
+                    <div class="popup__input col-6 col-xs-12">
+                      <div class="form-group form-group--sm">
+                        <div class="form-group__label">E-mail</div>
+                        <input class="form-control form-control--border js-required" type="email" placeholder="" required>
+                      </div>
+                    </div>
+                  </div>
+                      <div class="upload-block upload-block--default js-files-form popup__file">
+                        <input class="js-file-input" type="file" name="files[]" id="upload-file__input_1" accept=".jpg, .png, .xsl">
+                        <div class="upload-block__block">
+                          <div class="upload-block__icon">
+                            <svg class="icon icon_plus">
+                              <use xlink:href="images/sprite-svg.svg#plus"></use>
+                            </svg>
+                          </div>
+                          <div class="upload-block__wrap">
+                            <div class="upload-block__title">Добавьте файлы заказа xsl</div>
+                            <div class="upload-block__text">Или перетащить в эту область</div>
+                          </div>
+                          <div class="upload-block__desc">Не более 10 файлов</div>
+                        </div>
+                        <div class="upload-block__result js-files-list"></div>
+                      </div>
+                  <div class="popup__checkboxs">
+                    <div class="checkbox"> 
+                      <input type="checkbox" name="police21" id="police21" value="1">
+                      <label for="police21">Согласен(а) с условиями <a href="#">доставки и оплаты заказа</a> </label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="police22" id="police22" value="1">
+                      <label for="police22">Согласен(а) с условиями <a href="#">политики конфиденциальности и обработки персональных данных</a>  </label>
+                    </div>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit" data-href="#popup-order-2">Подтвердить заказ</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--order" id="popup-order-2">
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">выберите условия доставки</div>
+                <form class="popup__form js-form" action="">
+                  <div class="radiobox radiobox--block popup__input">
+                    <input class="js-required" type="radio" name="delivery" id="delivery-1" value="delivery-1" required>
+                    <label for="delivery-1">
+                      <div class="radiobox__title">Самовывоз из магазинов в Москве </div>
+                      <div class="radiobox__desc">0 рублей</div>
+                    </label>
+                  </div>
+                  <div class="radiobox radiobox--block popup__input">
+                    <input class="js-required" type="radio" name="delivery" id="delivery-2" value="delivery-2">
+                    <label for="delivery-2">
+                      <div class="radiobox__title">Доставка курьером по Москве</div>
+                      <div class="radiobox__desc">от 390 рублей</div>
+                    </label>
+                  </div>
+                  <div class="radiobox radiobox--block popup__input">
+                    <input class="js-required" type="radio" name="delivery" id="delivery-3" value="delivery-3">
+                    <label for="delivery-3">
+                      <div class="radiobox__title">Доставка Почтой России</div>
+                      <div class="radiobox__desc">зависит от тарифов почты</div>
+                    </label>
+                  </div>
+                  <div class="radiobox radiobox--block popup__input">
+                    <input class="js-required" type="radio" name="delivery" id="delivery-4" value="delivery-4">
+                    <label for="delivery-4">
+                      <div class="radiobox__title">Другой способ доставки</div>
+                      <div class="radiobox__desc">Службы доставки и другое по договоренности</div>
+                    </label>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit" type="button" data-href="#popup-finish-2">Выбрать</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--profile" id="popup-profile" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">профиль пользователя</div>
+                <div class="popup__avatar">
+                  <picture>
+                    <source class="lazy" data-srcset="images/avatar.webp" type="image/webp"/><img class="lazy" data-src="images/avatar.png" alt=""/>
+                  </picture>
+                  <div class="popup__avatar-load"><a href="#">Загрузить фотографию</a></div>
+                </div>
+                <div class="popup__title _name">Станиславская елена борисовна</div>
+                <div class="popup__params row">
+                  <div class="popup__params-label col-6 col-xs-12">Название компании</div>
+                  <div class="popup__params-value col-6 col-xs-12">ООО “Агрохолдинг”</div>
+                  <div class="popup__params-label col-6 col-xs-12">Телефон</div>
+                  <div class="popup__params-value col-6 col-xs-12">+7-952-364-78-50</div>
+                  <div class="popup__params-label col-6 col-xs-12">E-mail</div>
+                  <div class="popup__params-value col-6 col-xs-12">elena_s@mail.com</div>
+                  <div class="popup__params-label col-6 col-xs-12">Телефон</div>
+                  <div class="popup__params-value col-6 col-xs-12">+7-952-364-78-50</div>
+                  <div class="popup__params-label col-6 col-xs-12">ИНН или номер свидетельства постановки на учет</div>
+                  <div class="popup__params-value col-6 col-xs-12">515165656599126516</div>
+                  <div class="popup__params-label col-6 col-xs-12">КПП</div>
+                  <div class="popup__params-value col-6 col-xs-12">30500056599126516</div>
+                  <div class="popup__params-label col-6 col-xs-12">Расчетный счет</div>
+                  <div class="popup__params-value col-6 col-xs-12">4654489789467775645000546</div>
+                  <div class="popup__params-label col-6 col-xs-12">Название банка</div>
+                  <div class="popup__params-value col-6 col-xs-12">ПАО СБЕРБАНК г. МОСКВА</div>
+                  <div class="popup__params-label col-6 col-xs-12">БИК</div>
+                  <div class="popup__params-value col-6 col-xs-12">4654489789467775645000546</div>
+                  <div class="popup__params-label col-6 col-xs-12">Корреспондентский счет:</div>
+                  <div class="popup__params-value col-6 col-xs-12">6548000235695000045566956589</div>
+                </div>
+                <div class="popup__buttons"><a class="btn btn--block js-popup-show" href="#edit-profile-popup">Изменить данные</a></div>
+              </div>
+            </div>
+            <div class="popup popup--registration" id="edit-profile-popup">
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">изменение данных профиля</div>
+                <form class="popup__form" action="">
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Имя</div>
+                    <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Контактный телефон</div>
+                    <input class="form-control form-control--border js-required" type="tel" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">E-mail</div>
+                    <input class="form-control form-control--border js-required" type="email" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Введите пароль</div>
+                    <input class="form-control form-control--border js-required" type="password" placeholder="" required>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit">Подтвердить данные</button>
                   </div>
                 </form>
               </div>

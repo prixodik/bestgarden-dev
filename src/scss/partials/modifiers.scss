@@ -22,7 +22,7 @@
 @include classMod(justify-content-center) {
   justify-content: center;
 }
-@include classMod(justify-content-start) {
+@include classMod(justify-content-start) { 
   justify-content: flex-start;
 }
 @include classMod(justify-content-end) {

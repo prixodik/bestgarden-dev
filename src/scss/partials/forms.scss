@@ -17,7 +17,8 @@
   }
   .form-control:not(.form-control--default){ padding: 47px 30px 15px; font: 18px/28px $baseFF; color: $black; background: $form-input-bg; 
 
-    &.form-control--border{ background: transparent; border-color: #C7D3DA;  }
+    &.form-control--border{ background: transparent; border-color: #C7D3DA; }
+
     @include media($xs){ padding: 37px 20px 10px; font-size: 16px;  }
   } 
   &.is-error { 
@@ -37,6 +38,11 @@
 
   &--center{ 
     .inp-lbl{ text-align: center; width: 100%; padding-left: 0; padding-right: 0;  }
+  }
+
+  &--sm{
+    .form-control:not(.form-control--default){ padding: 36px 20px 14px; font: 16px/21px $baseFF; }
+    .form-group__label{ padding: 12px 20px 0; } 
   }
 }
 

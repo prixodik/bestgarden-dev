@@ -1,6 +1,7 @@
 
-.upload-block{ @include flex(0,center,center,nowrap); position: relative; z-index: 1; cursor: pointer; border-radius: 5px; border: 2px $green dashed; background: $white; padding: 25px 20px;
+.upload-block{ position: relative; z-index: 1;
 	input{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; opacity: 0; cursor: pointer; }
+	&__block{ @include flex(0,center,center,nowrap); position: relative; z-index: 1; cursor: pointer; border-radius: 5px; border: 2px $green dashed; background: $white; padding: 25px 20px; }
 	&__link{ position: absolute; top: 0; left: 0; z-index: 3; }
 	&__icon{ flex: 0 0 40px; width: 40px; height: 40px; @include flex(center,center,center); margin-right: 12px; background: $blue; border-radius: 50%; 
 		svg{ fill: $green; font-size: 15px; display: block; }
@@ -9,15 +10,17 @@
 	&__text{ color: rgba(#102E25, .35); font: $fs-14; }
 	&__desc{ position: absolute; top: calc(100% + 7px); left: 20px; color: $blue-dark; font: 12px/14px $baseFF; }
 
-	/*&__subtitle{ margin-bottom: 16px; }
-	&__result{ @include flex(); position: relative; z-index: 10; 
+	/*&__subtitle{ margin-bottom: 16px; } */  
+	&__result{ @include flex(); position: relative; z-index: 10; margin-top: 40px; margin-bottom: -10px;
 		&:empty{ display: none; }
-		&-item{ margin: 0 16px 16px 0; @include flex(0,center,center,nowrap); font: $fs-p2; color: $black;
-			&:last-child{ margin-right: 0; }
-			span{ color: $gray; margin-left: 6px; white-space: nowrap; }
-			svg{ width: 12px; height: 12px; fill: $gray; margin-left: 10px; }
+		&-item{ margin: 0 10px 10px 0; @include flex(0,center,center,nowrap); color: $green; border-radius: 5px; background: $blue; padding: 8px 8px 8px 10px; 
+			&:last-child{ margin-right: 0; } 
 		} 
-	} */
+		&-icon{ margin-right: 8px; fill: $green; font-size: 20px; display: block;  }
+		&-close{  margin-left: 20px;  
+			svg{ fill: #8699A5; font-size: 12px; display: block;  }
+		} 
+	}
 
 	&--inline{ @include flex(0,center,center,nowrap); padding: 0; border: 0; background: none; color: $green; border-radius: 0; }
 	&--inline &{

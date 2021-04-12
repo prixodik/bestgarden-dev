@@ -1,0 +1,68 @@
+extends extends/base.pug
+append vars
+	- var pageUrl = 'about.html';
+	- var pageTitle = 'О нас';
+	- var classBody = 'about-page';
+	- var headerBg = 'images/main-banner.jpg';
+block styles
+	
+block content
+	include ../components/main-section/template
+	+mainSection({
+		bread: [{url: '#', title: 'О нас'}]
+	}).main-section--about-page
+		h1.main-section__title оптовый интернет-магазин садового центра «МИР УВЛЕЧЕНИЙ»
+		.main-section__group-1.row
+			.main-section__img.col-4.col-sm-6.col-xs-12
+				+webp('images/about-img-1.jpg')
+			.main-section__group-1-text.item-page.col-8.col-sm-6.col-xs-12
+				p «МИР УВЛЕЧЕНИЙ» – это зарекомендовавшее себя имя на российском рынке товаров для сада с 1996 года. История «МИРА УВЛЕЧЕНИЙ» началась более 20 лет назад, когда гостеприимно распахнул свои двери первый магазин в Москве, а жителям других населенных пунктов были разосланы первые каталоги для заказа садоводческих товаров по почте. В 2001 году мы стали еще доступнее благодаря открытию интернет-магазина, в котором вы сейчас находитесь.
+
+				p На протяжении всего этого времени «МИР УВЛЕЧЕНИЙ» успешно работает, не останавливаясь на достигнутом. Специалисты компании ежегодно посещают международные специализированные выставки, поддерживают тесные отношения с ведущими мировыми питомниками, чтобы на российском рынке представить всё самое интересное, что существует в мире садоводства.
+
+				p «МИР УВЛЕЧЕНИЙ» открыт для предложений и общения: работает call-центр. Мы развиваемся и поддерживаем заработанный годами статус одного из лидеров рынка товаров для сада, чтобы быть для вас еще более интересными и полезными.
+				p.main-section__slogan В нашем интернет-магазине вы найдете<br> всё, что нужно для посадочного сезона
+		.main-section__group-2.row.row--middle
+			.main-section__group-2-info.col-6.col-xs-12.order-xs-2
+				.main-section__adres
+					.main-section__adres-title Садовый центр:
+					p ООО «МИР УВЛЕЧЕНИЙ»<br> Юридический адрес: Москва, ул. Искры, дом 31, корп. 1,<br> помещение II, комната 22Б.<br> ОГРН: 1037739756713
+				.main-section__adres
+					.main-section__adres-title Интернет-магазин:
+					p ООО «БЕСТГАРДЕН»<br> Юридический адрес: 127224, Москва, ул. Широкая, дом 27,<br> пом. I, комн. 21. ОГРН: 1187746815871
+
+			.main-section__img.col-5.col-md-6.col-xs-12.order-xs-1
+				+webp('images/about-img-2.jpg')
+
+		include ../components/advantage-block/template 
+		.main-section__advantages
+			.main-section__advantages-title.title-h3 почему стоит заказать товары у нас?
+			.main-section__advantages-row.row
+				.main-section__advantages-item.col-4.col-sm-6.col-xs-12
+					+advantageBlock({
+						icon: 'special',
+						title: 'Специальные условия<br> для оптовых покупателей',
+						text: 'Скидки для оптовых покупателей и бесплатная доставка при заказе от определенной суммы'
+					})
+				.main-section__advantages-item.col-4.col-sm-6.col-xs-12
+					+advantageBlock({
+						icon: 'shield',
+						title: 'Гарантия качества<br> товаров',
+						text: 'Мы прикладываем все усилия к тому, чтобы вы получили свой заказ отличного качества и в полном объеме'
+					})
+				.main-section__advantages-item.col-4.col-sm-6.col-xs-12
+					+advantageBlock({
+						icon: 'truck',
+						title: 'Гибкие условия<br> доставки',
+						text: 'Самовывоз, курьер <br>или доставка почтой <br>без минимальной суммы заказа'
+					})
+
+		
+	
+
+	include ../components/footer/template  
+	+footer()    
+
+	//- +gridLayout() 
+
+block scripts 

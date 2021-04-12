@@ -103,15 +103,18 @@ mixin uploadBlockComment(data)
 
 mixin uploadBlockFile(data)
 	.upload-block.-default.js-files-form&attributes(attributes)
-		input(type="file" name="files[]" id="upload-file__input_1" class="js-file-input" accept=".xsl")
+		input(type="file" name="files[]" id="upload-file__input_1" class="js-file-input" accept=".jpg, .png, .xsl")
+		._block
+			._icon
+				+svg('plus')
+			._wrap
+				._title Добавьте файлы заказа xsl
+				._text Или перетащить в эту область
+			._desc Не более 10 файлов
 		._result.js-files-list
-				//- ._list-item Иванов.jpg
-				//- 	span 1.29 Мб
-				//- 	a(href="#") 
+				//- ._result-item
+				//- 	+svg('file-xls')._result-icon
+				//- 	span catalog_vodnye
+				//- 	a._result-close(href="#")
 				//- 		+svg('close')
-		._icon
-			+svg('plus')
-		._wrap
-			._title Добавьте файлы заказа xsl
-			._text Или перетащить в эту область
-		._desc Не более 10 файлов
+				

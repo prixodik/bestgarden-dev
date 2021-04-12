@@ -1,0 +1,38 @@
+
+.bullet{ @include flex(0,center,center,nowrap); 
+	&__icon{ width: 15px; height: 15px; border-radius: 50%; flex: 0 0 auto; margin-right: 15px; background: $text-green-dark; border: 2px $text-green-dark solid; }
+	//&__text{ }
+	&__print{ 
+		svg{ fill: #B1C9D9; font-size: 36px; margin-left: 20px; display: block; }
+	}
+
+	&--lg &{ 
+		&__icon{ width: 19px; height: 19px; }
+		&__text{ font: 20px/28px $baseFF; }
+	}
+
+	&.status-2{ color: $link; }
+	&.status-2 &{
+		&__icon{ background: $link; border-color: $link; }
+	}
+
+	&.status-3{ color: $blue-dark; }
+	&.status-3 &{
+		&__icon{ background: $blue-dark; border-color: $blue-dark; }
+	}
+
+	&.status-4{ color: $link; }
+	&.status-4 &{
+		&__icon{ background: transparent; border-color: $link; }
+	}
+
+	&.status-5{ color: $form-blue; }
+	&.status-5 &{
+		&__icon{ background: $form-blue; border-color: $form-blue; }
+	}
+
+	&.status-6{ color: $green; } 
+	&.status-6 &{
+		&__icon{ background: $green; border-color: $green; }
+	}
+}

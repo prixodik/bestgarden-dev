@@ -9,6 +9,56 @@ mixin popup(data)
 				+svg('close')
 			block
 
+mixin popupProfile()
+	+popup().popup--profile#popup-profile(attributes)
+		._title профиль пользователя
+		._avatar
+			+webp('images/avatar.png')
+			._avatar-load
+				a(href="#") Загрузить фотографию
+		._title._name Станиславская елена борисовна
+		._params.row
+			._params-label.col-6.col-xs-12 Название компании
+			._params-value.col-6.col-xs-12 ООО “Агрохолдинг”
+			._params-label.col-6.col-xs-12 Телефон
+			._params-value.col-6.col-xs-12 +7-952-364-78-50
+			._params-label.col-6.col-xs-12 E-mail
+			._params-value.col-6.col-xs-12 elena_s@mail.com
+			._params-label.col-6.col-xs-12 Телефон
+			._params-value.col-6.col-xs-12 +7-952-364-78-50
+			._params-label.col-6.col-xs-12 ИНН или номер свидетельства постановки на учет
+			._params-value.col-6.col-xs-12 515165656599126516
+			._params-label.col-6.col-xs-12 КПП
+			._params-value.col-6.col-xs-12 30500056599126516
+			._params-label.col-6.col-xs-12 Расчетный счет
+			._params-value.col-6.col-xs-12 4654489789467775645000546
+			._params-label.col-6.col-xs-12 Название банка
+			._params-value.col-6.col-xs-12 ПАО СБЕРБАНК г. МОСКВА
+			._params-label.col-6.col-xs-12 БИК
+			._params-value.col-6.col-xs-12 4654489789467775645000546
+			._params-label.col-6.col-xs-12 Корреспондентский счет:
+			._params-value.col-6.col-xs-12 6548000235695000045566956589
+		._buttons
+			a.btn.-block.js-popup-show(href="#edit-profile-popup") Изменить данные
+
+mixin popupEditProfile(data)
+	+popup().popup--registration#edit-profile-popup
+		._title изменение данных профиля
+		form._form(action="")
+			.form-group.-sm._input
+				._label Имя
+				input.form-control.form-control--border.js-required(type="text" placeholder="" required)
+			.form-group.-sm._input
+				._label Контактный телефон
+				input.form-control.form-control--border.js-required(type="tel" placeholder="" required)
+			.form-group.-sm._input
+				._label E-mail
+				input.form-control.form-control--border.js-required(type="email" placeholder="" required)
+			.form-group.-sm._input
+				._label Введите пароль
+				input.form-control.form-control--border.js-required(type="password" placeholder="" required)
+			._buttons
+				button.btn.-block.js-submit Подтвердить данные
 
 mixin popupContactForm()
 	+popup().popup--contact-form#popup-contact-form(attributes)
@@ -19,20 +69,20 @@ mixin popupStatus()
 		._title статус заказа
 		._desc Введите номер заказа
 		form._form(action="") 
-			._input.form-group
+			.form-group.-sm._input
 				.form-group__label Номер заказа
-				input.form-control.-border(type="text")
+				input.form-control.-border.js-required(type="text" required)
 			._buttons
-				a.btn.-block.js-popup-show(href="#popup-status-2") Найти заказ
+				button.btn.-block.js-submit(data-href="#popup-status-2") Найти заказ
 
 mixin popupStatus2()
 	+popup().popup--status-result#popup-status-2(attributes)
 		._title статус заказа
 		._well
 			._number Заказ <strong>56452356485669</strong>
-			._status.is-active
-				._status-bullet.bullet
-				span Доставка
+			._status.bullet.bullet--lg.status-2
+				.bullet__icon
+				.bullet__text Ожидают проверки
 		._date Информация обновлена 15.02.2021
 		._desc Подробную информацию о заказе вы можете узнать<br> в личном кабинете или по телефону +7 (495) 734-80-88 
 		._buttons
@@ -74,9 +124,9 @@ mixin popupOrderOneClick(data)
 		form._form(action="")
 			._input
 				._input-label Телефон для связи:
-				.form-group
+				.form-group.-sm
 					._label Введите телефон
-					input.form-control.js-required(type="tel" placeholder="" required)
+					input.form-control.form-control--border.js-required(type="tel" placeholder="" required)
 			+uploadBlockFile().popup__file
 			._checkboxs
 				.checkbox
@@ -86,7 +136,7 @@ mixin popupOrderOneClick(data)
 					input(type="checkbox" name="police2" id="police2" value="1")
 					label(for="police2") Согласен(а) с условиями <a href="#">политики конфиденциальности и обработки персональных данных</a>
 			._buttons
-				a.btn.-block.js-popup-show(href="#popup-finish")  Отправить заказ
+				button.btn.-block.js-submit(data-href="#popup-finish")  Отправить заказ
 
 mixin popupFinish(data)
 	+popup().popup--finish#popup-finish
@@ -97,18 +147,28 @@ mixin popupFinish(data)
 		._buttons
 			a.btn.-border(href="#") Вернуться к каталогу
 
+mixin popupFinish2(data)
+	+popup().popup--finish#popup-finish-2
+		._img
+			+webp('images/finish-popup-img.png')
+		._title Спасибо! заказ оформлен
+		._desc Статус заказа вы можете отслеживать<br> в <a href="#">личном кабинете</a>
+		._buttons
+			a.btn.-border(href="#") Вернуться к каталогу
+
 
 mixin popupLogin()
 	+popup().popup--login.popup--terms-order#popup-login(attributes)
 		._title вход в личный кабинет
-		.form-group._input
-			._label Введите телефон
-			input.form-control.form-control--border.js-required(type="tel" placeholder="" required)
-		.form-group._input
-			._label Введите пароль
-			input.form-control.form-control--border.js-required(type="password" placeholder="" required)
-		._buttons
-			button.btn.-block  Войти  в личный кабинет
+		form._form(action="") 
+			.form-group.-sm._input
+				._label Введите телефон
+				input.form-control.form-control--border.js-required(type="tel" placeholder="" required)
+			.form-group.-sm._input
+				._label Введите пароль
+				input.form-control.form-control--border.js-required(type="password" placeholder="" required)
+			._buttons
+				button.btn.-block.js-submit  Войти  в личный кабинет
 		._links
 			a.btn.-icon.-link.-blue-dark.js-popup-show(href="#popup-registration-1")
 				+svg('registration')
@@ -119,11 +179,11 @@ mixin popupRegistration1()
 		._title регистрация в личном кабинете
 		._desc Вы сможете быстро оформлять и отслеживать заказы, получать скидки постоянного покупателя
 		form._form(action="") 
-			.form-group._input
+			.form-group.-sm._input
 				._label Введите телефон
 				input.form-control.form-control--border.js-required(type="tel" placeholder="" required)
 			._buttons
-				button.btn.-block.js-popup-show(data-href="#popup-registration-2") Отправить код в SMS
+				button.btn.-block.js-submit(data-href="#popup-registration-2") Отправить код в SMS
 			._links
 				a(href="#") У меня уже есть аккаунт
 
@@ -132,23 +192,23 @@ mixin popupRegistration2()
 		._title регистрация в личном кабинете
 		._desc На номер <strong>+7-952-364-78-50</strong> отправлено<br> SMS-сообщение с паролем
 		form._form(action="") 
-			.form-group._input
+			.form-group.-sm._input
 				._label Введите код из SMS
 				input.form-control.form-control--border.js-required.js-mask-sms(type="text" placeholder="" required)
 			._buttons
-				button.btn.-block.js-popup-show(data-href="#popup-registration-3") Далее
+				button.btn.-block.js-submit(data-href="#popup-registration-3") Далее
 			._links
 				a(href="#") Отправить код повторно
 
 mixin popupRegistration3()
-	+popup().popup--registration.active#popup-registration-3(attributes)
+	+popup().popup--registration#popup-registration-3(attributes)
 		._title регистрация в личном кабинете
 		._desc Для продолжения регистрации придумайте пароль для входа в личный кабинет
 		form._form(action="") 
-			.form-group._input
+			.form-group.-sm._input
 				._label Придумайте пароль для входа
 				input.form-control.form-control--border.js-required.js-pass1(type="password" placeholder="" required)
-			.form-group._input
+			.form-group.-sm._input
 				._label Повторите пароль
 				input.form-control.form-control--border.js-required.js-pass2(type="password" placeholder="" required)
 			._group
@@ -161,31 +221,130 @@ mixin popupRegistration3()
 						input.js-tab-show(type="radio" name="typereg" id="reg-type-label-2" value="reg-type-2")
 						label(for="reg-type-label-2") Юридическое лицо
 				._group-tab.tabs__body.is-active#reg-type-1
-					.form-group._input
+					.form-group.-sm._input
 						._label Имя Фамилия Отчество
 						input.form-control.form-control--border.js-required(type="text" placeholder="" required)
-					.form-group._input
+					.form-group.-sm._input
 						._label E-mail/Электронный адрес
 						input.form-control.form-control--border.js-required(type="email" placeholder="" required)
 				._group-tab.tabs__body#reg-type-2
-					.form-group._input
+					.form-group.-sm._input
 						._label Имя Фамилия Отчество
 						input.form-control.form-control--border.js-required(type="text" placeholder="" required)
-					.form-group._input
+					.form-group.-sm._input
 						._label Телефон
 						input.form-control.form-control--border.js-required(type="tel" placeholder="" required)
-					.form-group._input
+					.form-group.-sm._input
 						._label E-mail
 						input.form-control.form-control--border.js-required(type="email" placeholder="" required)
-					.form-group._input
+					.form-group.-sm._input
 						._label Полное официальное название предприятия
 						input.form-control.form-control--border.js-required(type="text" placeholder="" required)
-					.form-group._input
+					.form-group.-sm._input
 						._label ИНН или номер свидетельства постановки на учет
 						input.form-control.form-control--border.js-required(type="text" placeholder="" required)
 			._buttons
-				button.btn.-block.js-popup-show(data-href="#popup-registration-2") Зарегистрироваться
+				button.btn.-block.js-submit(data-href="#popup-registration-4") Зарегистрироваться
 
+
+mixin popupRegistration4()
+	+popup().popup--registration#popup-registration-4(attributes)
+		._title регистрация в личном кабинете
+		._desc Для продолжения регистрации и выставления счетов заполните банковские реквизиты
+		form._form(action="") 
+			._input
+				._input-label Банковские реквизиты
+				.form-group.-sm
+					._label КПП:
+					input.form-control.form-control--border.js-required(type="text" placeholder="" required)
+			.form-group.-sm._input
+				._label Расчетный счет:
+				input.form-control.form-control--border.js-required(type="text" placeholder="" required)
+			.form-group.-sm._input
+				._label Название банка:
+				input.form-control.form-control--border.js-required(type="text" placeholder="" required)
+			.form-group.-sm._input
+				._label БИК:
+				input.form-control.form-control--border.js-required(type="text" placeholder="" required)
+			.form-group.-sm._input
+				._label Корреспондентский счёт:
+				input.form-control.form-control--border.js-required(type="text" placeholder="" required)
+			._buttons
+				button.btn.-block.js-submit(data-href="#popup-registration-5") Завершить регистрацию
+
+mixin popupRegistration5()
+	+popup().popup--registration#popup-registration-5(attributes)
+		._title регистрация в личном кабинете
+		._desc
+			p
+				strong Вы успешно зарегистрированы!
+			p Для входы в личный кабинет введите номер телефона и пароль, указанные при реггистрации.
+		form._form(action="") 
+			.form-group.-sm._input
+				._label Введите телефон
+				input.form-control.form-control--border.js-required(type="tel" placeholder="" required)
+			.form-group.-sm._input
+				._label Введите пароль
+				input.form-control.form-control--border.js-required(type="password" placeholder="" required)
+			._buttons
+				button.btn.-block  Войти в личный кабинет
+
+mixin popupOrder(data)
+	+popup().popup--order#popup-order-1
+		._title оформление заказа
+		form._form(action="")
+			._input
+				._input-label Контактные данные:
+				.form-group.-sm
+					._label Имя
+					input.form-control.form-control--border.js-required(type="text" placeholder="" required)
+			._row.row
+				._input.col-6.col-xs-12
+					.form-group.-sm
+						._label Телефон для связи
+						input.form-control.form-control--border.js-required(type="tel" placeholder="" required)
+				._input.col-6.col-xs-12
+					.form-group.-sm
+						._label E-mail
+						input.form-control.form-control--border.js-required(type="email" placeholder="" required)
+			+uploadBlockFile().popup__file 
+			._checkboxs
+				.checkbox 
+					input(type="checkbox" name="police21" id="police21" value="1")
+					label(for="police21") Согласен(а) с условиями <a href="#">доставки и оплаты заказа</a> 
+				.checkbox
+					input(type="checkbox" name="police22" id="police22" value="1")
+					label(for="police22") Согласен(а) с условиями <a href="#">политики конфиденциальности и обработки персональных данных</a>  
+			._buttons
+				button.btn.-block.js-submit(data-href="#popup-order-2") Подтвердить заказ
+
+mixin popupOrder2(data)
+	+popup().popup--order#popup-order-2
+		._title выберите условия доставки
+		form._form.js-form(action="")
+			.radiobox.-block._input
+				input(class="js-required" type="radio" name="delivery" id="delivery-1" value="delivery-1" required)
+				label(for="delivery-1")
+					._title Самовывоз из магазинов в Москве 
+					._desc 0 рублей
+			.radiobox.-block._input
+				input(class="js-required" type="radio" name="delivery" id="delivery-2" value="delivery-2")
+				label(for="delivery-2")
+					._title Доставка курьером по Москве
+					._desc от 390 рублей
+			.radiobox.-block._input
+				input(class="js-required" type="radio" name="delivery" id="delivery-3" value="delivery-3")
+				label(for="delivery-3")
+					._title Доставка Почтой России
+					._desc зависит от тарифов почты
+			.radiobox.-block._input
+				input(class="js-required" type="radio" name="delivery" id="delivery-4" value="delivery-4")
+				label(for="delivery-4")
+					._title Другой способ доставки
+					._desc Службы доставки и другое по договоренности
+
+			._buttons
+				button.btn.-block.js-submit(type="button" data-href="#popup-finish-2") Выбрать
 
 
 

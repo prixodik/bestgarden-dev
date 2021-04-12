@@ -24,6 +24,12 @@ block content
             {ttl: 'Главная страница', url: 'main.html', target: '_blank'},
             {ttl: 'Каталоги', url: 'catalogs.html', target: '_blank'},
             {ttl: 'Один каталог', url: 'product.html', target: '_blank'},
+            {ttl: 'О нас', url: 'about.html', target: '_blank'},
+            {ttl: 'Доставка и оплата', url: 'delivery.html', target: '_blank'},
+            {ttl: 'Профиль физ.лица', url: 'profile-fiz.html', target: '_blank'},
+            {ttl: 'Профиль юр.лица', url: 'profile-yur.html', target: '_blank'},
+            {ttl: 'Заказы', url: 'orders.html', target: '_blank'},
+            {ttl: 'Скидки и бонусы', url: 'discount.html', target: '_blank'},
             
           ]
         })
@@ -54,8 +60,8 @@ block content
         .tab#tab3.is-visible
           h1 Кнопки
           a(href="#").btn button
-          a(href="#").btn.btn-yellow button
-          a(href="#").btn.btn-border button
+          a(href="#").btn.-border button
+          a(href="#").btn.-yellow button
         .tab#tab4
           h1 Иконки
           mixin iconList(data)

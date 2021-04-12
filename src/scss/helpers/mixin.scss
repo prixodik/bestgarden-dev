@@ -120,35 +120,39 @@
 
 @mixin classMod($class) {
 
-		/* [class*='#{$class} '],
+		[class*='#{$class} '],
 		[class$='#{$class}'] {
 			@content;
-		} */ 
+		} 
 
-		@include mq('tablet') {
+		//@include mq('tablet') {
+		@include media($xs){
 			html body [class*='#{$class}_xs '],
 			html body [class$='#{$class}_xs'] {
 				@content;
 			}
 		}
-		@include mq('tablet', min) {
-			@include mq('tablet-wide') {
+		//@include mq('tablet', min) {
+		@include media($sm){
+			//@include mq('tablet-wide') {
 				html body [class*='#{$class}_sm '],
 				html body [class$='#{$class}_sm'] {
 					@content;
 				}
-			}
+			//}
 		}
-		@include mq('tablet-wide', min) {
-			@include mq('desktop') {
+		//@include mq('tablet-wide', min) {
+		@include media($md){	
+			//@include mq('desktop') {
 				html body [class*='#{$class}_md '],
 				html body [class$='#{$class}_md'] {
 					@content;
 				}
-			}
+			//}
 		}
 
-		@include mq('desktop', min) {
+		//@include mq('desktop', min) {
+		@include media($lg){	 
 			html body [class*='#{$class}_lg '],
 			html body [class$='#{$class}_lg'] {
 				@content;

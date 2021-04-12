@@ -1,0 +1,67 @@
+extends extends/base.pug
+append vars
+	- var pageUrl = 'orders.html';
+	- var pageTitle = 'Заказы';
+	- var classBody = 'orders-page';
+	- var headerBg = 'images/main-banner.jpg';
+block styles
+	
+block content
+	include ../components/main-section/template
+	include ../components/well-block/template
+	include ../components/search-block/template
+
+	+mainSection({
+		bread: [{url: '#', title: 'Личный кабинет'},{url: '#', title: 'Заказы'}]
+	}).main-section--orders
+		h1.main-section__title Заказы
+		.main-section__filter.row.row--stretch.row--between
+			.main-section__filter-item.col-4.col-sm-12
+				select(name="")
+					option(value="") Все
+					option(value="") Все и еще немного
+					option(value="") Ничего
+			.main-section__filter-item.col-4.col-sm-12
+				+searchBlock({
+					placeholder: 'Поиск по номеру заказа'
+				})
+
+		.main-section__head.row
+			.main-section__head-item.-number.col-3 Номер заказа
+			.main-section__head-item.-date.col-3 Дата заказа
+			.main-section__head-item.-price.col-3 Стоимость, руб.
+			.main-section__head-item.-status.col-3 Статус
+
+		.main-section__list
+			.main-section__list-item
+				+wellBlockOrderInfo({
+					number: '356458665523',
+					date: '31.01.2021',
+					price: '58 462, 30',
+					statusClass: 'status-2',
+					status: 'ожидает проверки менеджером'
+				})
+			.main-section__list-item
+				+wellBlockOrderInfo({
+					number: '5648569523',
+					date: '31.01.2021',
+					price: '101 563,00',
+					statusClass: 'status-3',
+					status: 'ожидает оплаты'
+				})
+			.main-section__list-item
+				+wellBlockOrderInfo({
+					number: '8956452136',
+					date: '31.01.2021',
+					price: '390 607,50',
+					statusClass: 'status-5',
+					status: 'доставка'
+				})
+			
+
+	include ../components/footer/template  
+	+footer()    
+
+	//- +gridLayout() 
+
+block scripts 

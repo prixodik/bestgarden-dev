@@ -1,11 +1,13 @@
 
-.advantage-block{ @include flex(0,center,center,nowrap); font: 600 18px/28px $baseFF; color: $black; position: relative;
+.advantage-block{ @include flex(0,center,center,nowrap,column); font: $fs-16; position: relative; padding: 12px 22px 45px; border-radius: 15px; text-align: center; background: url('../images/advantage-block-bg.svg') 50% 100%/100% auto no-repeat #B5E0E3; min-height: 343px;
 	&__link{ position: absolute; top: 0; left: 0; z-index: 2; display: block; width: 100%; height: 100%; }
-	&__img{ margin-right: 30px; 
-		img{ display: block; }
+	&__img{ margin-bottom: 7px; flex: 0 0 auto; width: 105px; height: 105px; border-radius: 50%; border: 8px rgba($white,.15) solid; background: rgba($white,.3); @include flex(center,center,center);
+		img{ display: block; } 
+		svg{ fill: $green; font-size: 50px; }
 	}
+	&__title{ flex: 1 1 auto; font: bold 17px/22px $baseFF; color: $green;  }
 
-	@include media($md){ font: 600 14px/24px $baseFF;
-		&__img{ margin-right: 20px; max-width: 65px; }
+	@include media($md){ 
+		 
 	}
 }

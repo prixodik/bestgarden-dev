@@ -1,9 +1,9 @@
-.radiobox{ display: block; 
+.radiobox{ display: block; position: relative;
 	label {	background: none; position: relative; color: $text-green-dark; padding-left: 32px; display: inline-block; cursor: pointer; font: $fs-16;
 		&:before{content: ""; display: block; width: 20px; height: 20px; position: absolute; top: 0; left: 0; background: $white; border-radius: 50%; border: 1px $green solid; }
 		a{ text-decoration: underline; }
 	}
-	input[type=checkbox], input[type=radio] { display: none; }
+	input[type=checkbox], input[type=radio] { position: absolute; top: 0; left: -100000px; -webkit-appearance: auto;  }
 	input[type=radio]:checked + label{
 		//&:before{background: $yellow; }
 		&:after{ content: ""; display: block; width: 12px; height: 12px; background: $green; position: absolute; top: 4px; left: 4px; border-radius: 50%; }
@@ -13,21 +13,22 @@
 		label{ color: $white; }
 	}
 	 
-	/* &--btn{
-		label{ padding: 5px 15px; border: 1px #dfdfdf solid; border-radius: 4px; background: $white; font: 500 13px/25px $baseFF; 
+	&--block{
+		label{ padding: 12px 20px; border: 1px $gray-dark solid; border-radius: 10px; background: $white; font: 16px/20px $baseFF; color: rgba($text-green-dark,.4); display: block; 
 			&:after, &:before{ display: none;  }
 		}
-		input[type=radio]:checked + label{ background: $yellow; border-color: $yellow;  
+		input[type=radio]:checked + label{ background: $gray-dark; border-color: $gray-dark;  
 			&:after, &:before{ display: none;  } 	
 		}
-	} */
+	}
+	&--block &{
+		&__title{ color: $text-green-dark; margin-bottom: 5px; } 
+	}
 
 	
 
-	&.error{
-		label{
-			&:before{ border-color: red; }
-		}
+	input.is-error{ 
+		& + label{ border-color: red; } 
 	}
 
 	@include media($xs){

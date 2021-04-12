@@ -1,197 +1,141 @@
 
-.well-block{ padding: 20px 25px 20px 40px; background: #f7f7f7; border-radius: 5px; @include flex(0,center,center,nowrap); @include time();
+.well-block{ padding: 30px 30px 25px; background: $white; border-radius: 10px; @include time(); box-shadow: 4px 4px 23px rgba(113, 159, 163, 0.14); height: 100%;
 	ul, ol, p:not(.well-block__title){ margin-bottom: 24px;
 		&:last-child{ margin-bottom: 0; }
 	}
 
-	&__title{ margin-bottom: 0; font: 600 13px $baseFF; flex: 1 1 auto; margin-right: 40px; }
-	&__repair{ flex: 0 0 auto; margin-right: 55px; color: #949494; font: 600 13px $baseFF; }
-	&__close{ flex: 0 0 14px; 
-		svg{ font-size: 14px; fill: #bfbfbf; display: block; }
+	&__title{ margin-bottom: 30px; color: $green;  padding: 3px 9px 16px; border-bottom: 2px rgba($gray-devider,.6) solid; text-transform: uppercase;  }
+	&__edit{ color: $blue-dark; font: bold 15px $baseFF;  
+		&.hide{ display: none;  }
 	}
+	&__bottom{ text-align: right; margin-top: 20px; }  
 
-	&:hover{ background: $white; box-shadow: 0 6px 12px rgba($black,.09); }
 
-	&--article{ padding: 50px 80px; background: url('../images/well-block-article-bg.png') 30px 20px no-repeat #f6f6f6; display: block; font: bold 14px/25px $baseFF; 
-
-		&:hover{ background: url('../images/well-block-article-bg.png') 30px 20px no-repeat #f6f6f6; box-shadow: none; }
-	}
-
-	&--login{ padding: 20px; @include flex(center,center,center,nowrap); 
-		&:hover{ background: #f7f7f7; box-shadow: none; }
-	}
-	&--login &{
-		&__title{ font: 500 14px $baseFF; margin: 0 90px 0 0; flex: 0 1 auto;  }
-		
-	}
-
-	&--data{ display: table; padding: 20px 30px; width: 100%; 
-		&:hover{ background: #f7f7f7; box-shadow: none; } 
-	}
-	&--data &{
-		&__row{ display: table-row;  
-			&:last-child{
-				.well-block__label, .well-block__value{ border: 0; }
+	&--profile{ padding: 35px 30px 25px; @include flex(0,center,center,nowrap); background: $bg-directory; box-shadow: none; }
+	&--profile &{
+		&__name{ color: $green; margin-bottom: 15px; margin-top: 35px;  }
+		&__params{  
+			&-item{ margin-bottom: 10px;  
+				&:last-child{ margin-bottom: 0; } 
+			}
+			&-more{ 
+				a{ color: $form-blue; }
 			}
 		}
-		&__label{ white-space: nowrap; display: table-cell; border-bottom: 1px #ececec solid; padding: 15px 0; font: 600 15px $baseFF; padding-right: 25px; }
-		&__value{ display: table-cell; border-bottom: 1px #ececec solid; padding: 15px 0; 
-			.form-group{ flex: 1 1 auto; 
-				.form-control{
-					&:disabled{ border: 0; background: none; padding: 0; color: $black; font: 15px $baseFF; }
-				}
-			} 
+		&__avatar{  margin-right: 35px; flex: 0 0 auto;
+	      img{ border-radius: 50%; object-fit: cover; width: 179px; height: 179px; margin: 0 auto; display: block; } 
+	      &-load{ margin-top: 10px; text-align: center; color: $blue-dark; font: 10px/14px $baseFF; }
+	    }
+	    &__wrap{ flex: 1 1 auto; /* @include flex(space-between,stretch,stretch,nowrap,column); */  }
+	    &__bottom{  margin-top: 40px; }
+	    
+	}
+
+	&--orders{ @include flex(space-between,stretch,stretch,nowrap,column);  }
+	&--orders &{
+		&__row{ margin-bottom: 25px; 
+			&:last-child{ margin-bottom: 0;  }
 		}
-		&__form{ @include flex(0,center,center,nowrap); 
-			&.is-edit{ display: block;  
-				.well-block__edit{ display: none; }
-				.well-block__required-text{ display: block; }
-				.well-block__copy{ display: block; }
-				.well-block__buttons{ @include flex(space-between,0,0,nowrap); margin-top: 15px; }
-			}
-		}
-		&__required-text{ display: none; font: 12px/1 $baseFF; margin-bottom: 8px; }
-		&__buttons{ display: none; 
-			.btn{ padding-left: 20px; padding-right: 20px; margin: 0 20px; flex: 1 1 auto; 
-				&:first-child{ margin-left: 0; }
-				&:last-child{ margin-right: 0; }
-			}
-		}
-		&__copy{ display: none; margin-top: 15px; }
-		&__edit{ 
-			svg{ font-size: 20px; fill: #cacaca; display: block; }
+		&__list{ flex: 1 1 auto;  }
+		&__bottom{ margin-top: 30px; } 
+	}
+
+	&--discount &{
+		&__row{ margin-bottom: -20px; 
+			&-item{ margin-bottom: 20px; }
+			&-label{ margin-bottom: 20px;  }
+
 		}
 	}
 
-	&--adres{ padding: 15px 25px; 
-		&:hover{
-			.well-block__city{
-				svg{ fill: $yellow;  }
+	&--discount-2 &{
+		&__row{ margin-bottom: -20px; 
+			&-item{ margin-bottom: 20px; }
+			&-label{ margin-bottom: 15px; color: $blue-dark; font: 600 20px/26px $baseFF; }
+			&-discount{ color: $green; font: 700 40px $baseFF; 
+				&--blue{ color: $form-blue;  }
 			}
-			.well-block__edit{
-				svg{ fill: $black; }
-			}
+
 		}
 	}
-	&--adres &{ 
-		&__city{ @include flex(0,center,center,nowrap); font: 600 14px $baseFF; flex: 0 0 225px; padding-right: 20px;
-			svg{ display: block; fill: #b9b9b9; font-size: 16px; margin-right: 10px; }
-		} 
-		&__adres{ font: 600 14px $baseFF; flex: 1 1 auto; /* flex: 0 0 390px; */ padding-right: 20px;  } 
-		&__comment{ font: 500 13px $baseFF; flex: 1 1 auto; padding-right: 40px;  } 
-		&__buttons{ @include flex(flex-end,center,center,nowrap); }
-		&__edit{
-			svg{ font-size: 26px; fill: #cacaca; display: block; @include time(); }
-		}
-		&__delete{ margin-left: 40px; 
-			svg{ font-size: 16px; fill: #b9b9b9; display: block; @include time(); } 
-
-			&:hover{ 
-				svg{ fill: $black; }
-			}
-		}
+	
+	&--pay{ @include flex(0,stretch,stretch,nowrap,column); }
+	&--pay &{
+		&__text{ color: $gray;  flex: 1 1 auto; }
 	}
 
-	@include media($lg){ padding: 15px 20px; 
-		&--article{ padding: 40px 60px; background-position: 20px 20px; }
+	&--doc{ padding: 22px 40px;  }
+
+	&--order-info{ padding: 24px 30px; }
+	&--order-info &{
+		&__number{ font-weight: bold; color: $blue-dark; flex: 0 0 22%; max-width: 22%; } 
+		&__date{ text-align: center; flex: 0 0 24%; max-width: 24%; }
+		&__price{ text-align: center; flex: 0 0 24%; max-width: 24%; } 
+		&__status{ flex: 0 0 30%; max-width: 30%; } 
+
 	}
-	@include media($md){ padding: 10px 20px; 
 
-		&--article{ padding: 40px 60px; background-position: 20px 20px; }
+	@include media($lg){ 
 
-		&--data{ padding: 15px 20px; }
-		&--data &{
-			&__label{ padding: 15px 0; font: 600 13px $baseFF; padding-right: 15px; }
-			&__value{ padding: 15px 0; 
-				.form-group{ 
-					.form-control{
-						&:disabled{ font: 13px $baseFF; }
-					}
-				} 
-			}
-			&__form{ 
-				&.is-edit{ 
-					.well-block__buttons{ margin-top: 10px; }
-				}
-			}
-			&__required-text{ font: 11px/1 $baseFF; }
-			&__buttons{ 
-				.btn{ padding-left: 5px; padding-right: 5px; margin: 0 5px; font-size: 10px;
-					&:first-child{ margin-left: 0; }
-					&:last-child{ margin-right: 0; }
-				}
-			}
-			&__copy{ margin-top: 10px; }
-			&__edit{ 
-				svg{ font-size: 18px; }
-			}
+	}
+	@include media($md){ 
+		&--profile{ padding: 25px 20px 20px; }
+		&--profile &{
+			&__name{ margin-top: 25px;  }
+			&__avatar{  margin-right: 20px; 
+		      img{ width: 120px; height: 120px; }
+		    }
+		    &__bottom{  margin-top: 20px; }
+		    
 		}
 
-		&--adres &{ 
-			&__city{ font: 600 12px $baseFF; flex: 0 0 200px;  } 
-			&__adres{ font: 600 12px $baseFF; /* flex: 0 0 290px;  */}
-			&__comment{ font: 500 11px $baseFF; padding-right: 20px;  } 
-			//&__buttons{ @include flex(flex-end,center,center,nowrap); }
-			
-			&__delete{ margin-left: 20px; }
-		}
+		&--orders &{
+			&__row{ margin-bottom: 20px; 
+				&:last-child{ margin-bottom: 0;  }
+			}
+			&__bottom{ margin-top: 20px; } 
+		}		
+
+		&--doc{ padding: 15px 30px;  }
 	}
 
 	@include media($sm){
-		&--adres{ flex-wrap: wrap; }
-		&--adres &{ 
-			&__city{ flex: 0 0 100%; margin-bottom: 10px; } 
-			&__adres{ /* flex: 0 0 100%; */ flex: 0 0 calc(100% - 100px);  margin-bottom: 10px;  }
-			&__comment{ padding-right: 0; flex: 0 0 calc(100% - 100px); } 
-			&__buttons{ flex: 0 0 100px; }
-			
-			//&__delete{ margin-left: 20px; }
-		}
+		
 	}
 
-	@include media($xs){ padding: 20px 15px 10px; position: relative; display: block;
-		&__title{ font-size: 12px; margin: 0 0 5px; }
-		&__repair{ margin-right: 0; text-align: right; font: 600 12px $baseFF; display: block; }
-		&__close{ position: absolute; top: 7px; right: 7px;  }
+	@include media($xs){ padding: 20px;
+		&__title{ margin-bottom: 20px; padding: 0 0 10px; }  
+		&__edit{  font: bold 14px $baseFF; } 
 
-		&--article{ padding: 50px 20px 20px 20px; font-size: 12px; background-position: 10px 10px; }
-
-		&--login{ padding: 15px 5px; display: block; }
-		&--login &{
-			&__title{ font: 500 13px/20px $baseFF; margin: 0 0 15px 0; text-align: center; }
-			&__buttons{ @include flex(center); }
-			
+		&--profile{ padding: 20px 20px; display: block;  }
+		&--profile &{
+			&__name{ margin-top: 25px;  }
+			&__avatar{  margin-right: 0; 
+		      img{ width: 120px; height: 120px; }
+		    }
+		    &__bottom{  margin-top: 20px; }
+		    
 		}
 
-		&--data{ display: table; } 
-		&--data &{
-			&__label{ white-space: normal; }
-		}
+		&--doc{ padding: 15px 20px;  }
 
-		&--adres{ display: flex; padding: 10px 15px 15px; }
-		&--adres &{ 
-			//&__city{ flex: 0 0 100%; margin-bottom: 10px; } 
-			&__adres{ flex: 0 0 100%; }
-			&__comment{ flex: 0 0 100%; } 
-			&__buttons{ flex: 0 0 100%; order: -1; } 
-			
-			&__edit{
-				svg{ font-size: 20px; }
+		&--discount &{
+			&__row{ 
+				&-label{ margin-bottom: 10px;  }  
+
 			}
-			&__delete{ margin-left: 30px; 
-				svg{ font-size: 14px; }  
+		}
+
+		&--discount-2 &{
+			&__row{ 
+				&-label{ margin-bottom: 10px; font: 600 18px/24px $baseFF; }
+				&-discount{ font: 700 30px $baseFF;  }
+
 			}
 		}
 	}
 
 	@include media($xxs){
 		
-		&--data &{
-			
-			&__buttons{ 
-				.btn{ font-size: 8px;  }
-			}
-			
-		}
 	}
 }

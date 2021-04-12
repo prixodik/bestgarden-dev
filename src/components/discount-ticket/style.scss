@@ -1,0 +1,4 @@
+
+.discount-ticket{ background: $gray-bg; position: relative; border-radius: 5px; padding: 20px 25px 20px 70px; color: $blue-dark; font: bold 28px $baseFF;
+	&:before{ content: ""; display: block; width: 0; border-left: 2px #C9DCE9 dashed; position: absolute; top: 0; left: 35px; bottom: 0; }
+}

@@ -12,7 +12,9 @@ mixin header(data)
 						img(src="images/logo.png", alt="")
 					._slogan Оптовая продажа товаров для сада
 				._body-content
-					+searchBlock()._search
+					+searchBlock({
+						placeholder: 'Название или артикул'
+					})._search
 					
 					._contacts
 						+iconInlineLogin()._contacts-item

@@ -1,0 +1,56 @@
+extends extends/base.pug
+append vars
+	- var pageUrl = 'delivery.html';
+	- var pageTitle = '.main-section__';
+	- var classBody = 'delivery-page';
+	- var headerBg = 'images/main-banner.jpg';
+block styles
+	
+block content
+	include ../components/main-section/template
+	include ../components/accardion-block/template
+	+mainSection({
+		bread: [{url: '#', title: 'О нас'}]
+	}).main-section--delivery
+		h1.main-section__title информация о доставке и оплате
+		.main-section__tab-nav.tabs__nav
+			.tabs__nav-item.is-active
+				a.js-tab-nav(href="#tab-1") Доставка
+			.tabs__nav-item
+				a.js-tab-nav(href="#tab-2") Оплата
+
+		.main-section__tab.tabs__body.is-active#tab-1
+			.banner-block.-delivery.main-section__banner
+				img(src="images/banner-delivery-img.svg")._img
+				._wrap
+					._title бесплатная доставка при заказе от 100 000 рублей!
+					._text по Москве, ближнему Подмосковью и до ТК
+
+			+accardionBlock([{ 
+					title: 'Доставка почтой по России',
+					text: '<p><img src="images/post-rus.png" alt=""></p><p>Заказанные вами товары будут упакованы в посылку и доставлены в ваше почтовое отделение. <strong>Расходы по почтовой пересылке НЕ включены в стоимость товара.</strong> Стоимость почтовой пересылки оплачивается Заказчиком наложенным платежом при получении заказа на почтовом отделении.</p><p>Товар упаковывается и отправляется в течение 3-5 дней. После отправки посылки, на Ваш электронный адрес или телефон будет выслан идентификационный номер и дата почтового отправления.</p>'
+				},{
+					title: 'Самовывоз из магазинов',
+					text: '<p>Как только забронированный Вами товар поступит на наш склад, на Ваш электронный адрес или телефон будет выслано сообщение, что Ваш заказ отдан на комплектацию. Если у Вас возникли вопросы, пожалуйста, свяжитесь с нашими операторами. Call-центр: +7 (495) 734-80-88 время работы call центра: понедельник-пятница с 09:00 до 18:00, суббота, воскресение – выходные.<br> Как только будет скомплектован Ваш заказ, на ваш электронный адрес или телефон поступит новое сообщение.</p><p><strong>Товар на складе хранится 7 дней.</strong></p><p>Вам сообщат дату и выбранный вами пункт самовывоза, где можно забрать заказ. Самовывоз возможен из магазинов «Мир Увлечений»:</p><div class="row"><div class="col-4 col-sm-6 col-xs-12"><div class="main-section__adres"><div class="main-section__adres-metro main-section__adres-metro--orange"><svg><use xlink:href="images/sprite-svg.svg#metro"></svg><span>Садовый центр<br>в Медведково:</span></div><div class="main-section__adres-item"><strong>Адрес:</strong>  г. Москва, ул. Широкая, 27</div><div class="main-section__adres-item"><strong>Время работы:</strong> ежедневно с 09:00 до 21:00  без перерыва на обед, выходных и праздничных дней</div></div></div><div class="col-4 col-sm-6 col-xs-12"><div class="main-section__adres"><div class="main-section__adres-metro"><svg><use xlink:href="images/sprite-svg.svg#metro"></svg><span>Садовый центр<br> в Отрадном:</span></div><div class="main-section__adres-item"><strong>Адрес:</strong> г. Москва, ул. Санникова, 13</div><div class="main-section__adres-item"><strong>Время работы:</strong> ежедневно с 09:00 до 21:00 без перерыва на обед, выходных и праздничных дней</div></div></div></div>'
+				},{
+					title: 'Доставка курьером',
+					text: '<p>Для уточнения даты доставки, вам придёт сообщение с просьбой связаться с нашими операторамипо телефону <strong>+7 (495) 734-80-88.</strong></p><p>Доставка заказов по каталогу "Товар в наличии" осуществляется в ближайшие 2-7 рабочих дня с 10 до 18 часов. Если Вы сделали заказ до 12-00, доставка может быть осуществлена на следующий день. </p><p>Бесплатно - доставка курьером по Москве и области до 10 км. и сборка при заказе на сумму от 100 000 руб. (с учетом скидок и бонусов) и 100 % предоплате по каталогам Осень, Луковичные и многолетники, Розы, Саженцы, Саженцы ЗКС.</p><p>&nbsp;</p><div class="table-responsive"><table class="table"><tr><th>Способ доставки </th><th>Сумма доставки</th><th>Сборка заказа</th><th>Итого сумма доставки</th></tr><tr><td><strong>Курьером по Москве в пределах МКАД</strong></td><td>320,00 руб.</td><td>100,00 руб.</td><td>390,00 руб.</td></tr><tr><td><strong>Курьером по Москве и области<br> до 10 км от МКАД</strong></td><td>600,00 руб.</td><td>100,00 руб.</td><td>670,00 руб.</td></tr><tr><td><strong>Курьером по Москве и области<br> до 25 км от МКАД</strong></td><td>880,00 руб.</td><td>100,00 руб.</td><td>950,00 руб.</td></tr><tr><td><strong>Курьером по Москве и области свыше<br> 25 км от МКАД</strong></td><td>880руб. + 25 руб. за каждый<br> километр свыше 25</td><td>100,00 руб.</td><td>950 руб. + 25 руб. за каждый<br> километр свыше 25</td></tr></table></div>'
+				},{
+					title: 'Другие способы доставки',
+					text: '<p>Благодаря альтернативной доставке клиентам из регионов России стал доступен для заказа более широкий ассортимент товара (например штамбовые формы растений).</p>'
+				}]).accardion-block--white
+
+		.main-section__tab.item-page.tabs__body#tab-2
+			p Оплата осуществляется по выставленному счету, который вы можете скачать в <a href="#">личном кабинете</a> после проверки заказа менеджером и выставления счета.
+			.main-section__pay
+				.main-section__pay-title Реквизиты компании:
+				p ООО "БЕСТГАРДЕН"<br> ИНН: 9715322394<br> КПП: 771501001<br> Расчетный счет: 40702810038000238634<br> Банк: ПАО СБЕРБАНК г. МОСКВА<br> БИК: 044525225<br> Корр. счет: 30101810400000000225
+			
+	
+
+	include ../components/footer/template  
+	+footer()    
+
+	//- +gridLayout() 
+
+block scripts 

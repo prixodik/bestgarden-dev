@@ -1,0 +1,12 @@
+
+.banner-block{ padding: 27px; background: #A2D9DD; border-radius: 10px; @include flex(0,center,center,nowrap); 
+	&__img{ margin-right: 30px; flex: 0 0 160px; }
+	&__title{ color: $white; text-transform: uppercase; margin-bottom: 7px; text-shadow: 3px 3px 4px rgba(103, 175, 181, 1);
+}
+	&__text{ }
+
+	@include media($xs){ padding: 20px; display: block; text-align: center;
+		&__img{ margin: 0 auto 20px; display: block; }
+
+	}
+}

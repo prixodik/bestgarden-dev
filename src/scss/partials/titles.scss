@@ -24,7 +24,7 @@ $title-h4-xs: 600 16px/1.4 $titleFF; // ?
 $title-h5-xs: 600 14px/1.4 $titleFF; // ?
 
 
-$title-color: $black;
+$title-color: $green;
 
 h1, .title-h1{ font: $title-h1; color: $title-color; margin: 0 0 25px 0; 
 	@include media($md){

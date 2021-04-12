@@ -1,6 +1,6 @@
 
 mixin searchBlock(data)
 	.search-block&attributes(attributes)
-		input._input(type="text" placeholder="Название или артикул")
+		input._input(type="text" placeholder=data.placeholder)
 		button._btn
 			+svg('search')

@@ -8553,6 +8553,236 @@ var uikit = {
 
 
 
+    formatSize: function(length){
+
+            var i = 0, type = ['б','Кб','Мб','Гб','Тб','Пб'];
+
+            while((length / 1000 | 0) && i < type.length - 1) {
+
+                length /= 1024;
+
+                i++;
+
+            }
+
+            return length.toFixed(2) + ' ' + type[i];
+
+    },
+
+
+
+    upload: function(){
+
+
+
+        /*function formatSize(length){
+
+            var i = 0, type = ['б','Кб','Мб','Гб','Тб','Пб'];
+
+            while((length / 1000 | 0) && i < type.length - 1) {
+
+                length /= 1024;
+
+                i++;
+
+            }
+
+            return length.toFixed(2) + ' ' + type[i];
+
+        }*/
+
+
+
+
+
+        // File Upload
+
+        $.fn.fileUploader = function (filesToUpload, sectionIdentifier) {
+
+        var fileIdCounter = 0;
+
+            
+
+            this.parents('.js-files-form').find(".js-file-input").change(function (evt) {
+
+                var output = [];
+
+
+
+                for (var i = 0; i < evt.target.files.length; i++) {
+
+                    fileIdCounter++;
+
+                    var file = evt.target.files[i];
+
+                    var fileId = sectionIdentifier + fileIdCounter;
+
+
+
+                    filesToUpload.push({ 
+
+                        id: fileId,
+
+                        file: file
+
+                    });
+
+
+
+                    var size = uikit.formatSize(file.size);
+
+                    var removeLink = "<a class=\"js-file-delete upload-block__result-close\" href=\"#\" data-fileid=\"" + fileId + "\"><svg class=\"icon icon_close\"><use xlink:href=\"images/sprite-svg.svg#close\"></use></svg></a>";
+
+
+
+                    output.push("<div class=\"upload-block__result-item\"><svg class=\"icon icon_close upload-block__result-icon\"><use xlink:href=\"images/sprite-svg.svg#close\"></use></svg>", "<span>", escape(file.name), "</span>", removeLink, "</div>");
+
+                };
+
+
+
+                $(this).parents('.js-files-form').find(".js-files-list")
+
+                    .append(output.join(""));
+
+
+
+                //reset the input to null - nice little chrome bug!
+
+                evt.target.value = null;
+
+            });
+
+
+
+            $(document).on("click", ".js-file-delete", function (e) {
+
+                e.preventDefault();
+
+
+
+                var fileId = $(this).parent().children("a").data("fileid");
+
+
+
+                // loop through the files array and check if the name of that file matches FileName
+
+                // and get the index of the match
+
+                for (var i = 0; i < filesToUpload.length; ++i) {
+
+                    if (filesToUpload[i].id === fileId)
+
+                        filesToUpload.splice(i, 1);
+
+                }
+
+
+
+                $(this).parent().remove();
+
+            });
+
+
+
+            this.clear = function () {
+
+                for (var i = 0; i < filesToUpload.length; ++i) {
+
+                    if (filesToUpload[i].id.indexOf(sectionIdentifier) >= 0)
+
+                        filesToUpload.splice(i, 1);
+
+                }
+
+
+
+                $(this).children(".js-files-list").empty();
+
+            }
+
+
+
+            return this;
+
+        };
+
+
+
+        (function () {
+
+            var filesToUpload = [];
+
+
+
+            var files1Uploader = $(".js-file-input").fileUploader(filesToUpload, "files1");
+
+            //var files2Uploader = $("#files2").fileUploader(filesToUpload, "files2");
+
+            //var files3Uploader = $("#files3").fileUploader(filesToUpload, "files3");
+
+
+
+            $(document).on('click','.js-upload-btn', function (e) {
+
+                e.preventDefault();
+
+
+
+                var formData = new FormData();
+
+
+
+                for (var i = 0, len = filesToUpload.length; i < len; i++) {
+
+                    formData.append("files", filesToUpload[i].file);
+
+                }
+
+
+
+                $.ajax({
+
+                    url: "http://requestb.in/1k0dxvs1",
+
+                    data: formData,
+
+                    processData: false,
+
+                    contentType: false,
+
+                    type: "POST",
+
+                    success: function (data) {
+
+                        alert("DONE");
+
+
+
+                        files1Uploader.clear();
+
+                        files2Uploader.clear();
+
+                        files3Uploader.clear();
+
+                    },
+
+                    error: function (data) {
+
+                        alert("ERROR - " + data.responseText);
+
+                    }
+
+                });
+
+            });
+
+        })()
+
+    },
+
+
+
     customScroll: function(){
 
         $('.js-custom-scroll').mCustomScrollbar();
@@ -8629,17 +8859,57 @@ var uikit = {
 
         });
 
-        $('input[type="checkbox"]').change(function () {
+        $('input[type="checkbox"], input[type="radio"]').change(function () {
 
             reset($(this))
 
         });
 
-        function checkInput(el) {
+        function checkInput(el) { 
 
             var $form = $(el);
 
+
+
+            $form.find('.is-error').removeClass('is-error');//.each(function(){
+
+                //$(this).removeClass('is-error');
+
+                //console.log("!"+$form.find('.is-error').length+"!");
+
+            //});
+
+
+
             $form.find('select.js-required').each(function () {
+
+                if ($(this).val() != '') {
+
+                    validate($(this));
+
+                } else {
+
+                    error($(this));
+
+                }
+
+            });
+
+            $form.find('input[type=tel].js-required').each(function () {
+
+                if ($(this).val() != '') {
+
+                    validate($(this));
+
+                } else {
+
+                    error($(this));
+
+                }
+
+            });
+
+            $form.find('input[type=email].js-required').each(function () {
 
                 if ($(this).val() != '') {
 
@@ -8775,6 +9045,56 @@ var uikit = {
 
             });
 
+
+
+            var radios = [];
+
+            $form.find('input[type=radio]:required').each(function () {
+
+                var name = $(this).attr('name');
+
+                
+
+                if( radios.indexOf(name) == -1 ){
+
+                    
+
+                    radios.push(name);
+
+                    var result = false;
+
+                    $form.find('input[name='+name+'].js-required').each(function () {
+
+                        
+
+                        if ($(this).is(':checked')) {
+
+                            result = true;
+
+                        }
+
+                    });
+
+                        if (result == true) {
+
+                            validate($(this));
+
+                            return false;
+
+                        } else {
+
+                            //console.log(radios);
+
+                            $form.find('input[name='+name+'].js-required').addClass(classError);
+
+                            error($(this));
+
+                        }
+
+                }
+
+            });
+
         }
 
 
@@ -8787,7 +9107,63 @@ var uikit = {
 
             var errors = $form.find('.is-error:visible').length;
 
+            //console.log(errors);
+
             if (errors) {
+
+                return false;
+
+            }else if( $(this).data('href') != "" && $(this).data('href') != undefined){
+
+
+
+            // Открытие попапа после отправки формы.
+
+
+
+                if( $(this).attr("href") != "" && $(this).attr("href") != undefined){
+
+                    var href = $(this).attr("href");
+
+                }else{
+
+                    var href = $(this).data("href");
+
+                }
+
+                if($(this).data('media') == "lg" && uikit.ww() <= uikit.md){
+
+                    return false;
+
+                }
+
+
+
+                var bodyWidth = $('body').width();
+
+
+
+                $("body, html").addClass("overflow");
+
+
+
+                    if( bodyWidth - uikit.ww() < 0){
+
+                        //$('body').css('padding-right',((bodyWidth - uikit.ww())* -1)+'px');
+
+                    }
+
+
+
+                //$(".mobile-menu").removeClass("active");
+
+
+
+                $(".popup").removeClass("active");
+
+                $(href).addClass("active");
+
+
 
                 return false;
 
@@ -8843,7 +9219,7 @@ var uikit = {
 
             //alert(); 
 
-            console.log("#"+$(this).val()); 
+            //console.log("#"+$(this).val()); 
 
 
 
@@ -9742,6 +10118,8 @@ var uikit = {
         this.accardion();
 
         this.mobile();
+
+        this.upload();
 
         //this.customScroll();
 

@@ -1,24 +1,17 @@
 
 .tabs{
 	&__nav{list-style: none;  @include flex(); flex-wrap: nowrap; 
-		&-item{display: inline-block; font: bold 13px/1 $family;  position: relative; text-align: center; margin-right: 90px; color: $black; padding: 0 10px 30px 10px; text-transform: uppercase; @include transition(); white-space: nowrap;
+		&-item{ display: inline-block; min-width: 240px; position: relative; text-align: center; margin-right: 15px; color: $blue-dark; @include transition(); white-space: nowrap; background: $icon-bg-directory; border-radius: 10px; 
+
 			&:last-child{ margin-left: 0; }
-			&:after{content: ""; display: block; width: 0%; height: 3px; background: $yellow; position: absolute; bottom: 0; left: 50%; @include transition(); }
-			a{ text-decoration: none; color: $black; display: block; } 
 			
-			&.is-active, &:hover{ color: $black; 
-				&:after{ width: 100%; left: 0;} 
-			}
+			a{ display: block; padding: 18px; text-decoration: none; } 
+			
+			&.is-active, &:hover{ color: $white; background: $green;  }
 			//&.active{ font-weight: 800; }
 		}
 
-		&--pt{ 
-			.tabs__nav-item{ padding-top: 30px; } 
-		}
-
-		&--border-bottom{ border-bottom: 1px #efefef solid; 
-			.tabs__nav-item{ margin-bottom: -1px;  } 
-		}
+		
 		&--around{ @include flex(space-around,center,center,nowrap); }
 		&--around &{ 
 			&-item{ margin-left: 0; margin-right: 0; white-space: nowrap;  }
@@ -36,9 +29,11 @@
 
 	@include media($xs){  
 		&__nav{ overflow-x: auto; 
-			&-item{ font: bold 12px/16px $baseFF; padding: 15px 0; @include flex(center,center,center); margin-right: 30px; }
+			&-item{ min-width: 140px; 
+				a{ padding: 8px 10px; } 
+			}
 
-			&--around{ @include flex(flex-start,center,center,nowrap); }
+			&--around{ @include flex(flex-start,center,center,nowrap); } 
 			&--around &{ 
 				&-item{ margin-left: 0; margin-right: 40px; white-space: nowrap;  }
 			}
