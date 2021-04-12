@@ -1,0 +1,54 @@
+extends extends/base.pug
+append vars
+	- var pageUrl = 'discount-none.html';
+	- var pageTitle = 'Скидки и бонусы';
+	- var classBody = 'discount-page';
+	- var headerBg = 'images/main-banner.jpg';
+block styles
+	
+block content
+	include ../components/main-section/template
+	include ../components/well-block/template
+	include ../components/search-block/template
+	include ../components/progress-bar/template
+
+	+mainSection({
+		bread: [{url: '#', title: 'Личный кабинет'},{url: '#', title: 'Скидки и бонусы'}]
+	}).main-section--discount
+		h1.main-section__title.title-h3 Скидки и бонусы
+		.main-section__desc.item-page Для просмотра индивидуальной скидки войдите в <a class="js-popup-show" href="#popup-login">личный кабинет.</a>
+
+		.main-section__subtitle.title-h3 прогресс скидки
+		+progressBarNone().main-section__progress
+
+		.main-section__subtitle.title-h3 условия скидочной программы
+		.main-section__conditions
+			+iconInline({
+				icon: 'check',
+				text: 'Начисление скидки происходит только после получения посылки, с момента перехода заказа в статус «завершен».'
+			}).icon-inline--list.main-section__conditions-item
+			+iconInline({
+				icon: 'check',
+				text: 'Скидка применяется на любую группу товаров по каталогу, кроме товаров, участвующих в распродаже и оплаты услуги доставки.'
+			}).icon-inline--list.main-section__conditions-item
+			+iconInline({
+				icon: 'check',
+				text: 'Организатор оставляет за собой право приостановить действие Акции в любой момент без объяснения причин путем размещения соответствующего уведомления на официальной странице Акции.'
+			}).icon-inline--list.main-section__conditions-item
+			+iconInline({
+				icon: 'check',
+				text: 'Организатор имеет право в одностороннем порядке менять условия Акции в течение периода ее действия.'
+			}).icon-inline--list.main-section__conditions-item
+			+iconInline({
+				icon: 'check',
+				text: 'Организатор имеет право в одностороннем порядке менять условия Акции в течение периода ее действия.'
+			}).icon-inline--list.main-section__conditions-item
+			
+			
+
+	include ../components/footer/template  
+	+footer()    
+
+	//- +gridLayout() 
+
+block scripts 

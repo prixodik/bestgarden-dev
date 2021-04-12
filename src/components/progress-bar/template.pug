@@ -16,4 +16,22 @@ mixin progressBar(data)
 			._item.-step-5.-disabled
 				._procent 20%
 				._price 900 000<span>руб.</span> 
+
+mixin progressBarNone(data)
+	.progress-bar&attributes(attributes)
+		._line
+			._line.-active(style="width: 0%;")
+			._item.-step-1.-disabled
+			._item.-step-2.-disabled
+				._procent 5%
+				._price 100 000<span>руб.</span>
+			._item.-step-3.-disabled
+				._procent 10%
+				._price 500 000<span>руб.</span>
+			._item.-step-4.-disabled
+				._procent 15%
+				._price 750 000<span>руб.</span>
+			._item.-step-5.-disabled
+				._procent 20%
+				._price 900 000<span>руб.</span> 
 		

@@ -1,0 +1,67 @@
+extends extends/base.pug
+append vars
+	- var pageUrl = 'bills.html';
+	- var pageTitle = 'Счета';
+	- var classBody = 'orders-page';
+	- var headerBg = 'images/main-banner.jpg';
+block styles
+	
+block content
+	include ../components/main-section/template
+	include ../components/well-block/template
+	include ../components/search-block/template
+
+	+mainSection({
+		bread: [{url: '#', title: 'Личный кабинет'},{url: '#', title: 'Заказы'}]
+	}).main-section--bills
+		h1.main-section__title Счета
+		.main-section__filter.row.row--stretch.row--between
+			.main-section__filter-item.col-4.col-sm-12
+				select(name="")
+					option(value="") Все
+					option(value="") Все и еще немного
+					option(value="") Ничего
+			.main-section__filter-item.col-4.col-sm-12
+				+searchBlock({
+					placeholder: 'Поиск по номеру заказа'
+				})
+
+		.main-section__head.row
+			.main-section__head-item.-date.col Дата создания счета
+			.main-section__head-item.-number.col Номер заказа
+			.main-section__head-item.-price.col Стоимость, руб.
+			.main-section__head-item.-status.col Статус оплаты
+			.main-section__head-item.-status.col Скачать счет
+			.main-section__head-item.-status.col Отправить счет
+
+		.main-section__list
+			+wellBlockBillInfo({
+					number: '356458665523',
+					date: '31.01.2021',
+					price: '58 462,30',
+					statusClass: 'status-2-2',
+					status: 'оплачен'
+				}).main-section__list-item
+			+wellBlockBillInfo({
+					number: '356458665523',
+					date: '31.01.2021',
+					price: '58 462,30',
+					statusClass: 'status-2-3',
+					status: 'частично оплачен',
+					send: true
+				}).main-section__list-item
+			+wellBlockBillInfo({
+					number: '356458665523',
+					date: '31.01.2021',
+					price: '58 462,30',
+					statusClass: 'status-2-4',
+					status: 'не оплачен'
+				}).main-section__list-item
+			
+
+	include ../components/footer/template  
+	+footer()    
+
+	//- +gridLayout() 
+
+block scripts 

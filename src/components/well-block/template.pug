@@ -11,6 +11,73 @@ mixin wellBlock(data)
 				+svg('close')
 
 
+mixin wellBlockCallCenter(data)
+	.well-block.-call-center.-contacts&attributes(attributes)
+		._row.row
+			._row-item.col-4.col-sm-6.col-xs-12
+				._label Call-центр:
+				._phone.title-h2 +7 (495) 734-80-88
+			._row-item.col-4.col-sm-6.col-xs-12
+				._label Время работы call-центра:
+				p понедельник-пятница с 09:00 до 18:00<br> суббота, воскресение – выходные.
+
+mixin wellBlockShop(data)
+	.well-block.-shop.-contacts&attributes(attributes)
+		._row.row
+			._row-item.col-4.col-sm-6.col-xs-12
+				._label Интернет-магазин:
+				p принимает заказы круглосуточно<br> в автоматическом режиме
+			._row-item.col-4.col-sm-6.col-xs-12
+				._label Розничный сайт:
+				a._site(href="#")
+					img(src="images/icon-shop.svg" alt="")
+					span bestgarden.ru
+
+mixin wellBlockAdress(data)
+	.well-block.-adress.-contacts&attributes(attributes)
+		._item
+			._row.row
+				._adres.col-4.col-xs-12
+					._label Адреса магазинов:
+					.main-section__adres
+						.main-section__adres-metro.main-section__adres-metro--orange
+							+svg('metro')
+							span Садовый центр<br>в Медведково:
+						.main-section__adres-item <strong>Адрес:</strong>  г. Москва, ул. Широкая, 27
+						.main-section__adres-item <strong>Время работы:</strong> ежедневно с 09:00 до 21 00  без перерыва на обед, выходных и праздничных дней
+
+				._info.col-4.col-xs-12
+					._label Как добраться:
+					p 1 остановка от метро Медведкого (950 м), останавливаются автобусы 136, 172, 774 и 909.
+					p
+						+webp('images/map-img-1.jpg')
+					p
+						a(href="#") Открыть в Яндекс Картах
+				._img.col-4.col-xs-12
+					+webp('images/adres-img-1.jpg')
+
+		._item
+			._row.row
+				._adres.col-4.col-xs-12
+					._label Адреса магазинов:
+					.main-section__adres
+						.main-section__adres-metro
+							+svg('metro')
+							span Садовый центр<br> в Отрадном:
+						.main-section__adres-item <strong>Адрес:</strong> г. Москва, ул. Санникова, 13
+						.main-section__adres-item <strong>Время работы:</strong> ежедневно с 09:00 до 21:00 без перерыва на обед, выходных и праздничных дней
+
+				._info.col-4.col-xs-12
+					._label Как добраться:
+					p м. Отрадное. Последний вагон из центра. Из стеклянных дверей налево. Обойти ТЦ "Золотой Вавилон" с задней стороны через сквер. Ориентир "Сбербанк", "Почта России". Левее будет магазин "Магнит". Вход в магазин под вывеской "Мир Увлечений", Садовый центр.
+					p
+						+webp('images/map-img-2.jpg')
+					p
+						a(href="#") Открыть в Яндекс Картах
+				._img.col-4.col-xs-12
+					+webp('images/adres-img-2.jpg')
+
+
 mixin wellBlockProfile(data)
 	.well-block.-profile&attributes(attributes)
 		._avatar
@@ -161,3 +228,26 @@ mixin wellBlockOrderInfo(data)
 						a.bullet__print(href="#")
 							+svg('price-label')
 			
+mixin wellBlockBillInfo(data)
+	.well-block.-bill-info&attributes(attributes)
+		._row.row.row--middle
+			._date.col.col-xs-6.order-xs-2!= data.date
+			._number.col.col-xs-12.order-xs-1!= data.number
+			._price.col.col-xs-6.order-xs-3!= data.price
+			._status.col.col-xs-12.order-xs-4
+				.bullet(class=data.statusClass)
+					.bullet__icon
+					.bullet__text!= data.status
+					if data.status == 'ожидает оплаты' 
+						a.bullet__print(href="#")
+							+svg('price-label')
+			._download.col.col-xs-3.order-xs-6
+				a(href="#")
+					+svg('download')
+			._send.-active.col.col-xs-9.order-xs-5
+				if data.send == true
+					a(href="#")
+						+svg('check')
+						span Отправлено
+				else
+					a(href="#") Отправить на E-mail

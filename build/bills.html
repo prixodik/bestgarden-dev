@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Счета</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- appstore links-->
+    <!-- seo meta-->
+    <meta name="description" content="Meta description">
+    <meta name="keywords" content="Key, words">
+    <meta name="author" content="Site name">
+    <!-- og meta-->
+    <meta property="og:title" content="Site name">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="Site name">
+    <meta name="twitter:title" content="Site name">
+    <meta name="twitter:description" content="Site name">
+    <meta name="twitter:image:src" content="https://projectname.surge.shimages/og/1_1200х628.jpg">
+    <meta name="twitter:url" content="https://projectname.surge.sh">
+    <!-- remove for production-->
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="css/template_styles.css">
+  </head>
+  <body class="orders-page">
+        <header class="header">
+          <div class="header__container container">
+            <div class="header__body">
+              <div class="header__logo-wrap"><a class="header__logo"><img src="images/logo.png" alt=""></a>
+                <div class="header__slogan">Оптовая продажа товаров для сада</div>
+              </div>
+              <div class="header__body-content">
+                    <div class="search-block header__search">
+                      <input class="search-block__input" type="text" placeholder="Название или артикул">
+                      <button class="search-block__btn">
+                        <svg class="icon icon_search">
+                          <use xlink:href="images/sprite-svg.svg#search"></use>
+                        </svg>
+                      </button>
+                    </div>
+                <div class="header__contacts">
+                      <div class="icon-inline header__contacts-item">
+                        <div class="icon-inline__icon">
+                          <svg class="icon icon_user">
+                            <use xlink:href="images/sprite-svg.svg#user"></use>
+                          </svg>
+                        </div>
+                        <div class="icon-inline__wrap icon-inline__wrap--login"><a class="js-popup-show" href="#popup-login">Вход</a><span>|</span><a class="js-popup-show" href="#popup-registration-1">Регистрация</a></div>
+                      </div>
+                      <div class="icon-inline header__contacts-item">
+                        <div class="icon-inline__icon">
+                          <svg class="icon icon_phone">
+                            <use xlink:href="images/sprite-svg.svg#phone"></use>
+                          </svg>
+                        </div>
+                        <div class="icon-inline__wrap"><a class="icon-inline__phone" href="tel:+74957348088">+7 (495) 734-80-88</a>
+                          <p>Пн–Пт 09:00–18:00</p>
+                        </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+            <div class="header__bottom"><a class="burger js-mobile-menu-toggle header__burger" href="#"><span> </span><span> </span><span> </span></a>
+              <div class="header__menu js-mobile-menu">
+                    <div class="menu-block">
+                      <div class="menu-block__item"><a href="#">Каталоги</a></div>
+                      <div class="menu-block__item"><a href="#">О нас</a></div>
+                      <div class="menu-block__item"><a href="#">Доставка и оплата</a></div>
+                      <div class="menu-block__item"><a href="#">Задать вопрос</a></div>
+                      <div class="menu-block__item"><a href="#">Скидки</a></div>
+                      <div class="menu-block__item"><a href="#">Новости</a></div>
+                      <div class="menu-block__item"><a href="#">Контакты</a></div>
+                    </div>
+              </div>
+              <div class="header__buttons"><a class="btn btn--blue btn--icon btn--sm js-popup-show" href="#popup-status">
+                  <svg class="icon icon_question">
+                    <use xlink:href="images/sprite-svg.svg#question"></use>
+                  </svg><span>Узнать статус заказа</span></a></div>
+            </div>
+          </div>
+        </header>
+        <div class="main-section main-section--bills">
+          <div class="main-section__container container">
+                <div class="breadcrumbs main-section__bread">
+                  <ul class="breadcrumbs__ul" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                    <li class="breadcrumbs__li" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Главная</span>
+                        <meta itemprop="position" content="0"></a></li>
+                    <li class="breadcrumbs__li active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Личный кабинет</span>
+                        <meta itemprop="position" content="1"></a></li>
+                    <li class="breadcrumbs__li active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Заказы</span>
+                        <meta itemprop="position" content="2"></a></li>
+                  </ul>
+                </div>
+            <h1 class="main-section__title">Счета</h1>
+            <div class="main-section__filter row row--stretch row--between">
+              <div class="main-section__filter-item col-4 col-sm-12">
+                <select name="">
+                  <option value="">Все</option>
+                  <option value="">Все и еще немного</option>
+                  <option value="">Ничего</option>
+                </select>
+              </div>
+              <div class="main-section__filter-item col-4 col-sm-12">
+                    <div class="search-block">
+                      <input class="search-block__input" type="text" placeholder="Поиск по номеру заказа">
+                      <button class="search-block__btn">
+                        <svg class="icon icon_search">
+                          <use xlink:href="images/sprite-svg.svg#search"></use>
+                        </svg>
+                      </button>
+                    </div>
+              </div>
+            </div>
+            <div class="main-section__head row">
+              <div class="main-section__head-item main-section__head-item--date col">Дата создания счета</div>
+              <div class="main-section__head-item main-section__head-item--number col">Номер заказа</div>
+              <div class="main-section__head-item main-section__head-item--price col">Стоимость, руб.</div>
+              <div class="main-section__head-item main-section__head-item--status col">Статус оплаты</div>
+              <div class="main-section__head-item main-section__head-item--status col">Скачать счет</div>
+              <div class="main-section__head-item main-section__head-item--status col">Отправить счет</div>
+            </div>
+            <div class="main-section__list">
+                  <div class="well-block well-block--bill-info main-section__list-item">
+                    <div class="well-block__row row row--middle">
+                      <div class="well-block__date col col-xs-6 order-xs-2">31.01.2021</div>
+                      <div class="well-block__number col col-xs-12 order-xs-1">356458665523</div>
+                      <div class="well-block__price col col-xs-6 order-xs-3">58 462,30</div>
+                      <div class="well-block__status col col-xs-12 order-xs-4">
+                        <div class="bullet status-2-2">
+                          <div class="bullet__icon"></div>
+                          <div class="bullet__text">оплачен</div>
+                        </div>
+                      </div>
+                      <div class="well-block__download col col-xs-3 order-xs-6"><a href="#">
+                          <svg class="icon icon_download">
+                            <use xlink:href="images/sprite-svg.svg#download"></use>
+                          </svg></a></div>
+                      <div class="well-block__send well-block__send--active col col-xs-9 order-xs-5"><a href="#">Отправить на E-mail</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="well-block well-block--bill-info main-section__list-item">
+                    <div class="well-block__row row row--middle">
+                      <div class="well-block__date col col-xs-6 order-xs-2">31.01.2021</div>
+                      <div class="well-block__number col col-xs-12 order-xs-1">356458665523</div>
+                      <div class="well-block__price col col-xs-6 order-xs-3">58 462,30</div>
+                      <div class="well-block__status col col-xs-12 order-xs-4">
+                        <div class="bullet status-2-3">
+                          <div class="bullet__icon"></div>
+                          <div class="bullet__text">частично оплачен</div>
+                        </div>
+                      </div>
+                      <div class="well-block__download col col-xs-3 order-xs-6"><a href="#">
+                          <svg class="icon icon_download">
+                            <use xlink:href="images/sprite-svg.svg#download"></use>
+                          </svg></a></div>
+                      <div class="well-block__send well-block__send--active col col-xs-9 order-xs-5"><a href="#">
+                          <svg class="icon icon_check">
+                            <use xlink:href="images/sprite-svg.svg#check"></use>
+                          </svg><span>Отправлено</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="well-block well-block--bill-info main-section__list-item">
+                    <div class="well-block__row row row--middle">
+                      <div class="well-block__date col col-xs-6 order-xs-2">31.01.2021</div>
+                      <div class="well-block__number col col-xs-12 order-xs-1">356458665523</div>
+                      <div class="well-block__price col col-xs-6 order-xs-3">58 462,30</div>
+                      <div class="well-block__status col col-xs-12 order-xs-4">
+                        <div class="bullet status-2-4">
+                          <div class="bullet__icon"></div>
+                          <div class="bullet__text">не оплачен</div>
+                        </div>
+                      </div>
+                      <div class="well-block__download col col-xs-3 order-xs-6"><a href="#">
+                          <svg class="icon icon_download">
+                            <use xlink:href="images/sprite-svg.svg#download"></use>
+                          </svg></a></div>
+                      <div class="well-block__send well-block__send--active col col-xs-9 order-xs-5"><a href="#">Отправить на E-mail</a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer">
+          <div class="footer__container container">
+            <div class="footer__row row footer__row--stretch">
+              <div class="footer__logo-col col-auto col-lg-3 col-sm-4 col-xs-12">
+                <div class="footer__logo">
+                  <picture>
+                    <source class="lazy" data-srcset="images/logo.webp" type="image/webp"/><img class="lazy d-block" data-src="images/logo.png" alt=""/>
+                  </picture>
+                </div>
+                <div class="footer__slogan">Интернет-магазин ООО «БЕСТГАРДЕН»</div>
+                <div class="footer__adres">Юридический адрес: 127224, Москва,<br> ул. Широкая, дом 27, пом. I, комн. 21.<br> ОГРН: 1187746815871</div>
+              </div>
+              <div class="footer__menu col-auto col-lg-2 col-sm-4 col-xs-12">
+                <div class="footer__title">Каталоги</div>
+                <div class="footer__menu-item"><a href="#">Водные растения 2021</a></div>
+                <div class="footer__menu-item"><a href="#">Луковичные <br>и многолетники 2021</a></div>
+                <div class="footer__menu-item"><a href="#">Розы<br> пакетированные 2021</a></div>
+                <div class="footer__menu-item"><a href="#">Саженцы 2021 | ЗКС 2021</a></div>
+                <div class="footer__menu-item"><a href="#">Грунты</a></div>
+                <div class="footer__menu-item"><a href="#">Средства защиты</a></div>
+              </div>
+              <div class="footer__menu col-auto col-lg-2 col-sm-4 col-xs-12">
+                <div class="footer__title">Информация</div>
+                <div class="footer__menu-item"><a href="#">О магазине</a></div>
+                <div class="footer__menu-item"><a href="#">Доставка и оплата</a></div>
+                <div class="footer__menu-item"><a href="#">Скидки</a></div>
+                <div class="footer__menu-item"><a href="#">Личный кабинет</a></div>
+                <div class="footer__menu-item"><a href="#">Новости</a></div>
+              </div>
+              <div class="footer__contacts col col-lg-5 col-sm-12 col-xs-12">
+                <div class="footer__contacts-row row">
+                  <div class="footer__contacts-left col-9 col-sm-12">
+                    <div class="footer__title">контакты</div>
+                    <div class="footer__contacts-item"><strong>Адрес:</strong><br> г. Москва, ул. 2-я Хуторская, д. 38</div>
+                    <div class="footer__contacts-item"><strong>Call-center:</strong><br> 8 (495) 734-80-88</div>
+                  </div>
+                  <div class="footer__contacts-soc col-3 col-sm-12">
+                                    <div class="soc-list footer__soc soc-list--vertical">
+                                      <div class="soc-list__item"><a href="#">
+                                          <svg class="icon icon_vk">
+                                            <use xlink:href="images/sprite-svg.svg#vk"></use>
+                                          </svg></a></div>
+                                      <div class="soc-list__item"><a href="#">
+                                          <svg class="icon icon_facebook">
+                                            <use xlink:href="images/sprite-svg.svg#facebook"></use>
+                                          </svg></a></div>
+                                      <div class="soc-list__item"><a href="#">
+                                          <svg class="icon icon_instagram">
+                                            <use xlink:href="images/sprite-svg.svg#instagram"></use>
+                                          </svg></a></div>
+                                    </div>
+                  </div>
+                  <div class="footer__contacts-left-2 col-4 col-md-12">
+                    <div class="footer__contacts-item"><strong>Задать вопрос:</strong><br> 8 (495) 212-85-06</div>
+                    <div class="footer__contacts-link"><a class="js-popup-show" href="#popup-contact-form">Форма обратной связи</a></div>
+                  </div>
+                  <div class="footer__contacts-subscribe col-8 col-md-12">
+                        <div class="subscribe-block subscribe-block--footer">
+                          <div class="subscribe-block__title">Подпишитесь на рассылку</div>
+                          <form class="subscribe-block__form">
+                            <input class="subscribe-block__input" type="text" placeholder="Введите вашу почту">
+                            <button class="subscribe-block__btn btn">Подписаться</button>
+                          </form>
+                        </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <div class="footer__container container">
+              <div class="footer__copyright">2021, Все права защищены  | <a href="#">Политика обработки персональных данных</a></div>
+            </div>
+          </div>
+        </footer>
+            <div class="popup popup--contact-form" id="popup-contact-form" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                    <div class="form-block form-block--popup">
+                      <div class="form-block__title title-h2">Есть вопрос? Мы с радостью на него ответим!</div>
+                      <div class="form-block__desc">Контакты техподдержки: +7 (495) 734-80-88</div>
+                      <div class="form-block__desc-2">Перед тем, как задать вопрос, ознакомьтесь, пожалуйста, с разделами <a href="#"> Вопросы и ответы</a> и <a href="#">Доставка и оплата.</a></div>
+                      <form action=""> 
+                        <div class="form-block__row row">
+                          <div class="form-block__input col-6 col-xs-12">
+                            <div class="form-group">
+                              <div class="form-group__label">Введите ваше имя</div>
+                              <input class="form-control js-required" type="text" placeholder="" required>
+                            </div>
+                          </div>
+                          <div class="form-block__input col-6 col-xs-12">
+                            <div class="form-group">
+                              <div class="form-group__label">Введите вашу почту</div>
+                              <input class="form-control js-required" type="text" placeholder="" required>
+                            </div>
+                          </div>
+                          <div class="form-block__input col-12">
+                            <textarea class="form-control js-required" name="" cols="30" rows="10" placeholder="Введите ваш вопрос"></textarea>
+                          </div>
+                          <div class="form-block__file col-4 col-xs-12">
+                                <div class="upload-block upload-block--inline js-files-form">
+                                  <input class="js-file-input" type="file" name="files[]" id="upload-file__input_1" accept=".jpg, .jpeg, .png, .svg" multiple>
+                                  <svg class="icon icon_file-add upload-block__icon">
+                                    <use xlink:href="images/sprite-svg.svg#file-add"></use>
+                                  </svg>
+                                  <div class="upload-block__title">Прикрепить файл</div>
+                                </div>
+                          </div>
+                          <div class="form-block__police col-8 col-xs-12">
+                            <div class="checkbox checkbox--blue checkbox--fs-14">
+                              <input class="js-required" id="police-1" type="checkbox" name="police" value="1" required>
+                              <label for="police-1">Я принимаю <a href="#"><strong>Пользовательское соглашение</strong></a> и даю согласие обработку, хранение и передачу указанных мной персональных данных согласно <a href="#"><strong>Политике конфиденциальности</strong></a></label>
+                            </div>
+                          </div>
+                          <div class="form-block__buttons col-12">
+                            <button class="btn btn--yellow js-submit" type="submit">Отправить вопрос</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+              </div>
+            </div>
+            <div class="popup popup--status" id="popup-status" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">статус заказа</div>
+                <div class="popup__desc">Введите номер заказа</div>
+                <form class="popup__form" action=""> 
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Номер заказа</div>
+                    <input class="form-control form-control--border js-required" type="text" required>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit" data-href="#popup-status-2">Найти заказ</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--status-result" id="popup-status-2" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">статус заказа</div>
+                <div class="popup__well">
+                  <div class="popup__number">Заказ <strong>56452356485669</strong></div>
+                  <div class="popup__status bullet bullet--lg status-2">
+                    <div class="bullet__icon"></div>
+                    <div class="bullet__text">Ожидают проверки</div>
+                  </div>
+                </div>
+                <div class="popup__date">Информация обновлена 15.02.2021</div>
+                <div class="popup__desc">Подробную информацию о заказе вы можете узнать<br> в личном кабинете или по телефону +7 (495) 734-80-88 </div>
+                <div class="popup__buttons"><a class="btn btn--block js-popup-show" href="#popup-status">Новый поиск</a></div>
+              </div>
+            </div>
+            <div class="popup popup--info-product" id="popup-info-product" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__subtitle">Информация о товаре</div>
+                <div class="popup__title">Спирея Широбана японская</div>
+                <div class="popup__desc">Spiraea japonica Shirobana</div>
+                <div class="popup__img">
+                  <picture>
+                    <source class="lazy" data-srcset="images/product-img-1.webp" type="image/webp"/><img class="lazy" data-src="images/product-img-1.jpg" alt=""/>
+                  </picture>
+                </div>
+                <div class="popup__category"><span>Находится в каталоге:</span> водные растения 2021</div>
+                <div class="popup__buttons"><a class="btn btn--yellow" href="#">Перейти в каталог</a></div>
+              </div>
+            </div>
+            <div class="popup popup--terms-order" id="popup-terms-order">
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">Условия оформления заказа</div>
+                <div class="popup__message">
+                  <div class="popup__message-icon">
+                    <svg class="icon icon_warning">
+                      <use xlink:href="images/sprite-svg.svg#warning"></use>
+                    </svg>
+                  </div>
+                  <div class="popup__message-text"><span>Общий минимальный заказ:</span> от 40 000 руб.</div>
+                </div>
+                <div class="popup__well"><strong>Как сделать заказ:</strong> заполненный бланк заказа в Excel отправить в форму на нашем сайте и отслеживать заказ в личном кабинете. Также возможно оформление<br> без регистрации (в 1 клик): наш менеджер свяжется с вами.</div>
+                <div class="popup__buttons"><a class="btn js-popup-show" href="#popup-login">Войти  в личный кабинет</a></div>
+                <div class="popup__links"><a class="btn btn--icon btn--link btn--blue-dark js-popup-show" href="#popup-registration-1">
+                    <svg class="icon icon_registration">
+                      <use xlink:href="images/sprite-svg.svg#registration"></use>
+                    </svg><span>Регистрация</span></a><a class="btn btn--icon btn--link btn--form-blue js-popup-show" href="#popup-one-click">
+                    <svg class="icon icon_click">
+                      <use xlink:href="images/sprite-svg.svg#click"></use>
+                    </svg><span>Оформить в 1 клик</span></a></div>
+              </div>
+            </div>
+            <div class="popup popup--one-click" id="popup-one-click">
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">быстрое оформление заказа</div>
+                <div class="popup__desc">Если вы зарегистрированы в системе, <a href="#">войдите в личный кабинет</a>, чтобы отслеживать статус заказа и получать персональные скидки. Если вы хотите оформить заказ без регистрации, заполните форму ниже.</div>
+                <form class="popup__form" action="">
+                  <div class="popup__input">
+                    <div class="popup__input-label">Телефон для связи:</div>
+                    <div class="form-group form-group--sm">
+                      <div class="form-group__label">Введите телефон</div>
+                      <input class="form-control form-control--border js-required" type="tel" placeholder="" required>
+                    </div>
+                  </div>
+                      <div class="upload-block upload-block--default js-files-form popup__file">
+                        <input class="js-file-input" type="file" name="files[]" id="upload-file__input_1" accept=".jpg, .png, .xsl">
+                        <div class="upload-block__block">
+                          <div class="upload-block__icon">
+                            <svg class="icon icon_plus">
+                              <use xlink:href="images/sprite-svg.svg#plus"></use>
+                            </svg>
+                          </div>
+                          <div class="upload-block__wrap">
+                            <div class="upload-block__title">Добавьте файлы заказа xsl</div>
+                            <div class="upload-block__text">Или перетащить в эту область</div>
+                          </div>
+                          <div class="upload-block__desc">Не более 10 файлов</div>
+                        </div>
+                        <div class="upload-block__result js-files-list"></div>
+                      </div>
+                  <div class="popup__checkboxs">
+                    <div class="checkbox">
+                      <input type="checkbox" name="police1" id="police1" value="1">
+                      <label for="police1">Согласен(а) с условиями <a href="#">доставки и оплаты заказа</a> </label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="police2" id="police2" value="1">
+                      <label for="police2">Согласен(а) с условиями <a href="#">политики конфиденциальности и обработки персональных данных</a></label>
+                    </div>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit" data-href="#popup-finish"> Отправить заказ</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--finish" id="popup-finish">
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__img">
+                  <picture>
+                    <source class="lazy" data-srcset="images/finish-popup-img.webp" type="image/webp"/><img class="lazy" data-src="images/finish-popup-img.png" alt=""/>
+                  </picture>
+                </div>
+                <div class="popup__title">Спасибо! заказ оформлен</div>
+                <div class="popup__desc">Наши менеджеры скоро свяжутся с вами для уточнения заказа</div>
+                <div class="popup__buttons"><a class="btn btn--border" href="#">Вернуться к каталогу</a></div>
+              </div>
+            </div>
+            <div class="popup popup--finish" id="popup-finish-2">
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__img">
+                  <picture>
+                    <source class="lazy" data-srcset="images/finish-popup-img.webp" type="image/webp"/><img class="lazy" data-src="images/finish-popup-img.png" alt=""/>
+                  </picture>
+                </div>
+                <div class="popup__title">Спасибо! заказ оформлен</div>
+                <div class="popup__desc">Статус заказа вы можете отслеживать<br> в <a href="#">личном кабинете</a></div>
+                <div class="popup__buttons"><a class="btn btn--border" href="#">Вернуться к каталогу</a></div>
+              </div>
+            </div>
+            <div class="popup popup--login popup--terms-order" id="popup-login" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">вход в личный кабинет</div>
+                <form class="popup__form" action=""> 
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Введите телефон</div>
+                    <input class="form-control form-control--border js-required" type="tel" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Введите пароль</div>
+                    <input class="form-control form-control--border js-required" type="password" placeholder="" required>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit"> Войти  в личный кабинет</button>
+                  </div>
+                </form>
+                <div class="popup__links"><a class="btn btn--icon btn--link btn--blue-dark js-popup-show" href="#popup-registration-1">
+                    <svg class="icon icon_registration">
+                      <use xlink:href="images/sprite-svg.svg#registration"></use>
+                    </svg><span>Регистрация</span></a></div>
+              </div>
+            </div>
+            <div class="popup popup--registration" id="popup-registration-1" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">регистрация в личном кабинете</div>
+                <div class="popup__desc">Вы сможете быстро оформлять и отслеживать заказы, получать скидки постоянного покупателя</div>
+                <form class="popup__form" action=""> 
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Введите телефон</div>
+                    <input class="form-control form-control--border js-required" type="tel" placeholder="" required>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit" data-href="#popup-registration-2">Отправить код в SMS</button>
+                  </div>
+                  <div class="popup__links"><a href="#">У меня уже есть аккаунт</a></div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--registration" id="popup-registration-2" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">регистрация в личном кабинете</div>
+                <div class="popup__desc">На номер <strong>+7-952-364-78-50</strong> отправлено<br> SMS-сообщение с паролем</div>
+                <form class="popup__form" action=""> 
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Введите код из SMS</div>
+                    <input class="form-control form-control--border js-required js-mask-sms" type="text" placeholder="" required>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit" data-href="#popup-registration-3">Далее</button>
+                  </div>
+                  <div class="popup__links"><a href="#">Отправить код повторно</a></div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--registration" id="popup-registration-3" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">регистрация в личном кабинете</div>
+                <div class="popup__desc">Для продолжения регистрации придумайте пароль для входа в личный кабинет</div>
+                <form class="popup__form" action=""> 
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Придумайте пароль для входа</div>
+                    <input class="form-control form-control--border js-required js-pass1" type="password" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Повторите пароль</div>
+                    <input class="form-control form-control--border js-required js-pass2" type="password" placeholder="" required>
+                  </div>
+                  <div class="popup__group">
+                    <div class="popup__group-title">Контактные данные</div>
+                    <div class="popup__group-checkboxs">
+                      <div class="radiobox">
+                        <input class="js-tab-show" type="radio" name="typereg" id="reg-type-label-1" value="reg-type-1" checked>
+                        <label for="reg-type-label-1">Физическое лицо</label>
+                      </div>
+                      <div class="radiobox">
+                        <input class="js-tab-show" type="radio" name="typereg" id="reg-type-label-2" value="reg-type-2">
+                        <label for="reg-type-label-2">Юридическое лицо</label>
+                      </div>
+                    </div>
+                    <div class="popup__group-tab tabs__body is-active" id="reg-type-1">
+                      <div class="form-group form-group--sm popup__input">
+                        <div class="form-group__label">Имя Фамилия Отчество</div>
+                        <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                      </div>
+                      <div class="form-group form-group--sm popup__input">
+                        <div class="form-group__label">E-mail/Электронный адрес</div>
+                        <input class="form-control form-control--border js-required" type="email" placeholder="" required>
+                      </div>
+                    </div>
+                    <div class="popup__group-tab tabs__body" id="reg-type-2">
+                      <div class="form-group form-group--sm popup__input">
+                        <div class="form-group__label">Имя Фамилия Отчество</div>
+                        <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                      </div>
+                      <div class="form-group form-group--sm popup__input">
+                        <div class="form-group__label">Телефон</div>
+                        <input class="form-control form-control--border js-required" type="tel" placeholder="" required>
+                      </div>
+                      <div class="form-group form-group--sm popup__input">
+                        <div class="form-group__label">E-mail</div>
+                        <input class="form-control form-control--border js-required" type="email" placeholder="" required>
+                      </div>
+                      <div class="form-group form-group--sm popup__input">
+                        <div class="form-group__label">Полное официальное название предприятия</div>
+                        <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                      </div>
+                      <div class="form-group form-group--sm popup__input">
+                        <div class="form-group__label">ИНН или номер свидетельства постановки на учет</div>
+                        <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit" data-href="#popup-registration-4">Зарегистрироваться</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--registration" id="popup-registration-4" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">регистрация в личном кабинете</div>
+                <div class="popup__desc">Для продолжения регистрации и выставления счетов заполните банковские реквизиты</div>
+                <form class="popup__form" action=""> 
+                  <div class="popup__input">
+                    <div class="popup__input-label">Банковские реквизиты</div>
+                    <div class="form-group form-group--sm">
+                      <div class="form-group__label">КПП:</div>
+                      <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                    </div>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Расчетный счет:</div>
+                    <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Название банка:</div>
+                    <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">БИК:</div>
+                    <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Корреспондентский счёт:</div>
+                    <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit" data-href="#popup-registration-5">Завершить регистрацию</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--registration" id="popup-registration-5" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">регистрация в личном кабинете</div>
+                <div class="popup__desc">
+                  <p><strong>Вы успешно зарегистрированы!</strong></p>
+                  <p>Для входы в личный кабинет введите номер телефона и пароль, указанные при реггистрации.</p>
+                </div>
+                <form class="popup__form" action=""> 
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Введите телефон</div>
+                    <input class="form-control form-control--border js-required" type="tel" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Введите пароль</div>
+                    <input class="form-control form-control--border js-required" type="password" placeholder="" required>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block"> Войти в личный кабинет</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--order" id="popup-order-1">
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">оформление заказа</div>
+                <form class="popup__form" action="">
+                  <div class="popup__input">
+                    <div class="popup__input-label">Контактные данные:</div>
+                    <div class="form-group form-group--sm">
+                      <div class="form-group__label">Имя</div>
+                      <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                    </div>
+                  </div>
+                  <div class="popup__row row">
+                    <div class="popup__input col-6 col-xs-12">
+                      <div class="form-group form-group--sm">
+                        <div class="form-group__label">Телефон для связи</div>
+                        <input class="form-control form-control--border js-required" type="tel" placeholder="" required>
+                      </div>
+                    </div>
+                    <div class="popup__input col-6 col-xs-12">
+                      <div class="form-group form-group--sm">
+                        <div class="form-group__label">E-mail</div>
+                        <input class="form-control form-control--border js-required" type="email" placeholder="" required>
+                      </div>
+                    </div>
+                  </div>
+                      <div class="upload-block upload-block--default js-files-form popup__file">
+                        <input class="js-file-input" type="file" name="files[]" id="upload-file__input_1" accept=".jpg, .png, .xsl">
+                        <div class="upload-block__block">
+                          <div class="upload-block__icon">
+                            <svg class="icon icon_plus">
+                              <use xlink:href="images/sprite-svg.svg#plus"></use>
+                            </svg>
+                          </div>
+                          <div class="upload-block__wrap">
+                            <div class="upload-block__title">Добавьте файлы заказа xsl</div>
+                            <div class="upload-block__text">Или перетащить в эту область</div>
+                          </div>
+                          <div class="upload-block__desc">Не более 10 файлов</div>
+                        </div>
+                        <div class="upload-block__result js-files-list"></div>
+                      </div>
+                  <div class="popup__checkboxs">
+                    <div class="checkbox"> 
+                      <input type="checkbox" name="police21" id="police21" value="1">
+                      <label for="police21">Согласен(а) с условиями <a href="#">доставки и оплаты заказа</a> </label>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="police22" id="police22" value="1">
+                      <label for="police22">Согласен(а) с условиями <a href="#">политики конфиденциальности и обработки персональных данных</a>  </label>
+                    </div>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit" data-href="#popup-order-2">Подтвердить заказ</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--order" id="popup-order-2">
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">выберите условия доставки</div>
+                <form class="popup__form js-form" action="">
+                  <div class="radiobox radiobox--block popup__input">
+                    <input class="js-required" type="radio" name="delivery" id="delivery-1" value="delivery-1" required>
+                    <label for="delivery-1">
+                      <div class="radiobox__title">Самовывоз из магазинов в Москве </div>
+                      <div class="radiobox__desc">0 рублей</div>
+                    </label>
+                  </div>
+                  <div class="radiobox radiobox--block popup__input">
+                    <input class="js-required" type="radio" name="delivery" id="delivery-2" value="delivery-2">
+                    <label for="delivery-2">
+                      <div class="radiobox__title">Доставка курьером по Москве</div>
+                      <div class="radiobox__desc">от 390 рублей</div>
+                    </label>
+                  </div>
+                  <div class="radiobox radiobox--block popup__input">
+                    <input class="js-required" type="radio" name="delivery" id="delivery-3" value="delivery-3">
+                    <label for="delivery-3">
+                      <div class="radiobox__title">Доставка Почтой России</div>
+                      <div class="radiobox__desc">зависит от тарифов почты</div>
+                    </label>
+                  </div>
+                  <div class="radiobox radiobox--block popup__input">
+                    <input class="js-required" type="radio" name="delivery" id="delivery-4" value="delivery-4">
+                    <label for="delivery-4">
+                      <div class="radiobox__title">Другой способ доставки</div>
+                      <div class="radiobox__desc">Службы доставки и другое по договоренности</div>
+                    </label>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit" type="button" data-href="#popup-finish-2">Выбрать</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--profile" id="popup-profile" attributes>
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">профиль пользователя</div>
+                <div class="popup__avatar">
+                  <picture>
+                    <source class="lazy" data-srcset="images/avatar.webp" type="image/webp"/><img class="lazy" data-src="images/avatar.png" alt=""/>
+                  </picture>
+                  <div class="popup__avatar-load"><a href="#">Загрузить фотографию</a></div>
+                </div>
+                <div class="popup__title _name">Станиславская елена борисовна</div>
+                <div class="popup__params row">
+                  <div class="popup__params-label col-6 col-xs-12">Название компании</div>
+                  <div class="popup__params-value col-6 col-xs-12">ООО “Агрохолдинг”</div>
+                  <div class="popup__params-label col-6 col-xs-12">Телефон</div>
+                  <div class="popup__params-value col-6 col-xs-12">+7-952-364-78-50</div>
+                  <div class="popup__params-label col-6 col-xs-12">E-mail</div>
+                  <div class="popup__params-value col-6 col-xs-12">elena_s@mail.com</div>
+                  <div class="popup__params-label col-6 col-xs-12">Телефон</div>
+                  <div class="popup__params-value col-6 col-xs-12">+7-952-364-78-50</div>
+                  <div class="popup__params-label col-6 col-xs-12">ИНН или номер свидетельства постановки на учет</div>
+                  <div class="popup__params-value col-6 col-xs-12">515165656599126516</div>
+                  <div class="popup__params-label col-6 col-xs-12">КПП</div>
+                  <div class="popup__params-value col-6 col-xs-12">30500056599126516</div>
+                  <div class="popup__params-label col-6 col-xs-12">Расчетный счет</div>
+                  <div class="popup__params-value col-6 col-xs-12">4654489789467775645000546</div>
+                  <div class="popup__params-label col-6 col-xs-12">Название банка</div>
+                  <div class="popup__params-value col-6 col-xs-12">ПАО СБЕРБАНК г. МОСКВА</div>
+                  <div class="popup__params-label col-6 col-xs-12">БИК</div>
+                  <div class="popup__params-value col-6 col-xs-12">4654489789467775645000546</div>
+                  <div class="popup__params-label col-6 col-xs-12">Корреспондентский счет:</div>
+                  <div class="popup__params-value col-6 col-xs-12">6548000235695000045566956589</div>
+                </div>
+                <div class="popup__buttons"><a class="btn btn--block js-popup-show" href="#edit-profile-popup">Изменить данные</a></div>
+              </div>
+            </div>
+            <div class="popup popup--registration" id="edit-profile-popup">
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">изменение данных профиля</div>
+                <form class="popup__form" action="">
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Имя</div>
+                    <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Контактный телефон</div>
+                    <input class="form-control form-control--border js-required" type="tel" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">E-mail</div>
+                    <input class="form-control form-control--border js-required" type="email" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Введите пароль</div>
+                    <input class="form-control form-control--border js-required" type="password" placeholder="" required>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit">Подтвердить данные</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>

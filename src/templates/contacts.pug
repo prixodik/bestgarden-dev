@@ -1,0 +1,29 @@
+extends extends/base.pug
+append vars
+	- var pageUrl = 'contacts.html';
+	- var pageTitle = 'Контакты';
+	- var classBody = 'contacts-page';
+	- var headerBg = 'images/main-banner.jpg';
+block styles
+	
+block content
+	include ../components/main-section/template
+	include ../components/well-block/template
+	+mainSection({
+		bread: [{url: '#', title: 'Контакты'}]
+	}).main-section--contacts
+		h1.main-section__title.title-h3 контакты для оптовых покупателей
+		.main-section__row
+			+wellBlockCallCenter().main-section__row-item
+
+			+wellBlockShop().main-section__row-item
+
+			+wellBlockAdress().main-section__row-item
+			
+
+	include ../components/footer/template  
+	+footer()    
+
+	//- +gridLayout() 
+
+block scripts 

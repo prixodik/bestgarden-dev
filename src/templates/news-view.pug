@@ -1,0 +1,61 @@
+extends extends/base.pug
+append vars
+	- var pageUrl = 'news-view.html';
+	- var pageTitle = 'Новости подробнее';
+	- var classBody = 'news-page';
+	- var headerBg = 'images/main-banner.jpg';
+block styles
+	
+block content
+	include ../components/main-section/template
+	include ../components/news-block/template
+
+	+mainSection({
+		bread: [{url: '#', title: 'Новости'},{url: '#', title: 'Новое поступление лилий!'}]
+	}).main-section--news
+		h1.main-section__title.title-h3 Новое поступление лилий!
+		.main-section__imgs.row
+				.main-section__imgs-item.col-4.col-sm-6.col-xs-12
+					+webp('images/news-view-img-1.jpg').main-section__img
+				.main-section__imgs-item.col-4.col-sm-6.col-xs-12
+					+webp('images/news-view-img-2.jpg').main-section__img
+				.main-section__imgs-item.col-4.col-sm-6.col-xs-12
+					+webp('images/news-view-img-3.jpg').main-section__img
+		.main-section__text.item-page
+			p Поступление более 45 видов новых сортов лилий лучшего качества по низким ценам.
+			p Лилия – многолетнее луковичное растение, которое размножается детками-луковицами, чешуйками, листовыми черенками и почколуковичками-бульбочками (бульбоносные сорта).<br> Видовые лилии размножают семенами, которые в марте сеют в ящики с легкой землей. Зацветают сеянцы на 2–6-й год.
+		.main-section__buttons
+			a.btn.-yellow(href="#") Перейти в каталог
+			a.btn.-border(href="#") К списку новостей
+
+		.main-section__other
+			.main-section__other-title.title-h3 другие новости
+			.main-section__other-row.row.row--stretch
+				.main-section__other-item.col-4.col-sm-6.col-xs-12
+					+newsBlock({
+						img: 'images/news-img-1.jpg',
+						title: 'Новое поступление лилий!<br> Более 45 сортов!',
+						date: '20.01.2021',
+						text: 'В садовом центре и интернет-магазине появилось более 45 сортов лилий. С полным списком обновления вы можете <a href="#">ознакомиться</a>'
+					})
+				.main-section__other-item.col-4.col-sm-6.col-xs-12
+					+newsBlock({
+						img: 'images/news-img-2.jpg',
+						title: 'Новое поступление садового инвентаря премиум класса! ',
+						date: '19.01.2021',
+						text: 'DeWit — качественный садовый инвентарь из Голландии. Выбор качественных инструментов для сада — задача не из легких... <a href="#" class="news-block__more">Подробнее</a>'
+					})
+				.main-section__other-item.col-4.col-sm-6.col-xs-12.d-none_sm.d-block_xs
+					+newsBlock({
+						img: 'images/news-img-3.jpg',
+						title: 'ОКС или ЗКС, что выбрать?',
+						date: '15.01.2021',
+						text: 'В продаже можно встретить саженцы двух видов: с открытой корневой системой (ОКС), т.е. с голыми корнями,  и в контейнерах... <a href="#" class="news-block__more">Подробнее</a>'
+					})
+
+	include ../components/footer/template  
+	+footer()    
+
+	//- +gridLayout() 
+
+block scripts 

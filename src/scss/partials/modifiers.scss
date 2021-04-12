@@ -1,3 +1,6 @@
+@include classMod(d-none) {
+  display: none;
+}
 @include classMod(d-block) {
   display: block;
 }
@@ -9,9 +12,6 @@
 }
 @include classMod(d-inline-block) {
   display: inline-block;
-}
-@include classMod(d-none) {
-  display: none;
 }
 @include classMod(flex-flow-row-wrap) {
   flex-flow: row wrap;

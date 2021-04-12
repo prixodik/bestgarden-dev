@@ -5,6 +5,42 @@
 		&-item{ margin-bottom: 30px; }
 	}
 
+	&--search &{
+		&__title{ margin-bottom: 50px; }
+		&__tab-nav{ margin-bottom: 50px; }
+		&__group{ margin-bottom: 50px; padding-bottom: 50px; border-bottom: 2px rgba($gray-devider,.6) solid;  
+			&.last, &:last-child{ margin-bottom: 0; padding-bottom: 0; border: 0;  }
+
+			&-title{ color: $blue-dark; font: bold 25px/29px $baseFF; margin-bottom: 40px; }
+		}
+		&__list{
+			&-item{ margin-bottom: 40px; padding-bottom: 40px; border-bottom: 2px rgba($gray-devider,.6) solid; 
+				&:last-child{ margin-bottom: 0; padding-bottom: 0; border: 0;  }
+			}
+		} 
+		&__buttons{ @include flex(center); margin-top: 100px; }
+	}
+
+	&--contacts &{
+		&__title{ margin-bottom: 40px; }
+		&__row{ margin-bottom: -40px; 
+			&-item{ margin-bottom: 40px; }
+		}
+		&__adres{ margin-top: 20px;  
+			&-metro{ margin-bottom: 20px; @include flex(0,center,center,nowrap); color: #777878;
+				svg{ margin-right: 15px; flex: 0 0 auto; height: 48px; width: 40px; fill: #777878; } 
+
+				&--orange{ color: #F47201; 
+					svg{ fill: #F47201;  }
+				}
+			}
+			&-item{ margin-bottom: 12px; 
+				&:last-child{ margin-bottom: 0; }
+				strong{ color: $green; font-weight: 700; }
+			}
+		}
+	}
+
 	&--product &{
 		&__title{ margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px $gray-devider solid; }
 		&__params{ 
@@ -78,8 +114,8 @@
 	&--orders &{
 		&__filter{ margin-bottom: 50px;  }
 		&__head{ padding: 0 30px 30px;
-			&-item{ 
-				&--number{ font-weight: bold; color: $blue-dark; flex: 0 0 22%; max-width: 22%; } 
+			&-item{ font-weight: 500; color: $green;
+				&--number{ flex: 0 0 22%; max-width: 22%; } 
 				&--date{ text-align: center; flex: 0 0 24%; max-width: 24%; } 
 				&--price{ text-align: center; flex: 0 0 24%; max-width: 24%; } 
 				&--status{ flex: 0 0 30%; max-width: 30%; } 
@@ -94,6 +130,7 @@
 
 	&--discount &{
 		&__title{ margin-bottom: 50px; } 
+		&__desc{ margin-bottom: 40px; }  
 		&__row{ margin-bottom: 50px;
 			&-item{ margin-bottom: 20px; } 
 		}
@@ -106,8 +143,52 @@
 		}
 	}
 
-	@include media($md){ padding: 40px 0 200px; 
+	&--bills &{
+		&__filter{ margin-bottom: 50px;  }
+		&__head{ padding: 0 30px 30px;
+			&-item{ text-align: center; font-weight: 500; color: $green;
+				/* &--number{ font-weight: bold; color: $blue-dark; flex: 0 0 22%; max-width: 22%; } 
+				&--date{ text-align: center; flex: 0 0 24%; max-width: 24%; } 
+				&--price{ text-align: center; flex: 0 0 24%; max-width: 24%; } 
+				&--status{ flex: 0 0 30%; max-width: 30%; }  */
+			}
+		} 
+		&__list{ 
+			&-item{ margin-bottom: 15px;
+				&:last-child{ margin-bottom: 0;  }
+			}
+		}
+	}
 
+	&--news &{
+		&__title{ margin-bottom: 60px; }
+		&__list{
+			&-item{ margin-bottom: 40px; padding-bottom: 40px; border-bottom: 2px rgba($gray-devider,.6) solid; 
+				&:last-child{ margin-bottom: 0; padding-bottom: 0; border: 0;  }
+			}
+		}
+
+		&__imgs{ margin-bottom: 20px; 
+			&-item{ margin-bottom: 20px; }
+		}
+
+		&__buttons{ margin: 50px 0 -15px;  
+			.btn{ margin: 0 15px 15px 0; }
+		}
+
+		&__other{ margin-top: 150px; 
+			&-title{ margin-bottom: 50px; }
+			&-row{ margin-bottom: -20px; }
+			&-item{ margin-bottom: 20px; } 
+		}
+	}
+
+
+	@include media($md){ padding: 40px 0 200px; 
+		&--news &{
+			&__title{ margin-bottom: 40px; } 
+			&__other{ margin-top: 100px; }
+		}
 	} 
 
 	@include media($sm){ padding: 40px 0 150px;  
@@ -131,6 +212,22 @@
 			&__advantages{ margin-top: 100px;
 				&-title{ margin-bottom: 40px; } 
 			}
+		}
+
+		&--search &{
+			&__title{ margin-bottom: 40px; }
+			&__tab-nav{ margin-bottom: 40px; }
+			&__group{ margin-bottom: 40px; padding-bottom: 40px; 
+				&.last, &:last-child{ margin-bottom: 0; padding-bottom: 0; border: 0;  }
+
+				&-title{ font: bold 22px/26px $baseFF; margin-bottom: 30px; }
+			}
+			&__list{
+				&-item{ margin-bottom: 30px; padding-bottom: 30px; 
+					&:last-child{ margin-bottom: 0; padding-bottom: 0; }
+				}
+			} 
+			&__buttons{  margin-top: 70px; }
 		}
 	} 
 
@@ -166,6 +263,36 @@
 			&__subtitle{ margin-bottom: 40px; }
 			&__progress{ margin-bottom: 70px; }
 			 
+		}
+
+		&--bills &, &--orders &{
+			&__filter{ margin-bottom: 40px;  
+				&-item{ margin-bottom: 10px;
+					&:last-child{ margin-bottom: 0; }
+				}
+			}
+			&__head{ display: none; }
+		}
+
+		&--news &{
+			&__list{
+				&-item{ margin-bottom: 30px; padding-bottom: 30px;
+					&:last-child{ margin-bottom: 0; padding-bottom: 0;  }
+				}
+			}
+
+			&__buttons{ margin: 40px 0 -15px; }
+
+			&__other{ margin-top: 70px; 
+				&-title{ margin-bottom: 40px; }
+			}
+		}
+
+		&--contacts &{
+			&__title{ margin-bottom: 30px; }
+			&__row{ margin-bottom: -20px; 
+				&-item{ margin-bottom: 20px; } 
+			}
 		}
 	} 
 }

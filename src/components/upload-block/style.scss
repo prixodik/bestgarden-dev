@@ -25,7 +25,9 @@
 	&--inline{ @include flex(0,center,center,nowrap); padding: 0; border: 0; background: none; color: $green; border-radius: 0; }
 	&--inline &{
 		// &__wrap{ @include flex(0,center,center); }
-		&__icon{ fill: $green; font-size: 24px; margin-right: 12px; pointer-events: none; }
+		&__icon{ fill: $green; font-size: 24px; margin-right: 12px; pointer-events: none; background: none; flex: 0 0 auto; height: 24px; width: 24px; border-radius: 0;
+			svg{ font-size: 24px; }
+		}
 		&__title{ margin: 0; font: 700 15px $baseFF; pointer-events: none; }
 		&__result{ 
 			&-item{ margin: 0 40px 0 0; }

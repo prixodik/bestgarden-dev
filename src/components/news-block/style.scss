@@ -8,4 +8,28 @@
 	&__date{ margin-bottom: 15px; color: #4D4D4D; font: 15px/18px $baseFF; }
 	&__text{ color: $text-green-dark; font: $fs-14; }
 	&__more{ color: $link; font-weight: bold; }
+
+	&--horisontal{ background: none; box-shadow: none; border-radius: 0; height: auto; @include flex(0,stretch,stretch,nowrap,row); }
+	&--horisontal &{
+		&__img{ flex: 0 0 367px; max-width: 367px; margin-right: 40px; height: auto; 
+			img{ border-radius: 10px; height: 100%;  }
+		}
+		&__wrap{ padding: 0; display: block;  }
+		&__title{ font-size: 20px; }
+		&__date{ margin-bottom: 25px; color: rgba($text-form,.4); }
+		&__text{ margin-bottom: 30px; 
+			a{ color: $link; font-weight: bold; }
+		} 
+	}
+
+	@include media($sm){
+		&--horisontal{ display: block; }
+		&--horisontal &{
+			&__img{ margin: 0 0 20px; }
+			//&__wrap{ padding: 0; display: block;  }
+			&__title{ font-size: 18px; }
+			&__date{ margin-bottom: 20px; }
+			&__text{ margin-bottom: 20px; }  
+		}
+	}
 }

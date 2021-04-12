@@ -1,5 +1,5 @@
 
-.product-block{ background: $white; border-radius: 20px; box-shadow: 4px 4px 15px rgba(92, 109, 116, 0.12); 
+.product-block{ background: $white; border-radius: 20px; box-shadow: 4px 4px 15px rgba(92, 109, 116, 0.12); overflow: hidden; 
 	&__img{
 		img{ width: 100%; object-fit: cover; display: block;   }
 	}

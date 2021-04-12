@@ -1,0 +1,43 @@
+extends extends/base.pug
+append vars
+	- var pageUrl = 'news.html';
+	- var pageTitle = 'новости магазина';
+	- var classBody = 'news-page';
+	- var headerBg = 'images/main-banner.jpg';
+block styles
+	
+block content
+	include ../components/main-section/template
+	include ../components/news-block/template
+
+	+mainSection({
+		bread: [{url: '#', title: 'Новости'}]
+	}).main-section--news
+		h1.main-section__title.title-h3 Новости магазина
+		.main-section__list
+			+newsBlockHorisontal({
+					img: 'images/news-img-1.jpg',
+					title: 'Новое поступление лилий! Более 45 сортов!',
+					date: '19.01.2021', 
+					text: 'В садовом центре и интернет-магазине появилось более 45 сортов лилий. вом центре и интернет-магазине появилось более 45 сортов лилий.  вом центре и интернет-магазине появилось более 45 сортов лилий.  вом центре и интернет-магазине появилось более 45 сортов лилий. вом центре и интернет-магазине появилось более 45 сортов лилий. С полным списком обновления вы можете ознакомиться на розничном сайте <a href="#">по ссылке.</a>'
+				}).main-section__list-item
+			+newsBlockHorisontal({
+					img: 'images/news-img-2.jpg',
+					title: 'Новое поступление садового инвентаря премиум класса! ',
+					date: '19.01.2021',
+					text: 'DeWit — качественный садовый инвентарь из Голландии. Выбор качественных инструментов для сада — задача не из легких...'
+				}).main-section__list-item
+			+newsBlockHorisontal({
+					title: 'ОКС или ЗКС, что выбрать?',
+					date: '19.01.2021',
+					text: 'В продаже можно встретить саженцы двух видов: с открытой корневой системой (ОКС), т.е. с голыми корнями,  и в контейнерах...'
+				}).main-section__list-item
+			
+			
+
+	include ../components/footer/template  
+	+footer()    
+
+	//- +gridLayout() 
+
+block scripts 

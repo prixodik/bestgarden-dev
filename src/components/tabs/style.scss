@@ -9,6 +9,8 @@
 			
 			&.is-active, &:hover{ color: $white; background: $green;  }
 			//&.active{ font-weight: 800; }
+
+			&--disabled{ opacity: .4; } 
 		}
 
 		
@@ -21,13 +23,19 @@
 		&--center &{ 
 			&-item{ margin: 0 2rem; }
 		}
+
+		&--sm &{ 
+			&-item{ min-width: 170px; 
+				a{ padding: 12px;  }
+			}
+		}
 	}
 
 	&__body{ visibility: hidden; pointer-events: none; opacity: 0; @include time(0s, opacity); position: absolute; left: -8888px; top: 0;
 		&.is-active, &.is-visible{display: block; visibility: visible; opacity: 1; pointer-events: auto; position: relative; left: 0; }
 	}   
 
-	@include media($xs){  
+	@include media($sm){  
 		&__nav{ overflow-x: auto; 
 			&-item{ min-width: 140px; 
 				a{ padding: 8px 10px; } 

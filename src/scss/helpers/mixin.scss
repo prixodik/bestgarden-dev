@@ -120,17 +120,23 @@
 
 @mixin classMod($class) {
 
-		[class*='#{$class} '],
-		[class$='#{$class}'] {
-			@content;
-		} 
+		
 
-		//@include mq('tablet') {
-		@include media($xs){
-			html body [class*='#{$class}_xs '],
-			html body [class$='#{$class}_xs'] {
+		//@include mq('desktop', min) {
+		@include media($lg){	 
+			html body [class*='#{$class}_lg '],
+			html body [class$='#{$class}_lg'] {
 				@content;
 			}
+		}   
+		//@include mq('tablet-wide', min) {
+		@include media($md){	
+			//@include mq('desktop') {
+				html body [class*='#{$class}_md '],
+				html body [class$='#{$class}_md'] {
+					@content;
+				}
+			//}
 		}
 		//@include mq('tablet', min) {
 		@include media($sm){
@@ -141,21 +147,17 @@
 				}
 			//}
 		}
-		//@include mq('tablet-wide', min) {
-		@include media($md){	
-			//@include mq('desktop') {
-				html body [class*='#{$class}_md '],
-				html body [class$='#{$class}_md'] {
-					@content;
-				}
-			//}
-		}
-
-		//@include mq('desktop', min) {
-		@include media($lg){	 
-			html body [class*='#{$class}_lg '],
-			html body [class$='#{$class}_lg'] {
+		//@include mq('tablet') {
+		@include media($xs){
+			html body [class*='#{$class}_xs '],
+			html body [class$='#{$class}_xs'] { 
 				@content;
 			}
 		}
+		
+
+		/* html body [class*='#{$class} '],
+		html body [class$='#{$class}'] { 
+			@content;
+		} */  
 }

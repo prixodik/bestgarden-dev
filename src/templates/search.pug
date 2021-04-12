@@ -1,0 +1,68 @@
+extends extends/base.pug
+append vars
+	- var pageUrl = 'search.html';
+	- var pageTitle = 'результаты поиска по сайту';
+	- var classBody = 'search-page';
+	- var headerBg = 'images/main-banner.jpg';
+block styles
+	
+block content
+	include ../components/main-section/template
+	include ../components/news-block/template
+	include ../components/product-block/template
+	+mainSection({
+		bread: [{url: '#', title: 'Результаты поиска по сайту'}]
+	}).main-section--search
+		h1.main-section__title.title-h3 Результаты поиска по сайту
+		.main-section__tab-nav.tabs__nav.tabs__nav--sm
+			.tabs__nav-item.is-active
+				a(href="#") Все результаты
+			.tabs__nav-item.-disabled
+				a(href="#") В каталогах
+			.tabs__nav-item
+				a.js-scroll-to(href="#group-news") В новостях
+			.tabs__nav-item
+				a.js-scroll-to(href="#group-new") В новинках
+			.tabs__nav-item.-disabled
+				a(href="#") Вопросы и ответы
+
+		.main-section__group#group-news
+			.main-section__group-title В новостях:
+			.main-section__list
+				+newsBlockHorisontal({
+					img: 'images/news-img-1.jpg',
+					title: 'Новое поступление лилий! Более 45 сортов!',
+					date: '19.01.2021', 
+					text: 'В садовом центре и интернет-магазине появилось более 45 сортов лилий. вом центре и интернет-магазине появилось более 45 сортов лилий.  вом центре и интернет-магазине появилось более 45 сортов лилий.  вом центре и интернет-магазине появилось более 45 сортов лилий. вом центре и интернет-магазине появилось более 45 сортов лилий. С полным списком обновления вы можете ознакомиться на розничном сайте <a href="#">по ссылке.</a>'
+				}).main-section__list-item
+				+newsBlockHorisontal({
+					img: 'images/news-img-1.jpg',
+					title: 'Новое поступление лилий! Более 45 сортов!',
+					date: '19.01.2021', 
+					text: 'В садовом центре и интернет-магазине появилось более 45 сортов лилий. вом центре и интернет-магазине появилось более 45 сортов лилий.  вом центре и интернет-магазине появилось более 45 сортов лилий.  вом центре и интернет-магазине появилось более 45 сортов лилий. вом центре и интернет-магазине появилось более 45 сортов лилий. С полным списком обновления вы можете ознакомиться на розничном сайте <a href="#">по ссылке.</a>'
+				}).main-section__list-item
+
+		.main-section__group.last#group-new
+			.main-section__group-title В новинках:
+			.main-section__row.row.row--stretch
+					.main-section__row-item.col-3.col-md-4.col-sm-6.col-xs-12
+						+productBlock({
+							img: 'images/product-img-1.jpg',
+							title: 'Спирея Широбана японская'
+						})
+					.main-section__row-item.col-3.col-md-4.col-sm-6.col-xs-12
+						+productBlock({
+							img: 'images/product-img-2.jpg',
+							title: 'Кувшинка (Нимфея) Гладстониана'
+						})
+
+		.main-section__buttons
+			a.btn(href="#") На главную страницу
+				
+
+	include ../components/footer/template  
+	+footer()    
+
+	//- +gridLayout() 
+
+block scripts 

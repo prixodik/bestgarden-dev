@@ -1,7 +1,7 @@
 
 .bullet{ @include flex(0,center,center,nowrap); 
 	&__icon{ width: 15px; height: 15px; border-radius: 50%; flex: 0 0 auto; margin-right: 15px; background: $text-green-dark; border: 2px $text-green-dark solid; }
-	//&__text{ }
+	&__text{ white-space: nowrap; }
 	&__print{ 
 		svg{ fill: #B1C9D9; font-size: 36px; margin-left: 20px; display: block; }
 	}
@@ -31,8 +31,29 @@
 		&__icon{ background: $form-blue; border-color: $form-blue; }
 	}
 
-	&.status-6{ color: $green; } 
+	&.status-6{ color: $green; }   
 	&.status-6 &{
 		&__icon{ background: $green; border-color: $green; }
+	}
+
+	/* ------------------------------ */
+
+	&.status-2-2{ color: $green; }
+	&.status-2-2 &{
+		&__icon{ background: url('../images/bullet-status-2.svg') 0 0/contain no-repeat; border: 0; }
+	}
+
+	&.status-2-3{ color: $link; }
+	&.status-2-3 &{
+		&__icon{ background: url('../images/bullet-status-3.svg') 0 0/contain no-repeat; border: 0; }
+	}
+
+	&.status-2-4{ color: $blue-dark; }
+	&.status-2-4 &{
+		&__icon{ background: transparent; border-color: $blue-dark; }
+	}
+
+	@include media($md){
+		&__text{ white-space: normal; }
 	}
 }
