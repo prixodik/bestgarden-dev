@@ -21,10 +21,11 @@ mixin header(data)
 						+iconInlinePhone()._contacts-item 
 						
 			._bottom
-				+burger()._burger
-				._menu.js-mobile-menu
-					+menuBlock()
-				._buttons
-					a.btn.-blue.-icon.-sm.js-popup-show(href="#popup-status")
-						+svg('question')
-						span Узнать статус заказа
+				._bottom-container.container
+					+burger()._burger
+					._menu.js-mobile-menu
+						+menuBlock()
+					._buttons
+						a.btn.-blue.-icon.-sm.js-popup-show(href="#popup-status")
+							+svg('question')
+							span Узнать статус заказа

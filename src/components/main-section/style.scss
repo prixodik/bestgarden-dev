@@ -1,298 +1,635 @@
-.main-section{ padding: 40px 0 270px; background: url('../images/main-section-bg.jpg') 50% 100% no-repeat $gray-bg; position: relative; z-index: 1;
-	&__bread{ margin-bottom: 40px; }  
-	&__title{ margin-bottom: 50px; font-size: 30px; text-transform: uppercase; color: $green; }
-	&__row{ margin-bottom: -30px; 
-		&-item{ margin-bottom: 30px; }
+.main-section {
+	padding: 40px 0 270px;
+	background: url("../images/main-section-bg.jpg") 50% 100% no-repeat $gray-bg;
+	position: relative;
+	z-index: 1;
+	&__bread {
+		margin-bottom: 40px;
+	}
+	&__title {
+		margin-bottom: 50px;
+		font-size: 30px;
+		text-transform: uppercase;
+		color: $green;
+	}
+	&__row {
+		margin-bottom: -30px;
+		&-item {
+			margin-bottom: 30px;
+		}
 	}
 
-	&--search &{
-		&__title{ margin-bottom: 50px; }
-		&__tab-nav{ margin-bottom: 50px; }
-		&__group{ margin-bottom: 50px; padding-bottom: 50px; border-bottom: 2px rgba($gray-devider,.6) solid;  
-			&.last, &:last-child{ margin-bottom: 0; padding-bottom: 0; border: 0;  }
-
-			&-title{ color: $blue-dark; font: bold 25px/29px $baseFF; margin-bottom: 40px; }
+	&--search & {
+		&__title {
+			margin-bottom: 50px;
 		}
-		&__list{
-			&-item{ margin-bottom: 40px; padding-bottom: 40px; border-bottom: 2px rgba($gray-devider,.6) solid; 
-				&:last-child{ margin-bottom: 0; padding-bottom: 0; border: 0;  }
+		&__tab-nav {
+			margin-bottom: 50px;
+		}
+		&__group {
+			margin-bottom: 50px;
+			padding-bottom: 50px;
+			border-bottom: 2px rgba($gray-devider, 0.6) solid;
+			&.last,
+			&:last-child {
+				margin-bottom: 0;
+				padding-bottom: 0;
+				border: 0;
 			}
-		} 
-		&__buttons{ @include flex(center); margin-top: 100px; }
-	}
 
-	&--contacts &{
-		&__title{ margin-bottom: 40px; }
-		&__row{ margin-bottom: -40px; 
-			&-item{ margin-bottom: 40px; }
+			&-title {
+				color: $blue-dark;
+				font: bold 25px/29px $baseFF;
+				margin-bottom: 40px;
+			}
 		}
-		&__adres{ margin-top: 20px;  
-			&-metro{ margin-bottom: 20px; @include flex(0,center,center,nowrap); color: #777878;
-				svg{ margin-right: 15px; flex: 0 0 auto; height: 48px; width: 40px; fill: #777878; } 
-
-				&--orange{ color: #F47201; 
-					svg{ fill: #F47201;  }
+		&__list {
+			&-item {
+				margin-bottom: 40px;
+				padding-bottom: 40px;
+				border-bottom: 2px rgba($gray-devider, 0.6) solid;
+				&:last-child {
+					margin-bottom: 0;
+					padding-bottom: 0;
+					border: 0;
 				}
 			}
-			&-item{ margin-bottom: 12px; 
-				&:last-child{ margin-bottom: 0; }
-				strong{ color: $green; font-weight: 700; }
-			}
+		}
+		&__buttons {
+			@include flex(center);
+			margin-top: 100px;
 		}
 	}
 
-	&--product &{
-		&__title{ margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px $gray-devider solid; }
-		&__params{ 
-			&-item{ margin-bottom: 12px; @include flex(0,center,center,nowrap); 
-				&:last-child{ margin-bottom: 0; }
-			}
-			&-icon{ margin-right: 20px; width: 48px; height: 48px; border-radius: 50%; box-shadow: 2px 2px 8px rgba(92, 109, 116, 0.1); background: $white; @include flex(center,center,center); flex: 0 0 auto;
-				svg{ font-size: 25px; fill: $green; display: block; }
-			}
-			&-label{ font-weight: bold; color: $blue-dark; margin-right: 10px; }
-			&-value{ color: $text-green-dark; }
+	&--contacts & {
+		&__title {
+			margin-bottom: 40px;
 		}
-		&__buttons{ margin-top: 50px; @include flex(); margin-bottom: -15px;
-			.btn{ margin-right: 15px; margin-bottom: 15px; 
-				&:last-child{ margin-right: 15px; }
+		&__row {
+			margin-bottom: -40px;
+			&-item {
+				margin-bottom: 40px;
 			}
 		}
-		&__catalog{ margin-top: 35px; @include flex(0,center,center,nowrap);
-			&-icon{ margin-right:  15px; flex: 0 0 auto; }
-			a{ color: #51BCC3; font-weight: bold; }
-		}
-	}
-
-	&--about-page &{
-		&__img{
-				picture{ position: relative; z-index: 1; display: block; 
-					&:after{ content: ""; display: block; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 3; background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(201, 220, 233, 0.81) 62.29%, rgba(201, 220, 233, 0.84) 100%);  border-radius: 10px; }
-					img{ border-radius: 10px; width: 100%; display: block;  } 
+		&__adres {
+			margin-top: 20px;
+			&-metro {
+				margin-bottom: 20px;
+				@include flex(0, center, center, nowrap);
+				color: #777878;
+				svg {
+					margin-right: 15px;
+					flex: 0 0 auto;
+					height: 48px;
+					width: 40px;
+					fill: #777878;
 				}
+
+				&--orange {
+					color: #f47201;
+					svg {
+						fill: #f47201;
+					}
+				}
+			}
+			&-item {
+				margin-bottom: 12px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				strong {
+					color: $green;
+					font-weight: 700;
+				}
+			}
 		}
-		&__group-1{ padding-bottom: 130px;  background: url('../images/about-page-bg-2.svg') 0 100% no-repeat, url('../images/about-page-bg-1.svg') calc(100% - 120px) calc(100% - 25px) no-repeat;  
+	}
+
+	&--product & {
+		&__title {
+			margin-bottom: 25px;
+			padding-bottom: 20px;
+			border-bottom: 2px $gray-devider solid;
+		}
+		&__params {
+			&-item {
+				margin-bottom: 12px;
+				@include flex(0, center, center, nowrap);
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			&-icon {
+				margin-right: 20px;
+				width: 48px;
+				height: 48px;
+				border-radius: 50%;
+				box-shadow: 2px 2px 8px rgba(92, 109, 116, 0.1);
+				background: $white;
+				@include flex(center, center, center);
+				flex: 0 0 auto;
+				svg {
+					font-size: 25px;
+					fill: $green;
+					display: block;
+				}
+			}
+			&-label {
+				font-weight: bold;
+				color: $blue-dark;
+				margin-right: 10px;
+			}
+			&-value {
+				color: $text-green-dark;
+			}
+		}
+		&__buttons {
+			margin-top: 50px;
+			@include flex();
+			margin-bottom: -15px;
+			.btn {
+				margin-right: 15px;
+				margin-bottom: 15px;
+				&:last-child {
+					margin-right: 15px;
+				}
+			}
+		}
+		&__catalog {
+			margin-top: 35px;
+			@include flex(0, center, center, nowrap);
+			&-icon {
+				margin-right: 15px;
+				flex: 0 0 auto;
+			}
+			a {
+				color: #51bcc3;
+				font-weight: bold;
+			}
+		}
+	}
+
+	&--about-page & {
+		&__img {
+			picture {
+				position: relative;
+				z-index: 1;
+				display: block;
+				&:after {
+					content: "";
+					display: block;
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 3;
+					background: linear-gradient(
+						180deg,
+						rgba(255, 255, 255, 0) 0%,
+						rgba(201, 220, 233, 0.81) 62.29%,
+						rgba(201, 220, 233, 0.84) 100%
+					);
+					border-radius: 10px;
+				}
+				img {
+					border-radius: 10px;
+					width: 100%;
+					display: block;
+				}
+			}
+		}
+		&__group-1 {
+			padding-bottom: 130px;
+			background: url("../images/about-page-bg-2.svg") 0 100% no-repeat,
+				url("../images/about-page-bg-1.svg") calc(100% - 120px) calc(100% - 25px) no-repeat;
 			// &-text{}
-
 		}
-		&__slogan{ font: 600 20px/26px $baseFF; color: $green; }
-
-		&__adres{ margin-bottom: 30px; 
-			&:last-child{ margin-bottom: 0; }
-			&-title{ color: $green; margin-bottom: 20px; font: bold 18px/26px $baseFF; }
+		&__slogan {
+			font: 600 20px/26px $baseFF;
+			color: $green;
 		}
 
-		&__advantages{ margin-top: 132px;
-			&-title{ text-align: center; margin-bottom: 50px; color: $green; }
-			&-row{  margin-bottom: -20px; }
-			&-item{ margin-bottom: 20px; }
+		&__adres {
+			margin-bottom: 30px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			&-title {
+				color: $green;
+				margin-bottom: 20px;
+				font: bold 18px/26px $baseFF;
+			}
+		}
+
+		&__advantages {
+			margin-top: 132px;
+			&-title {
+				text-align: center;
+				margin-bottom: 50px;
+				color: $green;
+			}
+			&-row {
+				margin-bottom: -20px;
+			}
+			&-item {
+				margin-bottom: 20px;
+			}
 		}
 	}
 
-	&--delivery &{
-		&__title{ margin-bottom: 50px; }
-		&__tab-nav{ margin-bottom: 55px; }
-		&__banner{ margin-bottom: 40px; }
-		&__adres{ margin-top: 20px;  
-			&-metro{ margin-bottom: 20px; @include flex(0,center,center,nowrap); color: #777878;
-				svg{ margin-right: 15px; flex: 0 0 auto; height: 48px; width: 40px; fill: #777878; } 
+	&--delivery & {
+		&__title {
+			margin-bottom: 50px;
+		}
+		&__tab-nav {
+			margin-bottom: 55px;
+		}
+		&__banner {
+			margin-bottom: 40px;
+		}
+		&__adres {
+			margin-top: 20px;
+			&-metro {
+				margin-bottom: 20px;
+				@include flex(0, center, center, nowrap);
+				color: #777878;
+				svg {
+					margin-right: 15px;
+					flex: 0 0 auto;
+					height: 48px;
+					width: 40px;
+					fill: #777878;
+				}
 
-				&--orange{ color: #F47201; 
-					svg{ fill: #F47201;  }
+				&--orange {
+					color: #f47201;
+					svg {
+						fill: #f47201;
+					}
 				}
 			}
-			&-item{ margin-bottom: 12px; 
-				&:last-child{ margin-bottom: 0; }
-				strong{ color: $green; font-weight: 700; }
+			&-item {
+				margin-bottom: 12px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				strong {
+					color: $green;
+					font-weight: 700;
+				}
 			}
 		}
-		&__pay{ margin-top: 30px; 
-			&-title{ margin-bottom: 15px; font-weight: bold; color: $green; }
-		}
-	}
-
-	&--orders &{
-		&__filter{ margin-bottom: 50px;  }
-		&__head{ padding: 0 30px 30px;
-			&-item{ font-weight: 500; color: $green;
-				&--number{ flex: 0 0 22%; max-width: 22%; } 
-				&--date{ text-align: center; flex: 0 0 24%; max-width: 24%; } 
-				&--price{ text-align: center; flex: 0 0 24%; max-width: 24%; } 
-				&--status{ flex: 0 0 30%; max-width: 30%; } 
-			}
-		}
-		&__list{ 
-			&-item{ margin-bottom: 15px;
-				&:last-child{ margin-bottom: 0;  }
+		&__pay {
+			margin-top: 30px;
+			&-title {
+				margin-bottom: 15px;
+				font-weight: bold;
+				color: $green;
 			}
 		}
 	}
 
-	&--discount &{
-		&__title{ margin-bottom: 50px; } 
-		&__desc{ margin-bottom: 40px; }  
-		&__row{ margin-bottom: 50px;
-			&-item{ margin-bottom: 20px; } 
+	&--orders & {
+		&__filter {
+			margin-bottom: 50px;
 		}
-		&__subtitle{ margin-bottom: 50px; }
-		&__progress{ margin-bottom: 90px; }
-		&__conditions{
-			&-item{ margin-bottom: 20px; 
-				&:last-child{ margin-bottom: 0; }
+		&__head {
+			padding: 0 30px 30px;
+			&-item {
+				font-weight: 500;
+				color: $green;
+				&--number {
+					flex: 0 0 22%;
+					max-width: 22%;
+				}
+				&--date {
+					text-align: center;
+					flex: 0 0 24%;
+					max-width: 24%;
+				}
+				&--price {
+					text-align: center;
+					flex: 0 0 24%;
+					max-width: 24%;
+				}
+				&--status {
+					flex: 0 0 30%;
+					max-width: 30%;
+				}
+			}
+		}
+		&__list {
+			&-item {
+				margin-bottom: 15px;
+				&:last-child {
+					margin-bottom: 0;
+				}
 			}
 		}
 	}
 
-	&--bills &{
-		&__filter{ margin-bottom: 50px;  }
-		&__head{ padding: 0 30px 30px;
-			&-item{ text-align: center; font-weight: 500; color: $green;
+	&--discount & {
+		&__title {
+			margin-bottom: 50px;
+		}
+		&__desc {
+			margin-bottom: 40px;
+		}
+		&__row {
+			margin-bottom: 50px;
+			&-item {
+				margin-bottom: 20px;
+			}
+		}
+		&__subtitle {
+			margin-bottom: 50px;
+		}
+		&__progress {
+			margin-bottom: 90px;
+		}
+		&__conditions {
+			&-item {
+				margin-bottom: 20px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	&--bills & {
+		&__filter {
+			margin-bottom: 50px;
+		}
+		&__head {
+			padding: 0 30px 30px;
+			&-item {
+				text-align: center;
+				font-weight: 500;
+				color: $green;
+				&:first-child {
+					text-align: left;
+				}
 				/* &--number{ font-weight: bold; color: $blue-dark; flex: 0 0 22%; max-width: 22%; } 
 				&--date{ text-align: center; flex: 0 0 24%; max-width: 24%; } 
 				&--price{ text-align: center; flex: 0 0 24%; max-width: 24%; } 
 				&--status{ flex: 0 0 30%; max-width: 30%; }  */
 			}
-		} 
-		&__list{ 
-			&-item{ margin-bottom: 15px;
-				&:last-child{ margin-bottom: 0;  }
-			}
 		}
-	}
-
-	&--news &{
-		&__title{ margin-bottom: 60px; }
-		&__list{
-			&-item{ margin-bottom: 40px; padding-bottom: 40px; border-bottom: 2px rgba($gray-devider,.6) solid; 
-				&:last-child{ margin-bottom: 0; padding-bottom: 0; border: 0;  }
-			}
-		}
-
-		&__imgs{ margin-bottom: 20px; 
-			&-item{ margin-bottom: 20px; }
-		}
-
-		&__buttons{ margin: 50px 0 -15px;  
-			.btn{ margin: 0 15px 15px 0; }
-		}
-
-		&__other{ margin-top: 150px; 
-			&-title{ margin-bottom: 50px; }
-			&-row{ margin-bottom: -20px; }
-			&-item{ margin-bottom: 20px; } 
-		}
-	}
-
-
-	@include media($md){ padding: 40px 0 200px; 
-		&--news &{
-			&__title{ margin-bottom: 40px; } 
-			&__other{ margin-top: 100px; }
-		}
-	} 
-
-	@include media($sm){ padding: 40px 0 150px;  
-
-		&--product &{
-			&__img{ margin-bottom: 40px; }
-		}
-
-		&--about-page &{
-			&__group-1{ padding-bottom: 100px;  background: url('../images/about-page-bg-2.svg') 0 calc(100% - 50px) no-repeat;  
-				// &-text{}
-
-			}
-			&__slogan{ font: 600 18px/24px $baseFF; }
-
-			&__adres{ margin-bottom: 20px; 
-				&:last-child{ margin-bottom: 0; }
-				&-title{ margin-bottom: 10px; }
-			}
-
-			&__advantages{ margin-top: 100px;
-				&-title{ margin-bottom: 40px; } 
-			}
-		}
-
-		&--search &{
-			&__title{ margin-bottom: 40px; }
-			&__tab-nav{ margin-bottom: 40px; }
-			&__group{ margin-bottom: 40px; padding-bottom: 40px; 
-				&.last, &:last-child{ margin-bottom: 0; padding-bottom: 0; border: 0;  }
-
-				&-title{ font: bold 22px/26px $baseFF; margin-bottom: 30px; }
-			}
-			&__list{
-				&-item{ margin-bottom: 30px; padding-bottom: 30px; 
-					&:last-child{ margin-bottom: 0; padding-bottom: 0; }
+		&__list {
+			&-item {
+				margin-bottom: 15px;
+				&:last-child {
+					margin-bottom: 0;
 				}
-			} 
-			&__buttons{  margin-top: 70px; }
+			}
 		}
-	} 
+	}
 
-	@include media($xs){ padding: 30px 0 100px;  
-		&__bread{ margin-bottom: 30px; } 
-		&__title{ margin-bottom: 40px; font-size: 26px; }
-		&__row{ margin-bottom: -20px; 
-			&-item{ margin-bottom: 20px; }
+	&--news & {
+		&__title {
+			margin-bottom: 60px;
+		}
+		&__list {
+			&-item {
+				margin-bottom: 40px;
+				padding-bottom: 40px;
+				border-bottom: 2px rgba($gray-devider, 0.6) solid;
+				&:last-child {
+					margin-bottom: 0;
+					padding-bottom: 0;
+					border: 0;
+				}
+			}
 		}
 
-		&--about-page &{
-			&__img{ margin-bottom: 20px; }
-			&__group-1{ padding-bottom: 70px;  background: none;  
+		&__imgs {
+			margin-bottom: 20px;
+			&-item {
+				margin-bottom: 20px;
+			}
+		}
+
+		&__buttons {
+			margin: 50px 0 -15px;
+			.btn {
+				margin: 0 15px 15px 0;
+			}
+		}
+
+		&__other {
+			margin-top: 150px;
+			&-title {
+				margin-bottom: 50px;
+			}
+			&-row {
+				margin-bottom: -20px;
+			}
+			&-item {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	@include media($md) {
+		padding: 40px 0 200px;
+		&--news & {
+			&__title {
+				margin-bottom: 40px;
+			}
+			&__other {
+				margin-top: 100px;
+			}
+		}
+	}
+
+	@include media($sm) {
+		padding: 40px 0 150px;
+
+		&--product & {
+			&__img {
+				margin-bottom: 40px;
+			}
+		}
+
+		&--about-page & {
+			&__group-1 {
+				padding-bottom: 100px;
+				background: url("../images/about-page-bg-2.svg") 0 calc(100% - 50px) no-repeat;
 				// &-text{}
 			}
-			&__group-2{
+			&__slogan {
+				font: 600 18px/24px $baseFF;
+			}
+
+			&__adres {
+				margin-bottom: 20px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				&-title {
+					margin-bottom: 10px;
+				}
+			}
+
+			&__advantages {
+				margin-top: 100px;
+				&-title {
+					margin-bottom: 40px;
+				}
+			}
+		}
+
+		&--search & {
+			&__title {
+				margin-bottom: 40px;
+			}
+			&__tab-nav {
+				margin-bottom: 40px;
+			}
+			&__group {
+				margin-bottom: 40px;
+				padding-bottom: 40px;
+				&.last,
+				&:last-child {
+					margin-bottom: 0;
+					padding-bottom: 0;
+					border: 0;
+				}
+
+				&-title {
+					font: bold 22px/26px $baseFF;
+					margin-bottom: 30px;
+				}
+			}
+			&__list {
+				&-item {
+					margin-bottom: 30px;
+					padding-bottom: 30px;
+					&:last-child {
+						margin-bottom: 0;
+						padding-bottom: 0;
+					}
+				}
+			}
+			&__buttons {
+				margin-top: 70px;
+			}
+		}
+	}
+
+	@include media($xs) {
+		padding: 30px 0 100px;
+		&__bread {
+			margin-bottom: 30px;
+		}
+		&__title {
+			margin-bottom: 40px;
+			font-size: 26px;
+		}
+		&__row {
+			margin-bottom: -20px;
+			&-item {
+				margin-bottom: 20px;
+			}
+		}
+
+		&--about-page & {
+			&__img {
+				margin-bottom: 20px;
+			}
+			&__group-1 {
+				padding-bottom: 70px;
+				background: none;
+				// &-text{}
+			}
+			&__group-2 {
 				// .main-section__img{ margin: 20px 0 0; }
 			}
-			&__slogan{ font: 600 16px/20px $baseFF; 
-				br{ display: none; }
-			}
-
-			&__advantages{ margin-top: 70px;
-				&-title{ margin-bottom: 30px; }  
-			}
-		}
-
-		&--discount &{
-			&__title{ margin-bottom: 40px; } 
-			&__row{ margin-bottom: 40px;
-				&-item{ margin-bottom: 20px; } 
-			}
-			&__subtitle{ margin-bottom: 40px; }
-			&__progress{ margin-bottom: 70px; }
-			 
-		}
-
-		&--bills &, &--orders &{
-			&__filter{ margin-bottom: 40px;  
-				&-item{ margin-bottom: 10px;
-					&:last-child{ margin-bottom: 0; }
-				}
-			}
-			&__head{ display: none; }
-		}
-
-		&--news &{
-			&__list{
-				&-item{ margin-bottom: 30px; padding-bottom: 30px;
-					&:last-child{ margin-bottom: 0; padding-bottom: 0;  }
+			&__slogan {
+				font: 600 16px/20px $baseFF;
+				br {
+					display: none;
 				}
 			}
 
-			&__buttons{ margin: 40px 0 -15px; }
-
-			&__other{ margin-top: 70px; 
-				&-title{ margin-bottom: 40px; }
+			&__advantages {
+				margin-top: 70px;
+				&-title {
+					margin-bottom: 30px;
+				}
 			}
 		}
 
-		&--contacts &{
-			&__title{ margin-bottom: 30px; }
-			&__row{ margin-bottom: -20px; 
-				&-item{ margin-bottom: 20px; } 
+		&--discount & {
+			&__title {
+				margin-bottom: 40px;
+			}
+			&__row {
+				margin-bottom: 40px;
+				&-item {
+					margin-bottom: 20px;
+				}
+			}
+			&__subtitle {
+				margin-bottom: 40px;
+			}
+			&__progress {
+				margin-bottom: 70px;
 			}
 		}
-	} 
+
+		&--bills &,
+		&--orders & {
+			&__filter {
+				margin-bottom: 40px;
+				&-item {
+					margin-bottom: 10px;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+			&__head {
+				display: none;
+			}
+		}
+
+		&--news & {
+			&__list {
+				&-item {
+					margin-bottom: 30px;
+					padding-bottom: 30px;
+					&:last-child {
+						margin-bottom: 0;
+						padding-bottom: 0;
+					}
+				}
+			}
+
+			&__buttons {
+				margin: 40px 0 -15px;
+			}
+
+			&__other {
+				margin-top: 70px;
+				&-title {
+					margin-bottom: 40px;
+				}
+			}
+		}
+
+		&--contacts & {
+			&__title {
+				margin-bottom: 30px;
+			}
+			&__row {
+				margin-bottom: -20px;
+				&-item {
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
 }

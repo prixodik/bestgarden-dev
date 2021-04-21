@@ -1,54 +1,133 @@
-
-.accardion-block{ 
+.accardion-block {
 	* {
-		transition-duration: .2s;
-    	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+		transition-duration: 0.2s;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	}
-	&__head{ @include flex(space-between,center,center,nowrap); padding: 15px 15px; cursor: pointer; border-bottom: 2px rgba($gray-devider,.6) solid; 
-		&.is-active{ border-color: transparent; 
-			.accardion-block__arrow{ transform: rotate(-180deg); }
-		}
-	}
-	&__title{ color: $green; font: $title-h4; }
-	&__arrow{ @include flex(center,center,center); width: 45px; height: 45px; background: rgba($blue,.4); border-radius: 50%; @include time(); flex: 0 0 auto; margin-left: 10px;  
-		svg{ font-size: 15px; fill: $green; transform: rotate(90deg); display: block; }
+	&__head {
+		@include flex(space-between, center, center, nowrap);
+		padding: 15px 15px;
+		cursor: pointer; /* border-bottom: 2px rgba($gray-devider,.6) solid;  */
 
-		&:hover{ background: rgba($blue,.9); } 
-	}
-	&__body{ max-height: 0; opacity: 0; pointer-events: none;  overflow: hidden; /* transition: all .7s linear;  padding: 0 15px; */ border-bottom: 2px rgba($gray-devider,.6) solid; padding: 0 15px;  /* height: auto; transition-delay: 0;   */
-
-		&.is-active{ max-height: 2000px; margin-top: 20px;  opacity: 1; pointer-events: auto; /*transition: all .7s linear;   height: 100%;  */ padding: 0 15px 24px;    }  
-	} 
-
-	&--white &{
-		&__head{ background: $white; border-radius: 10px; box-shadow: 4px 4px 23px rgba(113, 159, 163, 0.14); padding: 20px 30px; margin-bottom: 25px; border: 0; }
-		&__body{ border: 0;  padding: 0 30px;
-			&.is-active{ padding: 20px 30px 50px; }
-		}
-	}
-
-	@include media($sm){
-		&__head{ padding: 10px 10px; }
-		&__arrow{ width: 35px; height: 35px; 
-			svg{ font-size: 14px; }
-		}
-
-		&--white &{
-			&__head{ padding: 10px 10px; margin-bottom: 15px; }
-			&__body{ border: 0;  padding: 0 10px;
-				&.is-active{ padding: 20px 10px 40px; }
+		/* &:first-child {
+			border-bottom: 2px rgba($gray-devider, 0.6) solid;
+		} */
+		&.is-active {
+			border-color: transparent;
+			.accardion-block__arrow {
+				transform: rotate(-180deg);
 			}
-		} 
-		
+		}
+	}
+	&__title {
+		color: $green;
+		font: $title-h4;
+	}
+	&__arrow {
+		@include flex(center, center, center);
+		width: 45px;
+		height: 45px;
+		background: rgba($blue, 0.4);
+		border-radius: 50%;
+		@include time();
+		flex: 0 0 auto;
+		margin-left: 10px;
+		svg {
+			font-size: 15px;
+			fill: $green;
+			transform: rotate(90deg);
+			display: block;
+		}
+
+		&:hover {
+			background: rgba($blue, 0.9);
+		}
+	}
+	&__body {
+		max-height: 0;
+		opacity: 1;
+		pointer-events: none;
+		overflow: hidden; /* transition: all .7s linear;  padding: 0 15px; */
+		border-top: 2px rgba($gray-devider, 0.6) solid;
+		padding: 0 15px; /* height: auto; transition-delay: 0;   */
+		&:last-child {
+			border-top: 0;
+		}
+
+		&.is-active {
+			max-height: 2000px;
+			//margin-top: 20px;
+			opacity: 1;
+			pointer-events: auto; /*transition: all .7s linear;   height: 100%;  */
+			padding: 20px 15px 24px;
+			border-bottom: 2px rgba($gray-devider, 0.6) solid;
+			border-top-color: transparent;
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
 	}
 
-	@include media($xs){
-		&__head{ padding: 10px 0; }
-		&__title{ font: $title-h4-xs; }
-		&__arrow{ width: 35px; height: 35px; 
-			svg{ font-size: 14px; }
+	&--white & {
+		&__head {
+			background: $white;
+			border-radius: 10px;
+			box-shadow: 4px 4px 23px rgba(113, 159, 163, 0.14);
+			padding: 20px 30px;
+			margin-bottom: 25px;
+			border: 0;
 		}
-		&__body{ padding: 10px 0;  } 
-		
+		&__body {
+			border: 0;
+			padding: 0 30px;
+			&.is-active {
+				padding: 20px 30px 50px;
+			}
+		}
+	}
+
+	@include media($sm) {
+		&__head {
+			padding: 10px 10px;
+		}
+		&__arrow {
+			width: 35px;
+			height: 35px;
+			svg {
+				font-size: 14px;
+			}
+		}
+
+		&--white & {
+			&__head {
+				padding: 10px 10px;
+				margin-bottom: 15px;
+			}
+			&__body {
+				border: 0;
+				padding: 0 10px;
+				&.is-active {
+					padding: 20px 10px 40px;
+				}
+			}
+		}
+	}
+
+	@include media($xs) {
+		&__head {
+			padding: 10px 0;
+		}
+		&__title {
+			font: $title-h4-xs;
+		}
+		&__arrow {
+			width: 35px;
+			height: 35px;
+			svg {
+				font-size: 14px;
+			}
+		}
+		&__body {
+			padding: 10px 0;
+		}
 	}
 }

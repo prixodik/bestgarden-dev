@@ -1,234 +1,518 @@
-
-.well-block{ padding: 30px 30px 25px; background: $white; border-radius: 10px; @include time(); box-shadow: 4px 4px 23px rgba(113, 159, 163, 0.14); height: 100%;
-	ul, ol, p:not(.well-block__title){ margin-bottom: 24px;
-		&:last-child{ margin-bottom: 0; }
-	}
-
-	&__title{ margin-bottom: 30px; color: $green;  padding: 3px 9px 16px; border-bottom: 2px rgba($gray-devider,.6) solid; text-transform: uppercase;  }
-	&__edit{ color: $blue-dark; font: bold 15px $baseFF;  
-		&.hide{ display: none;  }
-	}
-	&__bottom{ text-align: right; margin-top: 20px; }  
-
-
-	&--contacts{ padding: 30px 40px; height: auto; }
-	&--contacts &{
-		&__label{ margin-bottom: 15px; color: $blue-dark; font: 600 20px/26px $baseFF; }
-		&__phone{ color: $form-blue; margin-bottom: 0;  }
-		&__site{ @include flex(0,center,center,nowrap); color: $form-blue; font-weight: bold;
-			img,  svg{ flex: 0 0 45px; height: 45px; margin-right: 15px; }
+.well-block {
+	padding: 30px 30px 25px;
+	background: $white;
+	border-radius: 10px;
+	@include time();
+	box-shadow: 4px 4px 23px rgba(113, 159, 163, 0.14);
+	height: 100%;
+	ul,
+	ol,
+	p:not(.well-block__title) {
+		margin-bottom: 24px;
+		&:last-child {
+			margin-bottom: 0;
 		}
 	}
 
-	&--adress{ padding: 40px 35px; height: auto; }
-	&--adress &{
-		&__item{ padding-bottom: 35px; margin-bottom: 35px; border-bottom: 2px rgba($gray-devider,.6) solid; 
-			&:last-child{ padding-bottom: 0; margin-bottom: 0; border: 0; }
+	&__title {
+		margin-bottom: 30px;
+		color: $green;
+		padding: 3px 0 16px;
+		border-bottom: 2px rgba($gray-devider, 0.6) solid;
+		text-transform: uppercase;
+	}
+	&__edit {
+		color: $blue-dark;
+		font: bold 15px $baseFF;
+		&.hide {
+			display: none;
 		}
-		&__row{ margin: 0 -35px; }
-		&__adres{ padding: 0 35px; }
-		&__info{ padding: 0 35px; color: #8699A5; 
-			img{ border-radius: 10px; }
-			p{ margin-bottom: 20px;
-				&:last-child{ margin-bottom: 0; }
+	}
+	&__bottom {
+		text-align: right;
+		margin-top: 20px;
+	}
+
+	&--contacts {
+		padding: 30px 40px;
+		height: auto;
+	}
+	&--contacts & {
+		&__label {
+			margin-bottom: 15px;
+			color: $blue-dark;
+			font: 600 20px/26px $baseFF;
+		}
+		&__phone {
+			color: $form-blue;
+			margin-bottom: 0;
+		}
+		&__site {
+			@include flex(0, center, center, nowrap);
+			color: $form-blue;
+			font-weight: bold;
+			img,
+			svg {
+				flex: 0 0 45px;
+				height: 45px;
+				margin-right: 15px;
 			}
-			a{ color: $link; font-weight: bold; }
-		}
-		&__img{ padding: 0 35px; 
-			img{ margin: 0 auto; display: block; border-radius: 10px; }
 		}
 	}
 
-	&--profile{ padding: 35px 30px 25px; @include flex(0,center,center,nowrap); background: $bg-directory; box-shadow: none; }
-	&--profile &{
-		&__name{ color: $green; margin-bottom: 15px; margin-top: 35px;  }
-		&__params{  
-			&-item{ margin-bottom: 10px;  
-				&:last-child{ margin-bottom: 0; } 
+	&--adress {
+		padding: 40px 35px;
+		height: auto;
+	}
+	&--adress & {
+		&__item {
+			padding-bottom: 35px;
+			margin-bottom: 35px;
+			border-bottom: 2px rgba($gray-devider, 0.6) solid;
+			&:last-child {
+				padding-bottom: 0;
+				margin-bottom: 0;
+				border: 0;
 			}
-			&-more{ 
-				a{ color: $form-blue; }
+		}
+		&__row {
+			margin: 0 -35px;
+		}
+		&__adres {
+			padding: 0 35px;
+		}
+		&__info {
+			padding: 0 35px;
+			color: #8699a5;
+			img {
+				border-radius: 10px;
+			}
+			p {
+				margin-bottom: 20px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			a {
+				color: $link;
+				font-weight: bold;
 			}
 		}
-		&__avatar{  margin-right: 35px; flex: 0 0 auto;
-	      img{ border-radius: 50%; object-fit: cover; width: 179px; height: 179px; margin: 0 auto; display: block; } 
-	      &-load{ margin-top: 10px; text-align: center; color: $blue-dark; font: 10px/14px $baseFF; }
-	    }
-	    &__wrap{ flex: 1 1 auto; /* @include flex(space-between,stretch,stretch,nowrap,column); */  }
-	    &__bottom{  margin-top: 40px; }
-	    
-	}
-
-	&--orders{ @include flex(space-between,stretch,stretch,nowrap,column);  }
-	&--orders &{
-		&__row{ margin-bottom: 25px; 
-			&:last-child{ margin-bottom: 0;  }
-		}
-		&__list{ flex: 1 1 auto;  }
-		&__bottom{ margin-top: 30px; } 
-	}
-
-	&--discount &{
-		&__row{ margin-bottom: -20px; 
-			&-item{ margin-bottom: 20px; }
-			&-label{ margin-bottom: 20px;  }
-
-		}
-	}
-
-	&--discount-2 &{
-		&__row{ margin-bottom: -20px; 
-			&-item{ margin-bottom: 20px; }
-			&-label{ margin-bottom: 15px; color: $blue-dark; font: 600 20px/26px $baseFF; }
-			&-discount{ color: $green; font: 700 40px $baseFF; 
-				&--blue{ color: $form-blue;  }
+		&__img {
+			padding: 0 35px;
+			img {
+				margin: 0 auto;
+				display: block;
+				border-radius: 10px;
 			}
-
 		}
 	}
-	
-	&--pay{ @include flex(0,stretch,stretch,nowrap,column); }
-	&--pay &{
-		&__text{ color: $gray;  flex: 1 1 auto; }
+
+	&--profile {
+		padding: 35px 30px 25px;
+		@include flex(0, center, center, nowrap);
+		background: $bg-directory;
+		box-shadow: none;
+		height: auto;
+	}
+	&--profile & {
+		&__name {
+			color: $green;
+			margin-bottom: 15px;
+			margin-top: 35px;
+		}
+		&__params {
+			&-item {
+				margin-bottom: 10px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			&-more {
+				a {
+					color: $form-blue;
+				}
+			}
+		}
+		&__avatar {
+			margin-right: 35px;
+			flex: 0 0 auto;
+			img {
+				border-radius: 50%;
+				object-fit: cover;
+				width: 179px;
+				height: 179px;
+				margin: 0 auto;
+				display: block;
+			}
+			&-load {
+				margin-top: 10px;
+				text-align: center;
+				color: $blue-dark;
+				font: 10px/14px $baseFF;
+			}
+		}
+		&__wrap {
+			flex: 1 1 auto; /* @include flex(space-between,stretch,stretch,nowrap,column); */
+		}
+		&__bottom {
+			margin-top: 40px;
+		}
 	}
 
-	&--doc{ padding: 22px 40px;  }
-
-	&--order-info{ padding: 24px 30px; }
-	&--order-info &{
-		&__number{ font-weight: bold; color: $blue-dark; flex: 0 0 22%; max-width: 22%; } 
-		&__date{ text-align: center; flex: 0 0 24%; max-width: 24%; }
-		&__price{ text-align: center; flex: 0 0 24%; max-width: 24%; } 
-		&__status{ flex: 0 0 30%; max-width: 30%; } 
-
+	&--orders {
+		@include flex(space-between, stretch, stretch, nowrap, column);
+	}
+	&--orders & {
+		&__row {
+			margin-bottom: 25px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		&__list {
+			flex: 1 1 auto;
+		}
+		&__bottom {
+			margin-top: 30px;
+		}
 	}
 
-	&--bill-info{ padding: 24px 30px; }
-	&--bill-info &{
-		&__row{ flex-wrap: nowrap; }
-		&__number{ font-weight: bold; text-align: center; color: $blue-dark; /* flex: 0 0 22%; max-width: 22%; */ } 
-		&__date{ text-align: center; /* flex: 0 0 24%; max-width: 24%; */ }
-		&__price{ text-align: center; /* flex: 0 0 24%; max-width: 24%; */ } 
-		&__status{ @include flex(center);  /* flex: 0 0 30%; max-width: 30%; */ } 
-		&__download{ 
-			svg{ fill: $link; font-size: 24px; display: block; margin: 0 auto;  }
-		} 
-		&__send{ font: 500 14px/20px $baseFF; 
-			a{ color: $form-blue; }
+	&--discount & {
+		&__row {
+			margin-bottom: -20px;
+			&-item {
+				margin-bottom: 20px;
+			}
+			&-label {
+				margin-bottom: 20px;
+			}
+		}
+	}
 
-			&--active{ 
-				a{ @include flex(0,center,center,nowrap); color: $green;  
-					svg{ margin-right: 7px; fill: $green; font-size: 14px; display: block; }
+	&--discount-2 & {
+		&__row {
+			margin-bottom: -20px;
+			&-item {
+				margin-bottom: 20px;
+			}
+			&-label {
+				margin-bottom: 15px;
+				color: $blue-dark;
+				font: 600 20px/26px $baseFF;
+			}
+			&-discount {
+				color: $green;
+				font: 700 40px $baseFF;
+				&--blue {
+					color: $form-blue;
 				}
 			}
 		}
 	}
 
-	@include media($lg){ 
-
+	&--pay {
+		@include flex(0, stretch, stretch, nowrap, column);
 	}
-	@include media($md){ 
-		&--profile{ padding: 25px 20px 20px; }
-		&--profile &{
-			&__name{ margin-top: 25px;  }
-			&__avatar{  margin-right: 20px; 
-		      img{ width: 120px; height: 120px; }
-		    }
-		    &__bottom{  margin-top: 20px; }
-		    
+	&--pay & {
+		&__text {
+			color: $gray;
+			flex: 1 1 auto;
 		}
+	}
 
-		&--orders &{
-			&__row{ margin-bottom: 20px; 
-				&:last-child{ margin-bottom: 0;  }
+	&--doc {
+		padding: 22px 40px;
+	}
+
+	&--order-info {
+		padding: 24px 30px;
+	}
+	&--order-info & {
+		&__number {
+			font-weight: bold;
+			color: $blue-dark;
+			flex: 0 0 22%;
+			max-width: 22%;
+		}
+		&__date {
+			text-align: center;
+			flex: 0 0 24%;
+			max-width: 24%;
+		}
+		&__price {
+			text-align: center;
+			flex: 0 0 24%;
+			max-width: 24%;
+		}
+		&__status {
+			flex: 0 0 30%;
+			max-width: 30%;
+		}
+	}
+
+	&--bill-info {
+		padding: 24px 30px;
+	}
+	&--bill-info & {
+		&__row {
+			flex-wrap: nowrap;
+		}
+		&__number {
+			font-weight: bold;
+			text-align: center;
+			color: $blue-dark; /* flex: 0 0 22%; max-width: 22%; */
+		}
+		&__date {
+			text-align: left; /* flex: 0 0 24%; max-width: 24%; */
+		}
+		&__price {
+			text-align: center; /* flex: 0 0 24%; max-width: 24%; */
+		}
+		&__status {
+			@include flex(center); /* flex: 0 0 30%; max-width: 30%; */
+		}
+		&__download {
+			svg {
+				fill: $link;
+				font-size: 24px;
+				display: block;
+				margin: 0 auto;
 			}
-			&__bottom{ margin-top: 20px; } 
-		}		
+		}
+		&__send {
+			font: 500 14px/20px $baseFF;
+			a {
+				color: $form-blue;
+			}
 
-		&--doc{ padding: 15px 30px;  }
-	}
-
-	@include media($sm){
-		&--contacts{ padding: 30px 25px; }
-
-		&--adress{ padding: 30px 25px; }
-		&--adress &{
-			&__row{ margin: 0 -15px; }
-			&__adres{ padding: 0 15px; }
-			&__info{ padding: 0 15px;  }
-			&__img{ padding: 0 15px; }
+			&--active {
+				a {
+					@include flex(center, center, center, nowrap);
+					color: $green;
+					svg {
+						margin-right: 7px;
+						fill: $green;
+						font-size: 14px;
+						display: block;
+					}
+				}
+			}
 		}
 	}
 
-	@include media($xs){ padding: 20px;
-		&__title{ margin-bottom: 20px; padding: 0 0 10px; }  
-		&__edit{  font: bold 14px $baseFF; } 
-
-		&--contacts{ padding: 20px; }
-		&--contacts &{
-			&__label{ margin-bottom: 10px; font: 600 18px/24px $baseFF; }
-			&__row{ margin-bottom: -20px;
-				&-item{ margin-bottom: 20px; }
+	@include media($lg) {
+	}
+	@include media($md) {
+		&--profile {
+			padding: 25px 20px 20px;
+		}
+		&--profile & {
+			&__name {
+				margin-top: 25px;
+			}
+			&__avatar {
+				margin-right: 20px;
+				img {
+					width: 120px;
+					height: 120px;
+				}
+			}
+			&__bottom {
+				margin-top: 20px;
 			}
 		}
 
-		&--adress{ padding: 20px; }
-		&--adress &{
-			&__item{ padding-bottom: 25px; margin-bottom: 25px; 
-				&:last-child{ padding-bottom: 0; margin-bottom: 0; }
+		&--orders & {
+			&__row {
+				margin-bottom: 20px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			&__bottom {
+				margin-top: 20px;
+			}
+		}
+
+		&--doc {
+			padding: 15px 30px;
+		}
+	}
+
+	@include media($sm) {
+		&--contacts {
+			padding: 30px 25px;
+		}
+
+		&--adress {
+			padding: 30px 25px;
+		}
+		&--adress & {
+			&__row {
+				margin: 0 -15px;
+			}
+			&__adres {
+				padding: 0 15px;
+			}
+			&__info {
+				padding: 0 15px;
+			}
+			&__img {
+				padding: 0 15px;
+			}
+		}
+	}
+
+	@include media($xs) {
+		padding: 20px;
+		&__title {
+			margin-bottom: 20px;
+			padding: 0 0 10px;
+		}
+		&__edit {
+			font: bold 14px $baseFF;
+		}
+
+		&--contacts {
+			padding: 20px;
+		}
+		&--contacts & {
+			&__label {
+				margin-bottom: 10px;
+				font: 600 18px/24px $baseFF;
+			}
+			&__row {
+				margin-bottom: -20px;
+				&-item {
+					margin-bottom: 20px;
+				}
+			}
+		}
+
+		&--adress {
+			padding: 20px;
+		}
+		&--adress & {
+			&__item {
+				padding-bottom: 25px;
+				margin-bottom: 25px;
+				&:last-child {
+					padding-bottom: 0;
+					margin-bottom: 0;
+				}
 			}
 			//&__row{ margin: 0 -35px; }
-			&__adres{ margin-bottom: 20px; }
-			&__info{ margin-bottom: 20px; }
-			&__img{ margin-bottom: 20px;  }
-		}
-
-		&--profile{ padding: 20px 20px; display: block;  }
-		&--profile &{
-			&__name{ margin-top: 25px;  }
-			&__avatar{  margin-right: 0; 
-		      img{ width: 120px; height: 120px; }
-		    }
-		    &__bottom{  margin-top: 20px; }
-		    
-		}
-
-		&--doc{ padding: 15px 20px;  }
-
-		&--discount &{
-			&__row{ 
-				&-label{ margin-bottom: 10px;  }  
-
+			&__adres {
+				margin-bottom: 20px;
+			}
+			&__info {
+				margin-bottom: 20px;
+			}
+			&__img {
+				margin-bottom: 20px;
 			}
 		}
 
-		&--discount-2 &{
-			&__row{ 
-				&-label{ margin-bottom: 10px; font: 600 18px/24px $baseFF; }
-				&-discount{ font: 700 30px $baseFF;  }
-
+		&--profile {
+			padding: 20px 20px;
+			display: block;
+		}
+		&--profile & {
+			&__name {
+				margin-top: 25px;
+			}
+			&__avatar {
+				margin-right: 0;
+				img {
+					width: 120px;
+					height: 120px;
+				}
+			}
+			&__bottom {
+				margin-top: 20px;
 			}
 		}
 
-		&--order-info{ padding: 20px 20px; }
-		&--order-info &{
-			&__number{ flex: 0 0 100%; max-width: 100%; margin-bottom: 15px; }  
-			&__date{ text-align: left; flex: 0 0 50%; max-width: 50%; }
-			&__price{ text-align: right; flex: 0 0 50%; max-width: 50%; } 
-			&__status{ flex: 0 0 100%; max-width: 100%; margin-top: 15px; } 
-
+		&--doc {
+			padding: 15px 20px;
 		}
 
-		&--bill-info{ padding: 20px; }
-		&--bill-info &{
-			&__row{ flex-wrap: wrap; }
-			&__number{ text-align: left; margin-bottom: 15px; } 
-			&__date{ text-align: left; margin-bottom: 15px; }
-			&__price{ text-align: left; margin-bottom: 15px; } 
-			&__status{ display: block; margin-bottom: 15px; }  
-			&__download{  
-				svg{ font-size: 20px; margin: 0;  }
-			} 
+		&--discount & {
+			&__row {
+				&-label {
+					margin-bottom: 10px;
+				}
+			}
+		}
+
+		&--discount-2 & {
+			&__row {
+				&-label {
+					margin-bottom: 10px;
+					font: 600 18px/24px $baseFF;
+				}
+				&-discount {
+					font: 700 30px $baseFF;
+				}
+			}
+		}
+
+		&--order-info {
+			padding: 20px 20px;
+		}
+		&--order-info & {
+			&__number {
+				flex: 0 0 100%;
+				max-width: 100%;
+				margin-bottom: 15px;
+			}
+			&__date {
+				text-align: left;
+				flex: 0 0 50%;
+				max-width: 50%;
+			}
+			&__price {
+				text-align: right;
+				flex: 0 0 50%;
+				max-width: 50%;
+			}
+			&__status {
+				flex: 0 0 100%;
+				max-width: 100%;
+				margin-top: 15px;
+			}
+		}
+
+		&--bill-info {
+			padding: 20px;
+		}
+		&--bill-info & {
+			&__row {
+				flex-wrap: wrap;
+			}
+			&__number {
+				text-align: left;
+				margin-bottom: 15px;
+			}
+			&__date {
+				text-align: left;
+				margin-bottom: 15px;
+			}
+			&__price {
+				text-align: left;
+				margin-bottom: 15px;
+			}
+			&__status {
+				display: block;
+				margin-bottom: 15px;
+			}
+			&__download {
+				svg {
+					font-size: 20px;
+					margin: 0;
+				}
+			}
 			/* &__send{ font: 500 14px/20px $baseFF; 
 				a{ color: $form-blue; }
 				
@@ -237,11 +521,10 @@
 						svg{ margin-right: 7px; fill: $green; font-size: 14px; display: block; }
 					}
 				}
-			} */ 
+			} */
 		}
 	}
 
-	@include media($xxs){
-		
+	@include media($xxs) {
 	}
 }

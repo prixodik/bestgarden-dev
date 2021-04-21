@@ -1,51 +1,105 @@
-
-.icon-inline{ @include flex(0,center,center,nowrap);
-	&__icon{ @include flex(center,center,center); margin-right: 12px; width: 38px; height: 38px; border-radius: 50%; background: $blue;  flex: 0 0 auto;
-		svg{ display: block; font-size: 20px; fill: $white; }
-	}
-	&__wrap{ color: $text-green-dark; font: $fs-14; 
-		a{ text-decoration: none; 
-			&:hover{ text-decoration: underline; }
-		}
-
-		&--login{
-			span{ margin: 0 5px; }
-		}
-	}
-	&__phone{ margin-bottom: 4px; font: $fs-16-bold; display: block; white-space: nowrap; }
-
-	&--white &{
-		&__icon{ background: $white; box-shadow: 2px 2px 8px rgba(92, 109, 116, 0.1); 
-			svg{ fill: $green; }
-		}
-		&__wrap{ 
-			a{ color: $form-blue; font-weight: bold;  }
+.icon-inline {
+	@include flex(0, center, center, nowrap);
+	&__icon {
+		@include flex(center, center, center);
+		margin-right: 12px;
+		width: 38px;
+		height: 38px;
+		border-radius: 50%;
+		background: $blue;
+		flex: 0 0 auto;
+		svg {
+			display: block;
+			font-size: 20px;
+			fill: $white;
 		}
 	}
-
-	&--lg &{ 
-		&__icon{ width: 50px; height: 50px; margin-right: 15px; 
-			svg{ font-size: 24px;  }
-		}
-	}
-
-	&--list &{
-		&__icon{ background: $blue-dark; width: 52px; height: 52px;
-			svg{ fill: $white; font-size: 17px; }
-		}
-		&__wrap{ font: $fs-16; color: $black;  }
-	}
-
-	@include media($md){
-		&__icon{ width: 30px; height: 30px; 
-			svg{ font-size: 16px; }
-		}
-
-		&--list &{
-			&__icon{  width: 42px; height: 42px;
-				svg{ font-size: 12px; }
+	&__wrap {
+		color: $text-green-dark;
+		font: $fs-14;
+		a {
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
 			}
-			&__wrap{ font: $fs-14;  }
+		}
+
+		&--login {
+			span {
+				margin: 0 5px;
+			}
+		}
+	}
+	&__phone {
+		margin-bottom: 4px;
+		font: $fs-16-bold;
+		display: block;
+		white-space: nowrap;
+	}
+
+	&--white & {
+		&__icon {
+			background: $white;
+			box-shadow: 2px 2px 8px rgba(92, 109, 116, 0.1);
+			svg {
+				fill: $green;
+			}
+		}
+		&__wrap {
+			a {
+				color: $form-blue;
+				font-weight: bold;
+			}
+		}
+	}
+
+	&--lg & {
+		&__icon {
+			width: 50px;
+			height: 50px;
+			margin-right: 15px;
+			svg {
+				font-size: 24px;
+			}
+		}
+	}
+
+	&--list & {
+		&__icon {
+			background: $blue-dark;
+			width: 32px;
+			height: 32px;
+			svg {
+				fill: $white;
+				font-size: 12px;
+			}
+		}
+		&__wrap {
+			font: $fs-16;
+			color: $black;
+		}
+	}
+
+	@include media($md) {
+		&__icon {
+			width: 30px;
+			height: 30px;
+			svg {
+				font-size: 16px;
+			}
+		}
+
+		&--list & {
+			&__icon {
+				width: 42px;
+				height: 42px;
+				svg {
+					font-size: 12px;
+				}
+			}
+			&__wrap {
+				font: $fs-14;
+			}
 		}
 	}
 }

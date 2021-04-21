@@ -63,22 +63,24 @@
                 </div>
               </div>
             </div>
-            <div class="header__bottom"><a class="burger js-mobile-menu-toggle header__burger" href="#"><span> </span><span> </span><span> </span></a>
-              <div class="header__menu js-mobile-menu">
-                    <div class="menu-block">
-                      <div class="menu-block__item"><a href="#">Каталоги</a></div>
-                      <div class="menu-block__item"><a href="#">О нас</a></div>
-                      <div class="menu-block__item"><a href="#">Доставка и оплата</a></div>
-                      <div class="menu-block__item"><a href="#">Задать вопрос</a></div>
-                      <div class="menu-block__item"><a href="#">Скидки</a></div>
-                      <div class="menu-block__item"><a href="#">Новости</a></div>
-                      <div class="menu-block__item"><a href="#">Контакты</a></div>
-                    </div>
+            <div class="header__bottom">
+              <div class="header__bottom-container container"><a class="burger js-mobile-menu-toggle header__burger" href="#"><span> </span><span> </span><span> </span></a>
+                <div class="header__menu js-mobile-menu">
+                      <div class="menu-block">
+                        <div class="menu-block__item"><a href="#">Каталоги</a></div>
+                        <div class="menu-block__item"><a href="#">О нас</a></div>
+                        <div class="menu-block__item"><a href="#">Доставка и оплата</a></div>
+                        <div class="menu-block__item"><a href="#">Задать вопрос</a></div>
+                        <div class="menu-block__item"><a href="#">Скидки</a></div>
+                        <div class="menu-block__item"><a href="#">Новости</a></div>
+                        <div class="menu-block__item"><a href="#">Контакты</a></div>
+                      </div>
+                </div>
+                <div class="header__buttons"><a class="btn btn--blue btn--icon btn--sm js-popup-show" href="#popup-status">
+                    <svg class="icon icon_question">
+                      <use xlink:href="images/sprite-svg.svg#question"></use>
+                    </svg><span>Узнать статус заказа</span></a></div>
               </div>
-              <div class="header__buttons"><a class="btn btn--blue btn--icon btn--sm js-popup-show" href="#popup-status">
-                  <svg class="icon icon_question">
-                    <use xlink:href="images/sprite-svg.svg#question"></use>
-                  </svg><span>Узнать статус заказа</span></a></div>
             </div>
           </div>
         </header>
@@ -97,7 +99,7 @@
             <h1 class="main-section__title">Заказы</h1>
             <div class="main-section__filter row row--stretch row--between">
               <div class="main-section__filter-item col-4 col-sm-6 col-xs-12">
-                <select name="">
+                <select class="nice-select--transparent" name="">
                   <option value="">Все</option>
                   <option value="">Все и еще немного</option>
                   <option value="">Ничего</option>

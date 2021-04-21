@@ -1,76 +1,177 @@
+.header {
+	background: $white;
+	position: relative;
+	z-index: 10;
+	box-shadow: $cards-bg;
+	&__body {
+		@include flex(space-between, center, center, nowrap);
+		padding: 15px 0;
+		&-content {
+			@include flex(space-between, center, center, nowrap);
+			flex: 1 1 auto;
+		}
+	}
+	&__logo {
+		margin-bottom: 5px;
+		display: block;
+		img {
+			margin: 0 auto;
+			display: block;
+		}
+		&-wrap {
+			margin-right: 70px;
+		}
+	}
+	&__slogan {
+		text-align: center;
+		color: $green;
+		font: 10px/14px $baseFF;
+		white-space: nowrap;
+	}
+	&__search {
+		flex: 1 1 auto;
+	}
+	&__contacts {
+		@include flex(flex-end, center, center, nowrap);
+		&-item {
+			margin-left: 60px;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+	&__bottom {
+		padding: 8px 0;
 
-.header{ background: $white; position: relative; z-index: 10; box-shadow: $cards-bg;
-  &__body{ @include flex(space-between,center,center,nowrap); padding: 15px 0; 
-    &-content{ @include flex(space-between,center,center,nowrap); flex: 1 1 auto; } 
-  }
-  &__logo{ margin-bottom: 5px; display: block;
-    img{ margin: 0 auto; display: block; }
-    &-wrap{ margin-right: 70px; }
-  }
-  &__slogan{ text-align: center; color: $green; font: 10px/14px $baseFF; white-space: nowrap; }
-  &__search{ flex: 1 1 auto; }
-  &__contacts{ @include flex(flex-end,center,center,nowrap); 
-    &-item{ margin-left: 60px; 
-      &:first-child{ margin-left: 0;}
-    }
-  }
-  &__bottom{ padding: 8px 0; @include flex(space-between,center,center,nowrap); border-top: 1px $gray-devider solid; }
-  &__menu{ flex: 1 1 auto; }
-  &__burger{ display: none; }
-  
-  @include media($lg){ 
-    &__logo{ 
-      &-wrap{ margin-right: 40px; }
-    }
-    &__contacts{ 
-      &-item{ margin-left: 20px;  
-        &:first-child{ margin-left: 20px;}
-      }
-    }
-  }
+		border-top: 1px $gray-devider solid;
+		background: $white;
+		&-container {
+			@include flex(space-between, center, center, nowrap);
+			padding-left: 0;
+			padding-right: 0;
+		}
 
-  @include media($md){
-    &__logo{ 
-      &-wrap{ margin-right: 20px; }
-    }
-    &__contacts{ 
-      &-item{ margin-left: 15px;  
-        &:first-child{ margin-left: 15px; }
-      }
-    }
-  }
+		&.fixed {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			padding: 8px 15px;
 
-  @include media($sm){
-    &__menu{ display: none; position: absolute; top: 100%; left: 0; background: $white; padding: 20px 15px; width: 100%; box-shadow: $cards-bg;
-      //&.is-active{ }
-    }
-    &__burger{ display: block;  }
-    &__body{
-      &-content{ flex-wrap: wrap; }
-    }
-    &__search{ flex: 0 0 100%; margin-bottom: 10px;  }
-    &__contacts{ flex: 0 0 100%; 
-      &-item{ margin-left: 40px; 
-        &:first-child{ margin-left: 0;  }
-      }
-    }
-  }
+			.header__bottom-container {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+		}
+	}
+	&__menu {
+		flex: 1 1 auto;
+	}
+	&__burger {
+		display: none;
+	}
 
-  @include media($xs){
-    
-    &__body{ flex-wrap: wrap;
-      //&-content{ flex-wrap: wrap; }
-    }
-    &__logo{
-      &-wrap{ flex: 0 0 100%; margin: 0 0 10px;  }
-    }
-    //&__search{ flex: 0 0 100%; margin-bottom: 10px;  }
-    &__contacts{ flex: 0 0 100%; @include flex(space-between,center,center); 
-      &-item{ margin: 0; 
-        //&:last-child{ margin-bottom: 0;  } 
+	@include media($lg) {
+		&__logo {
+			&-wrap {
+				margin-right: 40px;
+			}
+		}
+		&__contacts {
+			&-item {
+				margin-left: 20px;
+				&:first-child {
+					margin-left: 20px;
+				}
+			}
+		}
+	}
 
-        .icon-inline__icon{ display: none;  }
-      }
-    }
-  }
+	@include media($md) {
+		&__logo {
+			&-wrap {
+				margin-right: 20px;
+			}
+		}
+		&__contacts {
+			&-item {
+				margin-left: 15px;
+				&:first-child {
+					margin-left: 15px;
+				}
+			}
+		}
+	}
+
+	@include media($sm) {
+		&__menu {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			background: $white;
+			padding: 20px 15px;
+			width: 100%;
+			box-shadow: $cards-bg;
+			//&.is-active{ }
+		}
+		&__burger {
+			display: block;
+		}
+		&__body {
+			&-content {
+				flex-wrap: wrap;
+			}
+		}
+		&__search {
+			flex: 0 0 100%;
+			margin-bottom: 10px;
+		}
+		&__contacts {
+			flex: 0 0 100%;
+			&-item {
+				margin-left: 40px;
+				&:first-child {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+	@include media($xs) {
+		&__body {
+			flex-wrap: wrap;
+			//&-content{ flex-wrap: wrap; }
+		}
+		&__logo {
+			&-wrap {
+				flex: 0 0 100%;
+				margin: 0 0 10px;
+			}
+		}
+		//&__search{ flex: 0 0 100%; margin-bottom: 10px;  }
+		&__contacts {
+			flex: 0 0 100%;
+			@include flex(space-between, center, center);
+			&-item {
+				margin: 0;
+				//&:last-child{ margin-bottom: 0;  }
+
+				.icon-inline__icon {
+					display: none;
+				}
+			}
+		}
+
+		&__bottom {
+			background: $white;
+			&.fixed {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				padding: 8px 15px;
+			}
+		}
+	}
 }

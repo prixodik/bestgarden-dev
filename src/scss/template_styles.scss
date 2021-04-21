@@ -14,7 +14,7 @@
 @import "helpers/grid";
 
 // include mixin
-@import "helpers/mixin"; 
+@import "helpers/mixin";
 /* Ссылки
 -----------------------------*/
 @import "partials/link";
@@ -22,40 +22,38 @@
 -----------------------------*/
 @import "partials/grid";
 /* Кнопки на сайте
------------------------------*/ 
+-----------------------------*/
 @import "partials/buttons";
 /* Элементы форм
 -----------------------------*/
 @import "partials/forms";
-@import "partials/checkbox";          
+@import "partials/checkbox";
 @import "partials/nice-select";
 /* Базовые стили всего сайта
 -----------------------------*/
-@import "partials/base"; 
+@import "partials/base";
 
 /* TITLES */
 @import "partials/titles";
 @import "partials/table";
-@import "partials/slick"; 
-//@import "partials/mCustomScrollbar"; 
-//@import "partials/range-slider"; 
+@import "partials/slick";
+//@import "partials/mCustomScrollbar";
+//@import "partials/range-slider";
 @import "partials/item-page";
-//@import "partials/fancybox";
-
+@import "partials/fancybox";
 
 /* Модальные окна
 -----------------------------*/
 //@import "../../bower_components/fancybox/dist/jquery.fancybox.css";
 
-
 /* Шапка сайта
 -----------------------------*/
-@import "../components/header/style";   
+@import "../components/header/style";
 /* Подвал сайта
 -----------------------------*/
-@import "../components/footer/style"; 
+@import "../components/footer/style";
 /* Мобильное меню
------------------------------*/        
+-----------------------------*/
 
 @import "../components/search-block/style";
 @import "../components/menu-block/style";
@@ -66,29 +64,27 @@
 @import "../components/accardion-block/style";
 @import "../components/subscribe-block/style";
 @import "../components/form-block/style";
-@import "../components/upload-block/style";   
-@import "../components/soc-list/style";   
-@import "../components/burger/style";   
-@import "../components/popup/style";    
-@import "../components/breadcrumbs/style";    
-@import "../components/gallery-block/style";    
-@import "../components/advantage-block/style";     
-@import "../components/tabs/style";    
-@import "../components/banner-block/style";    
-@import "../components/well-block/style";    
-@import "../components/bullet/style";     
-@import "../components/discount-ticket/style";     
-@import "../components/progress-bar/style";     
+@import "../components/upload-block/style";
+@import "../components/soc-list/style";
+@import "../components/burger/style";
+@import "../components/popup/style";
+@import "../components/breadcrumbs/style";
+@import "../components/gallery-block/style";
+@import "../components/advantage-block/style";
+@import "../components/tabs/style";
+@import "../components/banner-block/style";
+@import "../components/well-block/style";
+@import "../components/bullet/style";
+@import "../components/discount-ticket/style";
+@import "../components/progress-bar/style";
 
 @import "../components/index-section/style";
 @import "../components/about-section/style";
 @import "../components/products-section/style";
-@import "../components/catalog-section/style"; 
-@import "../components/news-section/style"; 
-@import "../components/faq-section/style";   
-@import "../components/main-section/style";   
-
-
+@import "../components/catalog-section/style";
+@import "../components/news-section/style";
+@import "../components/faq-section/style";
+@import "../components/main-section/style";
 
 /* Модификаторы  
 -----------------------------*/
