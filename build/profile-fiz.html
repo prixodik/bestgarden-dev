@@ -157,8 +157,38 @@
                           <div class="well-block__number col-4 col-xs-12">№ 568452136</div>
                           <div class="well-block__status col-8 col-xs-12">
                             <div class="bullet status-5">
-                              <div class="bullet__icon"></div>
-                              <div class="bullet__text">Доставка</div>
+                              <div class="bullet__icon"></div><a class="bullet__text" href="#">Доставка</a>
+                              <div class="bullet__hint">
+                                <div class="bullet__hint-title"> </div>
+                                <div class="bullet__hint-list"> 
+                                  <div class="bullet__hint-item">
+                                    <div class="bullet__hint-icon is-active"></div>
+                                    <div class="bullet__hint-wrap"> 
+                                      <div class="bullet__hint-label">В сборке</div>
+                                      <div class="bullet__hint-date">14.03.2021</div>
+                                    </div>
+                                  </div>
+                                  <div class="bullet__hint-item">
+                                    <div class="bullet__hint-icon"></div>
+                                    <div class="bullet__hint-wrap"> 
+                                      <div class="bullet__hint-label">Собран на складе</div>
+                                      <div class="bullet__hint-date">14.03.2021</div>
+                                    </div>
+                                  </div>
+                                  <div class="bullet__hint-item">
+                                    <div class="bullet__hint-icon"></div>
+                                    <div class="bullet__hint-wrap"> 
+                                      <div class="bullet__hint-label">Передан в транспортную компанию</div>
+                                    </div>
+                                  </div>
+                                  <div class="bullet__hint-item">
+                                    <div class="bullet__hint-icon"></div>
+                                    <div class="bullet__hint-wrap"> 
+                                      <div class="bullet__hint-label">Доставлен </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -867,6 +897,28 @@
                   </div>
                   <div class="popup__buttons">
                     <button class="btn btn--block js-submit">Подтвердить данные</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--order" id="send-email-popup">
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">Отправка счета</div>
+                <form class="popup__form" action="">
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Номер заказа</div>
+                    <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">E-mail</div>
+                    <input class="form-control form-control--border js-required" type="email" placeholder="" required>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit js-popup-close" data-href="#">Отправить</button>
                   </div>
                 </form>
               </div>

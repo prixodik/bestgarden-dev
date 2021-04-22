@@ -142,7 +142,29 @@ mixin wellBlockOrders(data)
 				._status.col-8.col-xs-12
 					.bullet.status-5
 						.bullet__icon
-						.bullet__text Доставка
+						a.bullet__text(href="#") Доставка
+						._hint
+							._hint-title 
+							._hint-list 
+								._hint-item
+									._hint-icon.is-active
+									._hint-wrap 
+										._hint-label В сборке
+										._hint-date 14.03.2021
+								._hint-item
+									._hint-icon
+									._hint-wrap 
+										._hint-label Собран на складе
+										._hint-date 14.03.2021
+								._hint-item
+									._hint-icon
+									._hint-wrap 
+										._hint-label Передан в транспортную компанию
+								._hint-item
+									._hint-icon
+									._hint-wrap 
+										._hint-label Доставлен 
+
 			._row.row
 				._number.col-4.col-xs-12 № 568452136
 				._status.col-8.col-xs-12
@@ -221,10 +243,34 @@ mixin wellBlockOrderInfo(data)
 			._status.col-3
 				.bullet(class=data.statusClass)
 					.bullet__icon
-					.bullet__text!= data.status
+					if data.status != 'доставка' 
+						.bullet__text!= data.status
 					if data.status == 'ожидает оплаты' 
-						a.bullet__print(href="#")
+						a.bullet__print(href="#" data-title="Скачать счёт")
 							+svg('price-label')
+					if data.status == 'доставка' 
+						a.bullet__link.js-hint-show(href="#") доставка
+						.bullet__hint 
+								.bullet__hint-title Статус доставки заказа 8956452136 
+								.bullet__hint-list 
+									.bullet__hint-item.is-active
+										.bullet__hint-icon
+										.bullet__hint-wrap 
+											.bullet__hint-label В сборке
+											.bullet__hint-date 14.03.2021
+									.bullet__hint-item.is-active
+										.bullet__hint-icon
+										.bullet__hint-wrap 
+											.bullet__hint-label Собран на складе
+											.bullet__hint-date 14.03.2021
+									.bullet__hint-item.is-active
+										.bullet__hint-icon
+										.bullet__hint-wrap 
+											.bullet__hint-label Передан в транспортную компанию
+									.bullet__hint-item.is-active
+										.bullet__hint-icon
+										.bullet__hint-wrap 
+											.bullet__hint-label Доставлен 
 			
 mixin wellBlockBillInfo(data)
 	.well-block.-bill-info&attributes(attributes)
@@ -248,4 +294,4 @@ mixin wellBlockBillInfo(data)
 						+svg('check')
 						span Отправлено
 				else
-					a(href="#") Отправить на E-mail
+					a.js-popup-show(href="#send-email-popup") Отправить на E-mail

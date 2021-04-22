@@ -140,7 +140,7 @@
                           <svg class="icon icon_download">
                             <use xlink:href="images/sprite-svg.svg#download"></use>
                           </svg></a></div>
-                      <div class="well-block__send well-block__send--active col col-xs-9 order-xs-5"><a href="#">Отправить на E-mail</a>
+                      <div class="well-block__send well-block__send--active col col-xs-9 order-xs-5"><a class="js-popup-show" href="#send-email-popup">Отправить на E-mail</a>
                       </div>
                     </div>
                   </div>
@@ -181,7 +181,7 @@
                           <svg class="icon icon_download">
                             <use xlink:href="images/sprite-svg.svg#download"></use>
                           </svg></a></div>
-                      <div class="well-block__send well-block__send--active col col-xs-9 order-xs-5"><a href="#">Отправить на E-mail</a>
+                      <div class="well-block__send well-block__send--active col col-xs-9 order-xs-5"><a class="js-popup-show" href="#send-email-popup">Отправить на E-mail</a>
                       </div>
                     </div>
                   </div>
@@ -841,6 +841,28 @@
                   </div>
                   <div class="popup__buttons">
                     <button class="btn btn--block js-submit">Подтвердить данные</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="popup popup--order" id="send-email-popup">
+              <div class="popup__overflow js-popup-hide"></div>
+              <div class="popup__wrapper"><a class="popup__close js-popup-hide">
+                  <svg class="icon icon_close">
+                    <use xlink:href="images/sprite-svg.svg#close"></use>
+                  </svg></a>
+                <div class="popup__title">Отправка счета</div>
+                <form class="popup__form" action="">
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">Номер заказа</div>
+                    <input class="form-control form-control--border js-required" type="text" placeholder="" required>
+                  </div>
+                  <div class="form-group form-group--sm popup__input">
+                    <div class="form-group__label">E-mail</div>
+                    <input class="form-control form-control--border js-required" type="email" placeholder="" required>
+                  </div>
+                  <div class="popup__buttons">
+                    <button class="btn btn--block js-submit js-popup-close" data-href="#">Отправить</button>
                   </div>
                 </form>
               </div>

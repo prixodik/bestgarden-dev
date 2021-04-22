@@ -1,59 +1,238 @@
+.bullet {
+	@include flex(0, center, center, nowrap);
+	&__icon {
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		flex: 0 0 auto;
+		margin-right: 15px;
+		background: $text-green-dark;
+		border: 2px $text-green-dark solid;
+	}
+	&__text {
+		white-space: nowrap;
+	}
+	&__print {
+		position: relative;
+		z-index: 1;
+		margin-left: 20px;
+		&:after {
+			content: attr(data-title);
+			display: none;
+			padding: 7px 34px;
+			border-radius: 5px;
+			background: rgba(#000, 0.7);
+			color: $white;
+			white-space: nowrap;
+			position: absolute;
+			top: calc(100% + 5px);
+			left: 0;
+			z-index: 10;
+		}
+		svg {
+			fill: #b1c9d9;
+			font-size: 36px;
 
-.bullet{ @include flex(0,center,center,nowrap); 
-	&__icon{ width: 15px; height: 15px; border-radius: 50%; flex: 0 0 auto; margin-right: 15px; background: $text-green-dark; border: 2px $text-green-dark solid; }
-	&__text{ white-space: nowrap; }
-	&__print{ 
-		svg{ fill: #B1C9D9; font-size: 36px; margin-left: 20px; display: block; }
+			display: block;
+		}
+
+		&:hover {
+			&:after {
+				display: block;
+			}
+		}
 	}
 
-	&--lg &{ 
-		&__icon{ width: 19px; height: 19px; }
-		&__text{ font: 20px/28px $baseFF; }
+	&__link {
+		border-bottom: 2px $form-blue dotted;
+		&:hover {
+			& + .bullet__hint {
+				display: block;
+			}
+		}
 	}
 
-	&.status-2{ color: $link; }
-	&.status-2 &{
-		&__icon{ background: $link; border-color: $link; }
+	&__hint {
+		display: none;
+		position: absolute;
+		bottom: calc(100% + 5px);
+		left: 0;
+		background-color: #f6f9ff;
+		border-radius: 10px;
+		padding: 40px;
+		z-index: 100;
+		box-shadow: $cards-bg;
+
+		&-title {
+			font: 600 18px $baseFF;
+			margin-bottom: 32px;
+			white-space: nowrap;
+			color: $text-green-dark;
+		}
+		&-item {
+			@include flex(0, center, center, nowrap);
+			margin-bottom: 35px;
+			white-space: nowrap;
+			color: rgba($green, 0.4);
+
+			&.is-active {
+				color: $green;
+				.bullet__hint-icon {
+					&:before {
+						background: url("../images/check2.svg") 50% 50% /25px auto no-repeat $white;
+						border: 0;
+					}
+					&:after {
+						opacity: 1;
+					}
+				}
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+				.bullet__hint-icon {
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+		&-icon {
+			flex: 0 0 25px;
+
+			margin-right: 15px;
+
+			position: relative;
+			z-index: 1;
+
+			&:before {
+				content: "";
+				border: 2px solid rgba(#245e63, 0.4);
+				display: block;
+				width: 25px;
+				height: 25px;
+				border-radius: 50%;
+				background-color: #f6f9ff;
+			}
+
+			&:after {
+				content: "";
+				display: block;
+				width: 0;
+				height: calc(100% + 21px);
+				border-right: 2px $green dotted;
+				opacity: 0.4;
+				position: absolute;
+				top: calc(100% + 3px);
+				left: 50%;
+				transform: translateX(-50% + 1);
+				z-index: -1;
+			}
+		}
+		&-label {
+		}
+		&-date {
+			margin-top: 3px;
+			font: $fs-14;
+			color: $gray;
+		}
 	}
 
-	&.status-3{ color: $blue-dark; }
-	&.status-3 &{
-		&__icon{ background: $blue-dark; border-color: $blue-dark; }
+	&--lg & {
+		&__icon {
+			width: 19px;
+			height: 19px;
+		}
+		&__text {
+			font: 20px/28px $baseFF;
+		}
 	}
 
-	&.status-4{ color: $link; }
-	&.status-4 &{
-		&__icon{ background: transparent; border-color: $link; }
+	&.status-2 {
+		color: $link;
+	}
+	&.status-2 & {
+		&__icon {
+			background: $link;
+			border-color: $link;
+		}
 	}
 
-	&.status-5{ color: $form-blue; }
-	&.status-5 &{
-		&__icon{ background: $form-blue; border-color: $form-blue; }
+	&.status-3 {
+		color: $blue-dark;
+	}
+	&.status-3 & {
+		&__icon {
+			background: $blue-dark;
+			border-color: $blue-dark;
+		}
 	}
 
-	&.status-6{ color: $green; }   
-	&.status-6 &{
-		&__icon{ background: $green; border-color: $green; }
+	&.status-4 {
+		color: $link;
+	}
+	&.status-4 & {
+		&__icon {
+			background: transparent;
+			border-color: $link;
+		}
+	}
+
+	&.status-5 {
+		color: $form-blue;
+	}
+	&.status-5 & {
+		&__icon {
+			background: $form-blue;
+			border-color: $form-blue;
+		}
+	}
+
+	&.status-6 {
+		color: $green;
+	}
+	&.status-6 & {
+		&__icon {
+			background: $green;
+			border-color: $green;
+		}
 	}
 
 	/* ------------------------------ */
 
-	&.status-2-2{ color: $green; }
-	&.status-2-2 &{
-		&__icon{ background: url('../images/bullet-status-2.svg') 0 0/contain no-repeat; border: 0; }
+	&.status-2-2 {
+		color: $green;
+	}
+	&.status-2-2 & {
+		&__icon {
+			background: url("../images/bullet-status-2.svg") 0 0 / contain no-repeat;
+			border: 0;
+		}
 	}
 
-	&.status-2-3{ color: $link; }
-	&.status-2-3 &{
-		&__icon{ background: url('../images/bullet-status-3.svg') 0 0/contain no-repeat; border: 0; }
+	&.status-2-3 {
+		color: $link;
+	}
+	&.status-2-3 & {
+		&__icon {
+			background: url("../images/bullet-status-3.svg") 0 0 / contain no-repeat;
+			border: 0;
+		}
 	}
 
-	&.status-2-4{ color: $blue-dark; }
-	&.status-2-4 &{
-		&__icon{ background: transparent; border-color: $blue-dark; }
+	&.status-2-4 {
+		color: $blue-dark;
+	}
+	&.status-2-4 & {
+		&__icon {
+			background: transparent;
+			border-color: $blue-dark;
+		}
 	}
 
-	@include media($md){
-		&__text{ white-space: normal; }
+	@include media($md) {
+		&__text {
+			white-space: normal;
+		}
 	}
 }

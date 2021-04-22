@@ -346,5 +346,16 @@ mixin popupOrder2(data)
 			._buttons
 				button.btn.-block.js-submit(type="button" data-href="#popup-finish-2") Выбрать
 
-
+mixin popupEmailSend(data)
+	+popup().popup--order#send-email-popup
+		._title Отправка счета
+		form._form(action="")
+			.form-group.-sm._input
+					._label Номер заказа
+					input.form-control.form-control--border.js-required(type="text" placeholder="" required)
+			.form-group.-sm._input
+					._label E-mail
+					input.form-control.form-control--border.js-required(type="email" placeholder="" required)
+			._buttons
+				button.btn.-block.js-submit.js-popup-close(data-href="#") Отправить
 
