@@ -1,0 +1,20 @@
+extends extends/base-404.pug
+append vars
+	- var pageUrl = 'about.html';
+	- var pageTitle = 'О нас';
+	- var classBody = 'about-page';
+	- var headerBg = 'images/main-banner.jpg';
+block styles
+	
+block content
+	include ../components/main-section/template
+	
+	.page-404
+		.container
+			img.lazy.page-404__bg(data-src="/images/404-page-bg.svg", alt="")
+			.page-404__title Такой страницы не существует
+			.page-404__buttons
+				a.btn.btn--yellow(href="#") На главную страницу 
+	//- +gridLayout() 
+
+block scripts 

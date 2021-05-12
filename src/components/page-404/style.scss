@@ -1,0 +1,15 @@
+.page-404 {
+	padding: 60px 0;
+	&__bg {
+		margin-bottom: 50px;
+	}
+	&__title {
+		text-align: center;
+		color: $green;
+		font: $title-h1;
+		margin-bottom: 30px;
+	}
+	&__buttons {
+		@include flex(center);
+	}
+}
